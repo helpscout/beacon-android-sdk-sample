@@ -1,1 +1,1 @@
-include ':simple-java', ':simple-kotlin', ':customisation'
+include ':simple-kotlin'
