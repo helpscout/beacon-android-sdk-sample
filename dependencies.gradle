@@ -8,7 +8,7 @@ ext {
     buildToolsVersion = '27.0.2'
     coroutinesVersion = '0.18'
     gradlePluginVersion = '3.0.1'
-    kotlinVersion = '1.2.10'
+    kotlinVersion = '1.2.21'
 
     // Testing
     jUnitVersion = '4.12'
