@@ -1,6 +1,7 @@
 package net.helpscout.samples.beacon.kotlin
 
 import android.app.Application
+import com.helpscout.beacon.Beacon
 
 class MainApplication : Application() {
 
@@ -10,11 +11,11 @@ class MainApplication : Application() {
     }
 
     fun initBeacon() {
-//        Beacon.Builder()
-//                .withContext(this)
-//                .withBeaconId("0c09af96-546a-4e40-a797-e747d74d5437")
-//                .withLogsEnabled(true)
-//                .build()
+        Beacon.Builder()
+                .withContext(this)
+                .withBeaconId("a63de347-8a4a-4fe7-9d73-6ae41421d140")
+                .withLogsEnabled(true)
+                .build()
     }
 
 }
