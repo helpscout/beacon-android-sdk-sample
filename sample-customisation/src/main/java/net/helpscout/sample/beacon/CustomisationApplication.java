@@ -2,6 +2,7 @@ package net.helpscout.sample.beacon;
 
 import android.app.Application;
 
+import com.facebook.stetho.Stetho;
 import com.helpscout.beacon.Beacon;
 
 public class CustomisationApplication extends Application {
@@ -10,6 +11,7 @@ public class CustomisationApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initBeacon();
+        Stetho.initializeWithDefaults(this);
     }
 
     private void initBeacon() {
