@@ -7,6 +7,8 @@ import com.helpscout.beacon.Beacon;
 
 public class CustomisationApplication extends Application {
 
+    private static String secureBeaconId = "6563caf4-4fbe-4e27-924e-20e088d2ce81";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -17,7 +19,7 @@ public class CustomisationApplication extends Application {
     private void initBeacon() {
         new Beacon.Builder()
                 .withContext(this)
-                .withBeaconId("a63de347-8a4a-4fe7-9d73-6ae41421d140")
+                .withBeaconId(secureBeaconId)
                 .withLogsEnabled(true)
                 .build();
     }
