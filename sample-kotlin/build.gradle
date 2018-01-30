@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply from: '../dependencies.gradle'
+apply from: '../signing/signing.gradle'
 
 android {
 
@@ -26,8 +27,10 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
     }
 
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -43,7 +46,10 @@ dependencies {
     implementation "com.android.support:cardview-v7:$supportLibrary"
     implementation "com.android.support:design:$supportLibrary"
 
-    implementation "com.helpscout:beacon-sdk:0.0.1"
+    //noinspection GradleDynamicVersion
+    implementation "com.helpscout:beacon-sdk:+"
 
     testImplementation "junit:junit:$jUnitVersion"
 }
+
+

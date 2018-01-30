@@ -1,0 +1,48 @@
+//Applies the sample keystore to the release signingConfig with info from the signing.properties
+android {
+    signingConfigs {
+        release {
+
+            //CI can overrides the signing.properties location
+            def signingPropsFileLocation = project.getProperties().get("BEACON_SAMPLE_SIGNING_PROPS", '../signing/signing.properties')
+            
+            setSingingConfigPropsFromFile(signingConfigs.release, signingPropsFileLocation)
+        }
+    }
+}
+
+
+def setSingingConfigPropsFromFile(config, signingPropsFileLocation) {
+
+    def signingPropsFile = new File(signingPropsFileLocation)
+    if (signingPropsFile.canRead()) {
+        def props = loadPropertiesFromFile(signingPropsFile)
+
+        def requiredProps = ['STORE_PASSWORD', 'KEY_ALIAS', 'KEY_PASSWORD', 'STORE_FILE']
+        def missingProps = requiredProps - props.stringPropertyNames()
+
+        if (missingProps.isEmpty()) {
+            config.storeFile file(props['STORE_FILE'])
+            config.storePassword props['STORE_PASSWORD']
+            config.keyAlias props['KEY_ALIAS']
+            config.keyPassword props['KEY_PASSWORD']
+        } else {
+            println "Signing props file missing properties: ${missingProps}\n"
+        }
+    } else {
+        println "Signing props file ${signingPropsFileLocation} not found or could not be read. This can be overriden by the BEACON_SAMPLE_SIGNING_PROPS property"
+    }
+}
+
+
+static Properties loadPropertiesFromFile(File signingPropsFile) {
+    Properties props = new Properties()
+    def stream = new FileInputStream(signingPropsFile)
+    props.load(stream)
+    try {
+        stream.close()
+    } catch (Exception e) {
+        // Do nothing
+    }
+    return props
+}
