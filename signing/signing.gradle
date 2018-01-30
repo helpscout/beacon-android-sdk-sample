@@ -2,7 +2,10 @@
 android {
     signingConfigs {
         release {
-            def signingPropsFileLocation = '../signing/signing.properties'
+
+            //CI can overrides the signing.properties location
+            def signingPropsFileLocation = project.getProperties().get("BEACON_SAMPLE_SIGNING_PROPS", '../signing/signing.properties')
+            
             setSingingConfigPropsFromFile(signingConfigs.release, signingPropsFileLocation)
         }
     }
@@ -27,7 +30,7 @@ def setSingingConfigPropsFromFile(config, signingPropsFileLocation) {
             println "Signing props file missing properties: ${missingProps}\n"
         }
     } else {
-        println "Signing props file ${signingPropsFileLocation} not found or could not be read"
+        println "Signing props file ${signingPropsFileLocation} not found or could not be read. This can be overriden by the BEACON_SAMPLE_SIGNING_PROPS property"
     }
 }
 
