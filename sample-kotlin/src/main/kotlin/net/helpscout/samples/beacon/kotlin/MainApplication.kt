@@ -3,6 +3,8 @@ package net.helpscout.samples.beacon.kotlin
 import android.app.Application
 import com.facebook.stetho.Stetho
 import com.helpscout.beacon.Beacon
+import timber.log.Timber
+
 
 class MainApplication : Application() {
 
@@ -11,8 +13,14 @@ class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        initDebuggingLibs()
         initBeacon()
-        Stetho.initializeWithDefaults(this);
+        Timber.d("App & Beacon Init")
+    }
+
+    private fun initDebuggingLibs() {
+        Stetho.initializeWithDefaults(this)
+        Timber.plant(Timber.DebugTree())   
     }
 
     fun initBeacon() {
