@@ -5,6 +5,8 @@ import android.app.Application;
 import com.facebook.stetho.Stetho;
 import com.helpscout.beacon.Beacon;
 
+import timber.log.Timber;
+
 public class CustomisationApplication extends Application {
 
     private static String secureBeaconId = "6563caf4-4fbe-4e27-924e-20e088d2ce81";
@@ -12,8 +14,9 @@ public class CustomisationApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initDebuggingLibs();
         initBeacon();
-        Stetho.initializeWithDefaults(this);
+        Timber.d("App & Beacon Init");
     }
 
     private void initBeacon() {
@@ -24,4 +27,8 @@ public class CustomisationApplication extends Application {
                 .build();
     }
 
+    private void initDebuggingLibs() {
+        Stetho.initializeWithDefaults(this);
+        Timber.plant(new Timber.DebugTree());
+    }
 }
