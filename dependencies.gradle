@@ -20,6 +20,7 @@ ext {
     constraintLayoutVersion = '1.0.2'
 
     // Beacon
-    beaconVersion = '0.0.3'
+    beaconCoreVersion = '0.0.1'
+    beaconUiVersion = '0.0.4'
 
 }
