@@ -31,11 +31,5 @@ public class CustomisationActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.fab_open_beacon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                BeaconActivity.open(getBaseContext());
-            }
-        });
     }
 }

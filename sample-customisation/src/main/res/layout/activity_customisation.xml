@@ -7,15 +7,6 @@
     android:padding="16dp"
     tools:context="net.helpscout.sample.beacon.CustomisationActivity">
 
-    <com.helpscout.beacon.BeaconFabView
-        android:id="@+id/fab_open_beacon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:theme="@style/AppTheme.FAB"
-        app:beacon_id="a63de347-8a4a-4fe7-9d73-6ae41421d140"/>
-
     <Button
         android:id="@+id/action_open_beacon"
         android:layout_width="wrap_content"

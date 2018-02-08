@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="net.helpscout.samples.beacon.kotlin.MainActivity">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_open_beacon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-  <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
@@ -24,23 +8,21 @@
     android:orientation="vertical">
 
     <Button
-      android:id="@+id/button_open_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Open Beacon" />
+        android:id="@+id/button_open_beacon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Beacon" />
 
     <Button
-      android:id="@+id/button_login_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Login (basic mode)" />
+        android:id="@+id/button_login_beacon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login (basic mode)" />
 
     <Button
-      android:id="@+id/button_logout_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Logout" />
+        android:id="@+id/button_logout_beacon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
 
-  </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

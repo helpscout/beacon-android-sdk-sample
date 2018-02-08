@@ -4,6 +4,7 @@ ext {
     minSdkVersion = 16
     targetSdkVersion = 27
     compileSdkVersion = 27
+    dexcountVersion = '0.8.2'
 
     buildToolsVersion = '27.0.2'
     coroutinesVersion = '0.18'
