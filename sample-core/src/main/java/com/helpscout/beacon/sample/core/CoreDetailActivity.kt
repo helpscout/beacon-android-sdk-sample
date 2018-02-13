@@ -26,9 +26,7 @@ class CoreDetailActivity : AppCompatActivity() {
                 putExtra(EXTRA_ARTICLE_ID, article.suggestion.id)
             }
         }
-
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +40,9 @@ class CoreDetailActivity : AppCompatActivity() {
             val articleJob = async { repository.getArticleById(articleId) }
 
             val article = articleJob.await()
+
+            title = article.name
             webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
-
-
         }
 
     }
