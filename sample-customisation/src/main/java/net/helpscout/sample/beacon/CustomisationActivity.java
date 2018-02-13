@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
-import com.helpscout.beacon.BeaconActivity;
+import com.helpscout.beacon.ui.BeaconActivity;
 
 import net.helpscout.sample.beacon.customisation.R;
 

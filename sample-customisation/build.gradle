@@ -28,7 +28,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
@@ -40,7 +40,8 @@ android {
 }
 
 dependencies {
-    implementation "com.helpscout:beacon-sdk:+"
+    implementation "com.helpscout:beacon-core:0.0.3"
+    implementation "com.helpscout:beacon-ui:0.0.3"
 
     testImplementation "junit:junit:$jUnitVersion"
 }
