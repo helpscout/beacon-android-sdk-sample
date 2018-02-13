@@ -28,7 +28,7 @@ class CoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_core)
+        setContentView(R.layout.activity_suggestions)
 
         launch(UI) {
             val repository = Beacon.getInstance().repositoryInstance
@@ -43,7 +43,7 @@ class CoreActivity : AppCompatActivity() {
     }
 
     private fun openSuggestion(suggestion: BeaconArticleSuggestion) {
-
-
+        val articleIntent = CoreDetailActivity.open(this, suggestion)
+        startActivity(articleIntent)
     }
 }
