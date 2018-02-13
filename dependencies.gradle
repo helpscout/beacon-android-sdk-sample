@@ -7,7 +7,7 @@ ext {
     dexcountVersion = '0.8.2'
 
     buildToolsVersion = '27.0.2'
-    coroutinesVersion = '0.18'
+    coroutinesVersion = '0.20'
     gradlePluginVersion = '3.0.1'
     kotlinVersion = '1.2.21'
 

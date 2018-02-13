@@ -42,10 +42,10 @@ android {
 }
 
 dependencies {
-    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
-    implementation "com.helpscout:beacon-ui:$beaconUiVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
-    testImplementation "junit:junit:$jUnitVersion"
+    implementation "com.android.support:appcompat-v7:$supportLibrary"
+    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
 }
 
 
