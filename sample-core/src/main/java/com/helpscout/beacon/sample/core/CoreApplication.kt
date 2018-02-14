@@ -5,7 +5,7 @@ import com.helpscout.beacon.Beacon
 
 class CoreApplication : Application() {
 
-    private val secureBeaconId = "6563caf4-4fbe-4e27-924e-20e088d2ce81"
+    private val secureBeaconId = "a63de347-8a4a-4fe7-9d73-6ae41421d140"
 
     override fun onCreate() {
         super.onCreate()

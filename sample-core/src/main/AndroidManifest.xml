@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.helpscout.beacon.sample.core.CoreActivity">
+        <activity
+            android:name="com.helpscout.beacon.sample.core.CoreActivity"
+            android:label="@string/beacon_sdk_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +20,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"/>
+        <activity
+            android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"
+            android:parentActivityName="com.helpscout.beacon.sample.core.CoreActivity"/>
+
     </application>
 
 </manifest>
