@@ -43,7 +43,6 @@ class CoreActivity : AppCompatActivity() {
     }
 
     private fun openSuggestion(suggestion: BeaconArticleSuggestion) {
-        val articleIntent = CoreDetailActivity.open(this, suggestion)
-        startActivity(articleIntent)
+        startActivity(CoreDetailActivity.open(this, suggestion))
     }
 }
