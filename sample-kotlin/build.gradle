@@ -42,10 +42,8 @@ android {
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
-    implementation "com.helpscout:beacon-core:0.0.3"
-    //noinspection GradleDynamicVersion
-    implementation "com.helpscout:beacon-ui:0.0.3"
+    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
+    implementation "com.helpscout:beacon-ui:$beaconUiVersion"
 
     testImplementation "junit:junit:$jUnitVersion"
 }

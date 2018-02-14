@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.helpscout.samples.beacon.core">
+
+    <application
+        android:name="com.helpscout.beacon.sample.core.CoreApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.helpscout.beacon.sample.core.CoreActivity"
+            android:label="@string/beacon_sdk_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"
+            android:parentActivityName="com.helpscout.beacon.sample.core.CoreActivity"/>
+
+    </application>
+
+</manifest>

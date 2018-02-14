@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.getkeepsafe.dexcount'
 
 apply from: '../signing/signing.gradle'
@@ -10,7 +12,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "net.helpscout.samples.beacon.customisation"
+        applicationId "net.helpscout.samples.beacon.core"
 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -28,7 +30,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
@@ -40,8 +42,10 @@ android {
 }
 
 dependencies {
-    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
-    implementation "com.helpscout:beacon-ui:$beaconUiVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
-    testImplementation "junit:junit:$jUnitVersion"
+    implementation "com.android.support:appcompat-v7:$supportLibrary"
+    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
 }
+
+
