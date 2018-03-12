@@ -3,7 +3,13 @@ buildscript {
     apply from: './dependencies.gradle'
 
     repositories {
-        maven { url "${System.env.HOME}/.m2/repository" }
+        maven {
+            url "https://helpscout.bintray.com/beacon"
+            credentials {
+                username getProperty("HS_BINTRAY_USER")
+                password getProperty("HS_BINTRAY_KEY")
+            }
+        }
         google()
         jcenter()
         mavenCentral()
@@ -18,7 +24,13 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url "${System.env.HOME}/.m2/repository" }
+        maven {
+            url "https://helpscout.bintray.com/beacon"
+            credentials {
+                username getProperty("HS_BINTRAY_USER")
+                password getProperty("HS_BINTRAY_KEY")
+            }
+        }
         google()
         jcenter()
         mavenCentral()
