@@ -14,7 +14,7 @@ android:
 before_install:
 - yes | sdkmanager "platforms;android-27"
 script:
-- "./gradlew clean build -PHS_BINTRAY_USER=hs-reader@helpscout -PHS_BINTRAY_KEY=ENC_HS_READER_API_KEY"
+- "./gradlew clean build -PHS_BINTRAY_USER=hs-reader@helpscout -PHS_BINTRAY_KEY=$ENC_HS_READER_API_KEY"
 sudo: false
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
