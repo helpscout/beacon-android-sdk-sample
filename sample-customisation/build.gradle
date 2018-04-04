@@ -6,8 +6,8 @@ apply from: '../dependencies.gradle'
 
 android {
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
         applicationId "net.helpscout.samples.beacon.customisation"
@@ -37,6 +37,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 
 }
 
