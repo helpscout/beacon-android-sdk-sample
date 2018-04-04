@@ -22,14 +22,14 @@ class MainActivity : Activity() {
         }
 
         findViewById<Button>(R.id.button_login_beacon).setOnClickListener {
-            Beacon.login(userEmail)
+            Beacon.getInstance().login(userEmail)
             toast("Log in (Basic mode) as $userEmail")
         }
 
         findViewById<Button>(R.id.button_logout_beacon).setOnClickListener {
             if (Beacon.getInstance().isLoggedIn) {
                 val currentUser = Beacon.getInstance().userId()
-                Beacon.logout()
+                Beacon.getInstance().logout()
                 toast("Logged out with $currentUser")
             }
         }
