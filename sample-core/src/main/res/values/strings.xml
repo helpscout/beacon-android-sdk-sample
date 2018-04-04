@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">sample-core</string>
-    <string name="beacon_sdk_title">Beacon SDK Sample</string>
+    <string name="app_name">Beacon Core Sample</string>
 </resources>
