@@ -6,10 +6,10 @@ ext {
     compileSdkVersion = 27
     dexcountVersion = '0.8.2'
 
-    buildToolsVersion = '27.0.2'
+    buildToolsVersion = '27.0.3'
     coroutinesVersion = '0.20'
-    gradlePluginVersion = '3.0.1'
-    kotlinVersion = '1.2.21'
+    gradlePluginVersion = '3.1.2'
+    kotlinVersion = '1.2.41'
 
     // Testing
     jUnitVersion = '4.12'
