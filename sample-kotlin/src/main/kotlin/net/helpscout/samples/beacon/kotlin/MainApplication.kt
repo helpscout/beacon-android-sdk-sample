@@ -15,7 +15,6 @@ class MainApplication : Application() {
 
     fun initBeacon() {
         Beacon.Builder()
-                .withContext(this)
                 .withBeaconId(beaconId)
                 .withLogsEnabled(true)
                 .build()
