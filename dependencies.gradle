@@ -8,8 +8,8 @@ ext {
 
     buildToolsVersion = '27.0.3'
     coroutinesVersion = '0.20'
-    gradlePluginVersion = '3.1.0'
-    kotlinVersion = '1.2.21'
+    gradlePluginVersion = '3.1.2'
+    kotlinVersion = '1.2.41'
 
     // Testing
     jUnitVersion = '4.12'
@@ -21,7 +21,7 @@ ext {
     constraintLayoutVersion = '1.0.2'
 
     // Beacon
-    beaconCoreVersion = '0.1.1'
-    beaconUiVersion = '0.1.1'
+    beaconCoreVersion = '0.1.9'
+    beaconUiVersion = '0.1.9'
 
 }

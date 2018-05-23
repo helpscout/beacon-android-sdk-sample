@@ -14,7 +14,6 @@ class CoreApplication : Application() {
 
     private fun initBeacon() {
         Beacon.Builder()
-                .withContext(this)
                 .withBeaconId(secureBeaconId)
                 .withLogsEnabled(true)
                 .build()
