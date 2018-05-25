@@ -16,7 +16,6 @@ public class CustomisationApplication extends Application {
 
     private void initBeacon() {
         new Beacon.Builder()
-                .withContext(this)
                 .withBeaconId(secureBeaconId)
                 .withLogsEnabled(true)
                 .build();

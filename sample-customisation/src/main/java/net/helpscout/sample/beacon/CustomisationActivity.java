@@ -22,7 +22,7 @@ public class CustomisationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customisation);
 
         //typically this should be set after successfully logging on to your service
-        Beacon.getInstance().loginSecureMode(secureUserEmail, secureUserSignature);
+        Beacon.loginSecureMode(secureUserEmail, secureUserSignature);
 
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
             @Override

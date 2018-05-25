@@ -31,7 +31,7 @@ class CoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_suggestions)
 
         launch(UI) {
-            val repository = Beacon.getInstance().repositoryInstance
+            val repository = Beacon.getRepositoryInstance()
             val suggestionsJob = async { repository.suggestions }
 
             val suggestions = suggestionsJob.await()

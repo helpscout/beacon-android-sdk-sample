@@ -36,7 +36,7 @@ class CoreDetailActivity : AppCompatActivity() {
         val articleId = intent.getStringExtra(EXTRA_ARTICLE_ID)
 
         launch(UI) {
-            val repository = Beacon.getInstance().repositoryInstance
+            val repository = Beacon.getRepositoryInstance()
             val articleJob = async { repository.getArticleById(articleId) }
 
             val article = articleJob.await()
