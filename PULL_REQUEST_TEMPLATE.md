@@ -14,7 +14,7 @@ _Provide a description of the implementation_%
 
 | Before | After |
 | ------ | ----- |
-![device-2016-06-15-202042](https://cloud.githubusercontent.com/assets/531613/16094173/ee29cef4-3336-11e6-9a20-0e356ce629c5.png)| ![device-2016-06-15-202042](https://cloud.githubusercontent.com/assets/531613/16094173/ee29cef4-3336-11e6-9a20-0e356ce629c5.png)|
+![device-2016-06-15-202042](http://c.hlp.sc/1g2i292U470M/download/suggestions.png)| ![device-2016-06-15-202042](http://c.hlp.sc/1g2i292U470M/download/suggestions.png)|
 
 ### Test scenarios
 
