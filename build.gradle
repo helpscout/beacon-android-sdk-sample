@@ -3,16 +3,13 @@ buildscript {
     apply from: './dependencies.gradle'
 
     repositories {
-        maven {
-            url "https://helpscout.bintray.com/beacon"
-        }
         google()
         jcenter()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "com.android.tools.build:gradle:$gradlePluginVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$dexcountVersion"
     }
@@ -20,9 +17,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            url "https://helpscout.bintray.com/beacon"
-        }
         google()
         jcenter()
         mavenCentral()
