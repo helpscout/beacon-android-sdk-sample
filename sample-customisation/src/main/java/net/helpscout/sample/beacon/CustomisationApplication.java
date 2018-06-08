@@ -6,7 +6,7 @@ import com.helpscout.beacon.Beacon;
 
 public class CustomisationApplication extends Application {
 
-    private static String secureBeaconId = "a63de347-8a4a-4fe7-9d73-6ae41421d140";
+    private static String secureBeaconId = "YOUR_BEACON_ID";
 
     @Override
     public void onCreate() {
