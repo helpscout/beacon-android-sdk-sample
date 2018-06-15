@@ -1,13 +1,16 @@
 # Beacon SDK for Android
 
-[ ![Download Beacon Core](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
-[ ![Download Beacon UI](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
+* Beacon Core [ ![Download Beacon Core](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
+* Beacon UI[ ![Download Beacon UI](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
+
 
 ## Requirements
 
 The minimum supported SDK is **21** (Android 5.0), and your app must be compiled with at least API version **27** (Android 8.1).
 
 ## Features
+
+* [Change Log](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
 
 ### Coming Soon
 
@@ -142,7 +145,7 @@ In order to activate this mode, you have to tell the Beacon Builder like so:
 
 ```java
 Beacon beacon = Beacon.Builder()
-  .withBeaconId("76d18b11-41f4-4d34-9a8c-08679d4759e3")       
+  .withBeaconId("cf2102b5-0f3c-4214-972e-2a1d33c7fadb")       
   .withLogsEnabled(true)       
   .build();
 ```
@@ -162,13 +165,13 @@ this mode has all the features that Beacon provides:
 | ------ | ----- |
 ![reply](http://c.hlp.sc/3s1K0W1m2135/download/send_message.png)|![prev](http://c.hlp.sc/2R0t0r0f1m2e/download/previous.png)|
 
-### Customisation
+### Customization
 
-The Beacon SDK allows for some customisation of it's color and text. We've made public a number of color and text
+The Beacon SDK allows for some customization of it's color and text. We've made public a number of color and text
 resources that will make it easy for you to add the look and feel of your own brand. Overriding any of these
 values, you'll get the desired result.
 
-Head over to the [sample project that shows colour customisation](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) to get you started.
+Head over to the [sample project that shows color customization](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) to get you started.
 
 #### Colors
 
@@ -179,7 +182,7 @@ Head over to the [sample project that shows colour customisation](https://github
 ```
 
 These three colors work the same way as their counterparts in `AppCompat`. By overriding
-the desired values you'll be able to customise the color values in the SDK.
+the desired values you'll be able to customize the color values in the SDK.
 
 #### Strings
 
@@ -191,14 +194,10 @@ Same goes for strings, there are a number of texts that can be overriden:
 <string name="hs_beacon_search_hint">My new search hint</string>
 ```
 
-### Permissions
-
-The Beacon SDK only requires Internet permission which is defined in the core module.
-
 ## Implementing your own User Interface
 
 If all you are looking to do is to expose the knowledge database of articles, the Public API mode is your best bet.
-We provide you with a `Repository` (you can read more about this pattern [here](https://msdn.microsoft.com/en-us/library/ff649690.aspx). You'll only need to include the `core` dependency.
+We have provided you with a `Repository` (you can read more about this pattern [here](https://msdn.microsoft.com/en-us/library/ff649690.aspx). You'll only need to include the `core` dependency.
 
 The only requirement is to have created a `Beacon` with the `Beacon.Builder` as described above.
 
