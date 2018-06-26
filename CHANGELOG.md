@@ -8,6 +8,7 @@ Version 0.2.3 *(2018-06-25)*
 * Support for HTTP caching of API responses
 * Several minor UI fixes when in landscape mode
 * Limit name & subject fields length on the Send a message form to match Web
+* Hide avatar instead of displaying initials if image not present to match Web
 * Fix Article CSS loading bug on Android 5
 * Optimised search result handling to prevent unnecessary API call to get more results when none exist
 
