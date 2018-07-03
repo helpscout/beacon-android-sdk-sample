@@ -1,8 +1,19 @@
 Change Log
 ==========
 
-Version 0.2.3 *(2018-06-25)*
+Version 0.2.4 *(2018-07-2)*
 ----------------------------
+
+* Removed Moshi's Kotlin Type adapter to fix support for ProGuard in host app
+* Previous messages list and message threads now load additional pages via infinite scrolling lists
+* Message replies are now permitted with blank message if an attachment is present
+
+
+Version 0.2.3 *(2018-06-26)* - _Deprecated_
+----------------------------
+
+Deprecated due to issue with 3rd party dependancy (Moshi's Kotlin Type adapter) preventing host app from using PorGuard.
+
 
 * Draft support for message replies
 * Support for HTTP caching of API responses
