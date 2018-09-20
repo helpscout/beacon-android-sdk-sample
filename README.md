@@ -14,9 +14,9 @@ The minimum supported SDK is **21** (Android 5.0), and your app must be compiled
 
 ### Coming Soon
 
-* Live chat
+* Pre-fill contact form data
 * Push notification support
-
+* Live chat
 
 ## Installation
 The Beacon Android SDK is distributed as AAR and available from JCenter, so simply add the following lines to your app’s `build.gradle` file.
@@ -43,9 +43,7 @@ Alternatively you can download the .aar files from our repository on [bintray.co
 After following the steps above, your app is set up for integrating with the Beacon SDK. Before you can continue any further, you'll need
  to get hold of the ID of the Beacon that you'd like to integrate with.
 
-You can find your ID by [logging into Help Scout](https://secure.helpscout.net/settings/beacons) and navigating to the Beacon you'd like to use. Inside the `Embed Code` you'll find the ID as shown in the picture below:
-
-![Beacon Builder](http://c.hlp.sc/1T033f0E0R0H/Screen%20Shot%202018-06-08%20at%202.05.11%20PM.png)
+You can find your Beacon ID by [logging into Help Scout](https://secure.helpscout.net/settings/beacons) and navigating to the Beacon you'd like to use. Inside the `Installation` section you'll see an Android tab which highlights the Beacon ID and a code snippet.
 
 Once you've located the Beacon ID, you are ready to initialise the library. If you will only display one Beacon, the `Application.onCreate()` method of your [Application class](https://developer.android.com/reference/android/app/Application.html)
 class is a great place to initialize the SDK. If you won't know the Beacon ID at Application start, or will be running multiple Beacons, you'll need to make sure of adding
