@@ -1,6 +1,21 @@
 Change Log
 ==========
 
+Version 0.2.5 *(2018-10-19)*
+----------------------------
+
+* Initial Push notifications support via FCM.  Note server side UI not available at this time.  
+* Support for pre filled contact form (name, subject, message) `Beacon.addPreFilledForm(..)`
+* Local override to disable the contact form `Beacon.setOverrideMessagingEnabled(false)`
+* Error screen for invalid beacon config
+
+Bug Fixes
+
+* Fixed issue where the Toolbar wasn't auto updating it's text color when `@color/hs_beacon_colorPrimary` was overridden in host app.
+* Corrected issue with User Attributes. The were only being uploaded to API when using secure mode. Fixed to also support basic mode.
+* Send a message FAB not working - https://github.com/helpscout/beacon-android-sdk-sample/issues/17
+* Internal repository invalid beacon fix -  https://github.com/helpscout/beacon-android-sdk-sample/issues/16
+
 Version 0.2.4 *(2018-07-2)*
 ----------------------------
 
