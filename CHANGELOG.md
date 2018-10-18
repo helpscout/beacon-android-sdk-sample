@@ -8,13 +8,18 @@ Version 0.2.5 *(2018-10-19)*
 * Support for pre filled contact form (name, subject, message) `Beacon.addPreFilledForm(..)`
 * Local override to disable the contact form `Beacon.setOverrideMessagingEnabled(false)`
 * Error screen for invalid beacon config
+* Increased limit of user attributes permitted from 10 to 100
+* Added Client-side validation for blacklisted attachment types
+
 
 Bug Fixes
 
 * Fixed issue where the Toolbar wasn't auto updating it's text color when `@color/hs_beacon_colorPrimary` was overridden in host app.
-* Corrected issue with User Attributes. The were only being uploaded to API when using secure mode. Fixed to also support basic mode.
+* Corrected issue with User Attributes upload, which were only being uploaded to API when using secure mode. Fixed to also support basic mode.
 * Send a message FAB not working - https://github.com/helpscout/beacon-android-sdk-sample/issues/17
 * Internal repository invalid beacon fix -  https://github.com/helpscout/beacon-android-sdk-sample/issues/16
+* Error handling when registering Push token
+* Clearing of user attributes on Logout
 
 Version 0.2.4 *(2018-07-2)*
 ----------------------------
