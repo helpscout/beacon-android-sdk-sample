@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.webkit.WebView
+import android.widget.ProgressBar
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.BuildConfig
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
@@ -15,6 +17,7 @@ import net.helpscout.samples.beacon.core.R
 
 class CoreDetailActivity : AppCompatActivity() {
 
+    private val progressBar: ProgressBar by lazy { findViewById<ProgressBar>(R.id.suggestion_loading) }
     private val webView: WebView by lazy { findViewById<WebView>(R.id.suggestion_web_view) }
 
     companion object {
@@ -36,6 +39,7 @@ class CoreDetailActivity : AppCompatActivity() {
         val articleId = intent.getStringExtra(EXTRA_ARTICLE_ID)
 
         launch(UI) {
+
             val repository = Beacon.getRepositoryInstance()
             val articleJob = async { repository.getArticleById(articleId) }
 
@@ -43,6 +47,7 @@ class CoreDetailActivity : AppCompatActivity() {
 
             title = article.name
             webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
+            progressBar.visibility = View.GONE
         }
 
     }

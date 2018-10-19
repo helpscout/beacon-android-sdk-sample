@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ListView
 import android.widget.ProgressBar
+import android.widget.Toast
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
 import kotlinx.coroutines.experimental.android.UI
@@ -31,14 +32,17 @@ class CoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_suggestions)
 
         launch(UI) {
-            val repository = Beacon.getRepositoryInstance()
-            val suggestionsJob = async { repository.suggestions }
+            try {
+                val repository = Beacon.getRepositoryInstance()
+                val suggestionsJob = async { repository.suggestions }
+                val suggestions = suggestionsJob.await()
 
-            val suggestions = suggestionsJob.await()
-
-            suggestionsList.adapter = listAdapter
-            listAdapter.updateSuggestions(suggestions)
-            progressBar.visibility = View.GONE
+                suggestionsList.adapter = listAdapter
+                listAdapter.updateSuggestions(suggestions)
+                progressBar.visibility = View.GONE
+            } catch (e: Exception) {
+                Toast.makeText(this@CoreActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
