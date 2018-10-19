@@ -8,7 +8,7 @@ Version 0.2.5 *(2018-10-19)*
 * Support for pre filled contact form (name, subject, message) `Beacon.addPreFilledForm(..)`
 * Local override to disable the contact form `Beacon.setOverrideMessagingEnabled(false)`
 * Error screen for invalid beacon config
-* Increased limit of user attributes permitted from 10 to 100
+* Increased limit of user attributes permitted from 10 to 30
 * Added Client-side validation for blacklisted attachment types
 
 
