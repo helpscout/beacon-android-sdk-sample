@@ -40,8 +40,23 @@ android {
     }
 
 }
+ext {
+    supportLibraryForThisProject = '28.0.0'
+}
 
 dependencies {
+
+    implementation "com.android.support:design:28.0.0"
+
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryForThisProject"
+        resolutionStrategy.force "com.android.support:support-v4:$supportLibraryForThisProject"
+        resolutionStrategy.force "com.android.support:support-compat:$supportLibraryForThisProject"
+        resolutionStrategy.force "com.android.support:support-core-ui:$supportLibraryForThisProject"
+        resolutionStrategy.force "com.android.support:recyclerview-v7:$supportLibraryForThisProject"
+        resolutionStrategy.force "com.android.support:appcompat-v7:$supportLibraryForThisProject"
+    }
+
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
 
