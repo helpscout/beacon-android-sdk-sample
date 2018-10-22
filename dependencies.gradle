@@ -1,9 +1,9 @@
 ext {
 
     // Sdk and tools
-    minSdkVersion = 16
-    targetSdkVersion = 27
-    compileSdkVersion = 27
+    minSdkVersion = 21
+    targetSdkVersion = 28
+    compileSdkVersion = 28
     dexcountVersion = '0.8.2'
 
     buildToolsVersion = '28.0.2'
