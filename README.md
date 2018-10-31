@@ -163,6 +163,24 @@ this mode has all the features that Beacon provides:
 | ------ | ----- |
 ![reply](http://c.hlp.sc/3s1K0W1m2135/download/send_message.png)|![prev](http://c.hlp.sc/2R0t0r0f1m2e/download/previous.png)|
 
+### Select which screen to open
+
+For default the beacon will open on the Help & Support screen, if you want to open other screen you can do it by calling one of the `BeaconActivity.open()` methods.
+
+We support opening the following screens: Article, Search and Contact Form (send message).
+
+Examples:
+```java
+// This will open the search screen and it will search for the string "search term"
+BeaconActivity.open(this, BeaconScreens.SEARCH_SCREEN, arrayListOf("search term"));
+
+// This will open the article screen and it will open the article with id "12345abcd"
+BeaconActivity.open(this, BeaconScreens.ARTICLE_SCREEN, arrayListOf("12345abcd"));
+
+// This will open the contact form screen
+BeaconActivity.open(this, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf());
+```
+
 ### Customization
 
 The Beacon SDK allows for some customization of it's color and text. We've made public a number of color and text
