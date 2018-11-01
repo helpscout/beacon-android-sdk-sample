@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 0.2.6 *(2018-10-31)*
+----------------------------
+
+* Fixed user attributes not shown on the first message a brand new user sends
+* Fixed crash when scrolling through conversations
+* Fixed crash when trying to attach some invalid extensions to a conversation or draft
+
 Version 0.2.5 *(2018-10-19)*
 ----------------------------
 
