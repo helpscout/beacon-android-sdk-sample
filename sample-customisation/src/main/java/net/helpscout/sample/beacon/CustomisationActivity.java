@@ -1,12 +1,17 @@
 package net.helpscout.sample.beacon;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.internal.core.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
+
+import java.util.Collections;
 
 import net.helpscout.sample.beacon.customisation.R;
 
@@ -24,6 +29,13 @@ public class CustomisationActivity extends AppCompatActivity {
         //typically this should be set after successfully logging on to your service
         Beacon.login(secureUserEmail);
 
+        Beacon.addPreFilledForm(new PreFilledForm(
+                "Testy Mc Test Face",
+                "Feedback from app v." + getAppVersion(),
+                "Please include steps to reproduce the issue",
+                Collections.<Integer, String>emptyMap()));
+
+
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,4 +44,14 @@ public class CustomisationActivity extends AppCompatActivity {
         });
 
     }
+
+    private String getAppVersion() {
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            return pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
 }
