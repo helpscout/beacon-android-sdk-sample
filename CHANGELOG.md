@@ -1,8 +1,21 @@
 Change Log
 ==========
 
+Version 0.2.7 *(2018-11-21)*
+----------------------------
+
+* New options to Open Beacon UI straight to the contact form, search results or specific article
+* Beacon UI color is now taken from the server defined Beacon color (local override coming in next version)
+* Email input is now inline with other contact form fields rather than separate UI to match JS SDK
+
+Bug Fixes
+
+* Fixed crash when downloading an attachment without a file extension.  
+* Removed `DisableableAppBarLayoutBehavior` which was causing issues when using different Android support library dependencies
+
 Version 0.2.6 *(2018-10-31)*
 ----------------------------
+Bug Fixes
 
 * Fixed user attributes not shown on the first message a brand new user sends
 * Fixed crash when scrolling through conversations

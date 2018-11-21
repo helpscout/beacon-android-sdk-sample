@@ -15,7 +15,7 @@ The minimum supported SDK is **21** (Android 5.0), and your app must be compiled
 ### Coming Soon
 
 * Support for AndroidX
-* More options to override Beacon builder configuration locally
+* More options to override Beacon builder configuration locally i.e disable articles or hide subject from contact form
 * Live chat
 
 ## Installation
@@ -181,39 +181,16 @@ BeaconActivity.open(this, BeaconScreens.ARTICLE_SCREEN, arrayListOf("12345abcd")
 BeaconActivity.open(this, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf());
 ```
 
-### Pre-filling contact form
-
-We have added the option for us to pre-populate fields in the contact form using a `PreFilledForm` object. This should reduce the typing of your customers and especially useful if you already know the customer's name or you what to prompt for certain information in the message .
-
-```java
-
-Beacon.addPreFilledForm(new PreFilledForm(
-                "Testy Mc Test Face",
-                "Bug report from app :" + getAppVersion(), 
-                "Please include steps to reproduce the issue",
-                Collections.<Integer, String>emptyMap()));
-
-```
-
 
 ### Customization
 
-The Beacon SDK allows for some customization of it's color and text. We've made public a number of color and text
-resources that will make it easy for you to add the look and feel of your own brand. Overriding any of these
-values, you'll get the desired result.
+The Beacon SDK allows for some customization text and contact form pre-filled options.
 
 Head over to the [sample project that shows color customization](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) to get you started.
 
 #### Colors
 
-```xml
-<color name="hs_beacon_colorPrimary">@color/primary</color>
-<color name="hs_beacon_colorPrimaryDark">@color/primary_dark</color>
-<color name="hs_beacon_colorAccent">@color/accent</color>
-```
-
-These three colors work the same way as their counterparts in `AppCompat`. By overriding
-the desired values you'll be able to customize the color values in the SDK.
+v0.2.7 ensures the Beacon color set on the server as part of the Beacon Builder is downloaded and used as the custom theme colour. In v0.2.8 this color will be overridable via Beacon local overrides.
 
 #### Strings
 
@@ -223,6 +200,20 @@ Same goes for strings, there are a number of texts that can be overriden:
 <string name="hs_beacon_toolbar_title">My new title</string>
 <string name="hs_beacon_suggestions_header_title">My new header</string>
 <string name="hs_beacon_search_hint">My new search hint</string>
+```
+
+### Pre-filling contact form
+
+We have added the option for us to pre-populate fields in the contact form using a `PreFilledForm` object. This should reduce the typing of your customers and especially useful if you already know the customer's name or you what to prompt for certain information in the message .
+
+```java
+
+Beacon.addPreFilledForm(new PreFilledForm(
+                "Testy Mc Test Face", //name
+                "Bug report from app :" + getAppVersion(), //subject
+                "Please include steps to reproduce the issue", //message
+                Collections.<Integer, String>emptyMap())); //custom field values. Note the Id must match one of your configured custom fields
+
 ```
 
 ## Implementing your own User Interface
