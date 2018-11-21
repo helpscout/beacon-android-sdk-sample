@@ -14,8 +14,8 @@ The minimum supported SDK is **21** (Android 5.0), and your app must be compiled
 
 ### Coming Soon
 
-* Pre-fill contact form data
-* Push notification support
+* Support for AndroidX
+* More options to override Beacon builder configuration locally
 * Live chat
 
 ## Installation
@@ -28,10 +28,10 @@ dependencies {
 }
 ```
 
-Once you sync the Gradle project you'll be ready to initialize Beacon. 
+Once you sync the Gradle project you'll be ready to initialize Beacon.
 
 
-### Alternate install 
+### Alternate install
 Alternatively you can download the .aar files from our repository on [bintray.com](https://bintray.com/helpscout/beacon)
 
 * Beacon Core [ ![Beacon Core download](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
@@ -58,16 +58,16 @@ Beacon beacon = new Beacon.Builder()
 Beacon ID field is mandatory. Failing to provide it will throw an `SDKInitException`
 when an interaction with the `Beacon` object is done.
 
-## Launching the Beacon User Interface 
+## Launching the Beacon User Interface
 
 Once you’ve initialized Beacon, you’re ready to interact with it. Whenever you want
-to invoke Beacon, use the code below to display the Beacon user interface. 
+to invoke Beacon, use the code below to display the Beacon user interface.
 
 ```java
 BeaconActivity.open(context);
 ```
 
-We've put together a [sample demo project](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcases how you integrate with Beacon SDK and launch the Beacon User Interface.
+We've put together several [sample demo projects](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcase how you can integrate with Beacon SDK and launch the Beacon User Interface.
 
 ## Authenticating users
 
@@ -100,18 +100,18 @@ Note: the Secret key should *not* be stored in the app, instead your server shou
 
 ### User Attributes
 
-Beacon supports the addition of up to 10 attributes. These are arbitrary key-value pairs to allow you 
+Beacon supports the addition of up to 30 attributes. These are arbitrary key-value pairs to allow you
 to add extra identifying information to a user.
 
 You may add an attribute like so:
-  
+
 ```java
   Beacon.addAttributeWithKey("a key", "a value");
 ```
 
-You may also remove specific attributes. This function will return true if it was successfully 
+You may also remove specific attributes. This function will return true if it was successfully
 removed or false if the key wasn't found.
-  
+
 ```java
   Beacon.removeAttribute("a key");
 ```
@@ -133,13 +133,13 @@ There are three main components that construct the Beacon SDK that are split ove
 
 * beacon-ui
     - Easiest way to integrate Beacon features into your app
-   
+
 ## Developer options
 
-It's possible to launch the Beacon SDK in developer mode. By doing so, you'll be able to read 
-the HTTP requests and other actions that happen with the SDK realm. 
+It's possible to launch the Beacon SDK in developer mode. By doing so, you'll be able to read
+the HTTP requests and other actions that happen with the SDK realm.
 
-In order to activate this mode, you have to tell the Beacon Builder like so: 
+In order to activate this mode, you have to tell the Beacon Builder like so:
 
 ```java
 Beacon beacon = Beacon.Builder()
@@ -180,6 +180,21 @@ BeaconActivity.open(this, BeaconScreens.ARTICLE_SCREEN, arrayListOf("12345abcd")
 // This will open the contact form screen
 BeaconActivity.open(this, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf());
 ```
+
+### Pre-filling contact form
+
+We have added the option for us to pre-populate fields in the contact form using a `PreFilledForm` object. This should reduce the typing of your customers and especially useful if you already know the customer's name or you what to prompt for certain information in the message .
+
+```java
+
+Beacon.addPreFilledForm(new PreFilledForm(
+                "Testy Mc Test Face",
+                "Bug report from app :" + getAppVersion(), 
+                "Please include steps to reproduce the issue",
+                Collections.<Integer, String>emptyMap()));
+
+```
+
 
 ### Customization
 
