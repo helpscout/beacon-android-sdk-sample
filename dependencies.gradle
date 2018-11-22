@@ -1,7 +1,7 @@
 ext {
 
     // Sdk and tools
-    minSdkVersion = 16
+    minSdkVersion = 21
     targetSdkVersion = 27
     compileSdkVersion = 27
     dexcountVersion = '0.8.2'
@@ -21,7 +21,7 @@ ext {
     constraintLayoutVersion = '1.0.2'
 
     // Beacon
-    beaconCoreVersion = '0.2.6'
-    beaconUiVersion = '0.2.6'
+    beaconCoreVersion = '0.2.7'
+    beaconUiVersion = '0.2.7'
 
 }
