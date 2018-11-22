@@ -42,6 +42,8 @@ android {
 }
 
 dependencies {
+
+
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
 

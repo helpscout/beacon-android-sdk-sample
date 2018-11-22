@@ -3,21 +3,19 @@ package com.helpscout.beacon.sample.core
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.ListView
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import kotlinx.android.synthetic.main.activity_suggestions.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import net.helpscout.samples.beacon.core.R
 
 class CoreActivity : AppCompatActivity() {
 
     private var listAdapter: SuggestionsAdapter
-    private val progressBar: ProgressBar by lazy { findViewById<ProgressBar>(R.id.suggestions_loading) }
-    private val suggestionsList: ListView by lazy { findViewById<ListView>(R.id.suggestions_list) }
 
     init {
         listAdapter = SuggestionsAdapter(
@@ -31,15 +29,15 @@ class CoreActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_suggestions)
 
-        launch(UI) {
+        GlobalScope.launch(Dispatchers.Main) {
             try {
                 val repository = Beacon.getRepositoryInstance()
                 val suggestionsJob = async { repository.suggestions }
                 val suggestions = suggestionsJob.await()
 
-                suggestionsList.adapter = listAdapter
+                suggestions_list.adapter = listAdapter
                 listAdapter.updateSuggestions(suggestions)
-                progressBar.visibility = View.GONE
+                suggestions_loading.visibility = View.GONE
             } catch (e: Exception) {
                 Toast.makeText(this@CoreActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
             }

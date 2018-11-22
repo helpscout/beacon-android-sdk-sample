@@ -10,9 +10,10 @@ import android.widget.ProgressBar
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.BuildConfig
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import net.helpscout.samples.beacon.core.R
 
 class CoreDetailActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class CoreDetailActivity : AppCompatActivity() {
 
         val articleId = intent.getStringExtra(EXTRA_ARTICLE_ID)
 
-        launch(UI) {
+        GlobalScope.launch(Dispatchers.Main) {
 
             val repository = Beacon.getRepositoryInstance()
             val articleJob = async { repository.getArticleById(articleId) }

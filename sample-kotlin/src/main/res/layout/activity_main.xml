@@ -13,6 +13,13 @@
         android:layout_height="wrap_content"
         android:text="Open Beacon" />
 
+
+  <Button
+    android:id="@+id/button_open_beacon_to_search"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Open Beacon to search results" />
+
     <Button
         android:id="@+id/button_login_beacon"
         android:layout_width="wrap_content"

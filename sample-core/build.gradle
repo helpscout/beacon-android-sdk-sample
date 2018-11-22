@@ -29,7 +29,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
@@ -43,10 +43,32 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 
-    implementation "com.android.support:appcompat-v7:$supportLibrary"
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
+
+    implementation "com.android.support:appcompat-v7:$coreSupportLibraryVersion"
+
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-annotations:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:support-v4:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:support-compat:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:support-core-ui:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:recyclerview-v7:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:appcompat-v7:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:palette-v7:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:customtabs:$coreSupportLibraryVersion"
+        resolutionStrategy.force "com.android.support:animated-vector-drawable:$coreSupportLibraryVersion"
+
+//        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//            def requested = details.requested
+//            if (requested.group == 'org.jetbrains.kotlinx' && requested.name == 'kotlinx-coroutines-android') {
+//                details.useVersion '0.20'
+//            }
+//        }
+    }
 }
 
 

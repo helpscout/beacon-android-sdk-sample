@@ -1,15 +1,15 @@
 ext {
 
     // Sdk and tools
-    minSdkVersion = 16
-    targetSdkVersion = 27
-    compileSdkVersion = 27
+    minSdkVersion = 21
+    targetSdkVersion = 28
+    compileSdkVersion = 28
     dexcountVersion = '0.8.2'
 
     buildToolsVersion = '28.0.3'
     coroutinesVersion = '0.20'
     gradlePluginVersion = '3.2.1'
-    kotlinVersion = '1.2.71'
+    kotlinVersion = '1.3.10'
 
     // Testing
     jUnitVersion = '4.12'
@@ -17,11 +17,12 @@ ext {
     assertJ = '1.7.1'
 
     // Android libraries
-    supportLibrary = '27.0.2'
-    constraintLayoutVersion = '1.0.2'
+    constraintLayoutVersion = '1.0.3'
+    coreSupportLibraryVersion = '28.0.0'
 
     // Beacon
-    beaconCoreVersion = '0.2.6'
-    beaconUiVersion = '0.2.6'
+    beaconCoreVersion = '0.2.7'
+    beaconUiVersion = '0.2.7'
+
 
 }
