@@ -14,8 +14,8 @@ The minimum supported SDK is **21** (Android 5.0), and your app must be compiled
 
 ### Coming Soon
 
-* Pre-fill contact form data
-* Push notification support
+* Support for AndroidX
+* More options to override Beacon builder configuration locally i.e disable articles or hide subject from contact form
 * Live chat
 
 ## Installation
@@ -28,10 +28,10 @@ dependencies {
 }
 ```
 
-Once you sync the Gradle project you'll be ready to initialize Beacon. 
+Once you sync the Gradle project you'll be ready to initialize Beacon.
 
 
-### Alternate install 
+### Alternate install
 Alternatively you can download the .aar files from our repository on [bintray.com](https://bintray.com/helpscout/beacon)
 
 * Beacon Core [ ![Beacon Core download](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
@@ -58,16 +58,16 @@ Beacon beacon = new Beacon.Builder()
 Beacon ID field is mandatory. Failing to provide it will throw an `SDKInitException`
 when an interaction with the `Beacon` object is done.
 
-## Launching the Beacon User Interface 
+## Launching the Beacon User Interface
 
 Once you’ve initialized Beacon, you’re ready to interact with it. Whenever you want
-to invoke Beacon, use the code below to display the Beacon user interface. 
+to invoke Beacon, use the code below to display the Beacon user interface.
 
 ```java
 BeaconActivity.open(context);
 ```
 
-We've put together a [sample demo project](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcases how you integrate with Beacon SDK and launch the Beacon User Interface.
+We've put together several [sample demo projects](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcase how you can integrate with Beacon SDK and launch the Beacon User Interface.
 
 ## Authenticating users
 
@@ -100,18 +100,18 @@ Note: the Secret key should *not* be stored in the app, instead your server shou
 
 ### User Attributes
 
-Beacon supports the addition of up to 10 attributes. These are arbitrary key-value pairs to allow you 
+Beacon supports the addition of up to 30 attributes. These are arbitrary key-value pairs to allow you
 to add extra identifying information to a user.
 
 You may add an attribute like so:
-  
+
 ```java
   Beacon.addAttributeWithKey("a key", "a value");
 ```
 
-You may also remove specific attributes. This function will return true if it was successfully 
+You may also remove specific attributes. This function will return true if it was successfully
 removed or false if the key wasn't found.
-  
+
 ```java
   Beacon.removeAttribute("a key");
 ```
@@ -133,13 +133,13 @@ There are three main components that construct the Beacon SDK that are split ove
 
 * beacon-ui
     - Easiest way to integrate Beacon features into your app
-   
+
 ## Developer options
 
-It's possible to launch the Beacon SDK in developer mode. By doing so, you'll be able to read 
-the HTTP requests and other actions that happen with the SDK realm. 
+It's possible to launch the Beacon SDK in developer mode. By doing so, you'll be able to read
+the HTTP requests and other actions that happen with the SDK realm.
 
-In order to activate this mode, you have to tell the Beacon Builder like so: 
+In order to activate this mode, you have to tell the Beacon Builder like so:
 
 ```java
 Beacon beacon = Beacon.Builder()
@@ -163,24 +163,34 @@ this mode has all the features that Beacon provides:
 | ------ | ----- |
 ![reply](http://c.hlp.sc/3s1K0W1m2135/download/send_message.png)|![prev](http://c.hlp.sc/2R0t0r0f1m2e/download/previous.png)|
 
+### Select which screen to open
+
+For default the beacon will open on the Help & Support screen, if you want to open other screen you can do it by calling one of the `BeaconActivity.open()` methods.
+
+We support opening the following screens: Article, Search and Contact Form (send message).
+
+Examples:
+```java
+// This will open the search screen and it will search for the string "search term"
+BeaconActivity.open(this, BeaconScreens.SEARCH_SCREEN, arrayListOf("search term"));
+
+// This will open the article screen and it will open the article with id "12345abcd"
+BeaconActivity.open(this, BeaconScreens.ARTICLE_SCREEN, arrayListOf("12345abcd"));
+
+// This will open the contact form screen
+BeaconActivity.open(this, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf());
+```
+
+
 ### Customization
 
-The Beacon SDK allows for some customization of it's color and text. We've made public a number of color and text
-resources that will make it easy for you to add the look and feel of your own brand. Overriding any of these
-values, you'll get the desired result.
+The Beacon SDK allows for some customization text and contact form pre-filled options.
 
 Head over to the [sample project that shows color customization](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) to get you started.
 
 #### Colors
 
-```xml
-<color name="hs_beacon_colorPrimary">@color/primary</color>
-<color name="hs_beacon_colorPrimaryDark">@color/primary_dark</color>
-<color name="hs_beacon_colorAccent">@color/accent</color>
-```
-
-These three colors work the same way as their counterparts in `AppCompat`. By overriding
-the desired values you'll be able to customize the color values in the SDK.
+v0.2.7 ensures the Beacon color set on the server as part of the Beacon Builder is downloaded and used as the custom theme colour. In v0.2.8 this color will be overridable via Beacon local overrides.
 
 #### Strings
 
@@ -190,6 +200,20 @@ Same goes for strings, there are a number of texts that can be overriden:
 <string name="hs_beacon_toolbar_title">My new title</string>
 <string name="hs_beacon_suggestions_header_title">My new header</string>
 <string name="hs_beacon_search_hint">My new search hint</string>
+```
+
+### Pre-filling contact form
+
+We have added the option for us to pre-populate fields in the contact form using a `PreFilledForm` object. This should reduce the typing of your customers and especially useful if you already know the customer's name or you what to prompt for certain information in the message .
+
+```java
+
+Beacon.addPreFilledForm(new PreFilledForm(
+                "Testy Mc Test Face", //name
+                "Bug report from app :" + getAppVersion(), //subject
+                "Please include steps to reproduce the issue", //message
+                Collections.<Integer, String>emptyMap())); //custom field values. Note the Id must match one of your configured custom fields
+
 ```
 
 ## Implementing your own User Interface

@@ -1,12 +1,19 @@
 package net.helpscout.sample.beacon;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.internal.core.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import net.helpscout.sample.beacon.customisation.R;
 
@@ -24,6 +31,11 @@ public class CustomisationActivity extends AppCompatActivity {
         //typically this should be set after successfully logging on to your service
         Beacon.login(secureUserEmail);
 
+        addPreFilledData();
+
+        addUserAttributes();
+
+
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,4 +44,38 @@ public class CustomisationActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Illustrates how to use the user attributes
+     */
+    private void addUserAttributes() {
+        Beacon.addAttributeWithKey("App version", getAppVersion());
+        Beacon.addAttributeWithKey("OS version", Build.VERSION.RELEASE);
+        Beacon.addAttributeWithKey("Device", Build.MANUFACTURER + " " + Build.MODEL);
+    }
+
+    /**
+     * Pre-fill the Contact us form
+     */
+    private void addPreFilledData() {
+        Map<Integer, String> prePopulatedCustomFields = new HashMap<>();
+        prePopulatedCustomFields.put(123, "TEST");
+
+        Beacon.addPreFilledForm(new PreFilledForm(
+                "Testy Mc Test Face",
+                "Bug report for app",
+                "Please include steps to reproduce the issue",
+                prePopulatedCustomFields
+        ));
+    }
+
+    private String getAppVersion() {
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            return pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
 }

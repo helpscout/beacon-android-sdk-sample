@@ -16,6 +16,9 @@ _Provide a description of the implementation_%
 | ------ | ----- |
 ![device-2016-06-15-202042](http://c.hlp.sc/1g2i292U470M/download/suggestions.png)| ![device-2016-06-15-202042](http://c.hlp.sc/1g2i292U470M/download/suggestions.png)|
 
+### Developer Checklist
+- [ ] I have run this code using the below test scenarios and/or steps in card/issue where it was reported
+
 ### Test scenarios
 
 - [ ] Scenario 1:
