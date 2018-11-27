@@ -8,7 +8,7 @@
     android:id="@+id/suggestion_web_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.helpscout.beacon.sample.core.CoreActivity" />
+    tools:context="com.helpscout.beacon.sample.core.CoreListArticlesActivity" />
 
   <ProgressBar
     android:id="@+id/suggestion_loading"

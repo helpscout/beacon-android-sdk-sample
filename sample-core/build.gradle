@@ -30,11 +30,13 @@ android {
     buildTypes {
         debug {
             minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             signingConfig signingConfigs.release
             minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -42,10 +44,14 @@ android {
 
 }
 
+ext {
+    supportLibrary = '27.0.2'
+}
+
 dependencies {
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
     implementation "com.android.support:appcompat-v7:$supportLibrary"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
 }
 

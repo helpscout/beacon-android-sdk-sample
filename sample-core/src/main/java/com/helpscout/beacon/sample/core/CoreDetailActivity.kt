@@ -2,6 +2,7 @@ package com.helpscout.beacon.sample.core
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -23,10 +24,15 @@ class CoreDetailActivity : AppCompatActivity() {
     companion object {
 
         private val EXTRA_ARTICLE_ID = BuildConfig.APPLICATION_ID + ".ARTICLE_ID"
+        private val EXTRA_ARTICLE_URL = BuildConfig.APPLICATION_ID + ".ARTICLE_URL"
 
         fun open(context: Context, article: BeaconArticleSuggestion): Intent {
             return Intent(context, CoreDetailActivity::class.java).apply {
-                putExtra(EXTRA_ARTICLE_ID, article.suggestion.id)
+                if (article.isLink()) {
+                    putExtra(EXTRA_ARTICLE_URL, article.suggestion.url)
+                } else {
+                    putExtra(EXTRA_ARTICLE_ID, article.suggestion.id)
+                }
             }
         }
     }
@@ -37,7 +43,17 @@ class CoreDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_suggestion_detail)
 
         val articleId = intent.getStringExtra(EXTRA_ARTICLE_ID)
+        val articleUrl = intent.getStringExtra(EXTRA_ARTICLE_URL)
 
+
+        if (articleId.isNullOrEmpty()) {
+            openArticleUrl(articleUrl!!)
+        } else {
+            openArticleWithId(articleId)
+        }
+    }
+
+    private fun openArticleWithId(articleId: String) {
         launch(UI) {
 
             val repository = Beacon.getRepositoryInstance()
@@ -49,7 +65,12 @@ class CoreDetailActivity : AppCompatActivity() {
             webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
             progressBar.visibility = View.GONE
         }
+    }
 
+    private fun openArticleUrl(articleUrl: String) {
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse(articleUrl)
+        startActivity(i)
     }
 
 }
