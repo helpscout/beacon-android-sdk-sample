@@ -1,11 +1,10 @@
 package net.helpscout.sample.beacon;
 
+import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
@@ -17,11 +16,14 @@ import java.util.Map;
 
 import net.helpscout.sample.beacon.customisation.R;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class CustomisationActivity extends AppCompatActivity {
 
     //for sample this is hardcoded to a single user. But in your code these details would be on per user basis.
-    private static final String secureUserEmail = "beacon_secure@scottyab.com";
-    private static final String secureUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
+    private static final String secureModeUserEmail = "beacon_secure@scottyab.com";
+    private static final String secureModeUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class CustomisationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customisation);
 
         //typically this should be set after successfully logging on to your service
-        Beacon.login(secureUserEmail);
+        Beacon.login(secureModeUserEmail);
 
         addPreFilledData();
 
@@ -39,7 +41,18 @@ public class CustomisationActivity extends AppCompatActivity {
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BeaconActivity.openInSecureMode(getBaseContext(), secureUserSignature);
+                BeaconActivity.openInSecureMode(getBaseContext(), secureModeUserSignature);
+            }
+        });
+
+        findViewById(R.id.action_open_beacon_color).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                @SuppressLint("ResourceType") String colorHexString = getResources().getString(R.color.primary);
+
+                
+
+                BeaconActivity.openInSecureMode(getBaseContext(), secureModeUserSignature);
             }
         });
 
@@ -62,7 +75,7 @@ public class CustomisationActivity extends AppCompatActivity {
         prePopulatedCustomFields.put(123, "TEST");
 
         Beacon.addPreFilledForm(new PreFilledForm(
-                "Testy Mc Test Face",
+                "My Secure user Scott",
                 "Bug report for app",
                 "Please include steps to reproduce the issue",
                 prePopulatedCustomFields

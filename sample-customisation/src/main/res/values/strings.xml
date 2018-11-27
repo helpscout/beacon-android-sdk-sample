@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">Beacon Sample Customisation</string>
+  <string name="customisation_sample_description">This JAVA based sample shows how to open the Beacon in secure mode, some of the customisation options you can apply to override the Beacon Builder (from the website) and some of the additional SDK options</string>
+  <string name="button_open_beacon">Open Beacon (secure mode)</string>
+  <string name="button_open_beacon_color">Open Beacon with color override</string>
 </resources>
