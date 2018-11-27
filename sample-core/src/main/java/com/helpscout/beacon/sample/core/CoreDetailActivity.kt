@@ -71,6 +71,7 @@ class CoreDetailActivity : AppCompatActivity() {
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(articleUrl)
         startActivity(i)
+        finish()
     }
 
 }
