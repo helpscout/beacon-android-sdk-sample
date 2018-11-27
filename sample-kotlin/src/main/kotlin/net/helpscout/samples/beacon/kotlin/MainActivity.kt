@@ -1,16 +1,18 @@
 package net.helpscout.samples.beacon.kotlin
 
-import android.app.Activity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Toast
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.ui.BeaconActivity
 
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
 
     private val userEmail = "beacon_basic@scottyab.com"
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
