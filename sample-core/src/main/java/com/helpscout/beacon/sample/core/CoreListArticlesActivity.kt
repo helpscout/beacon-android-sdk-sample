@@ -13,11 +13,12 @@ import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
 import net.helpscout.samples.beacon.core.R
 
-class CoreActivity : AppCompatActivity() {
+class CoreListArticlesActivity : AppCompatActivity() {
 
     private var listAdapter: SuggestionsAdapter
     private val progressBar: ProgressBar by lazy { findViewById<ProgressBar>(R.id.suggestions_loading) }
     private val suggestionsList: ListView by lazy { findViewById<ListView>(R.id.suggestions_list) }
+
 
     init {
         listAdapter = SuggestionsAdapter(
@@ -41,7 +42,7 @@ class CoreActivity : AppCompatActivity() {
                 listAdapter.updateSuggestions(suggestions)
                 progressBar.visibility = View.GONE
             } catch (e: Exception) {
-                Toast.makeText(this@CoreActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
 import net.helpscout.samples.beacon.core.R
@@ -30,11 +31,14 @@ internal class SuggestionsAdapter(
     }
 
     private fun renderSuggestion(view: View, suggestion: BeaconArticleSuggestion) {
-        val rowName = view.findViewById<TextView>(R.id.suggestion_item_label)
-        if (suggestion.type.equals("link")){
-            rowName.text = suggestion.suggestion.text
+        val suggestionLabel = view.findViewById<TextView>(R.id.suggestion_item_label)
+        val isLinkImage = view.findViewById<ImageView>(R.id.suggestion_item_is_link)
+        if (suggestion.isLink()) {
+            suggestionLabel.text = suggestion.suggestion.text
+            isLinkImage.visibility = View.VISIBLE
         } else {
-            rowName.text = suggestion.suggestion.name
+            suggestionLabel.text = suggestion.suggestion.name
+            isLinkImage.visibility = View.INVISIBLE
         }
     }
 

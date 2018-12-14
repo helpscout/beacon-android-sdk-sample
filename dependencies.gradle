@@ -17,7 +17,6 @@ ext {
     assertJ = '1.7.1'
 
     // Android libraries
-    supportLibrary = '27.0.2'
     constraintLayoutVersion = '1.0.2'
 
     // Beacon

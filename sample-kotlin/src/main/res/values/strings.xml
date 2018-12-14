@@ -1,3 +1,8 @@
 <resources>
   <string name="app_name">Beacon Sample Kotlin</string>
+  <string name="kotlin_sample_description">This sample aims to be as simple as possible and show the bare minimum code needed to get Beacon up and running in your app.</string>
+  <string name="button_open_beacon">Open Beacon</string>
+  <string name="button_login_basic_mode">Login (basic mode)</string>
+  <string name="button_logout">Logout</string>
+  <string name="button_open_beacon_to_contact_page">Open Beacon to Contact form</string>
 </resources>
