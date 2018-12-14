@@ -1,6 +1,23 @@
 Change Log
 ==========
 
+Version 0.2.8 *(2018-12-13)*
+----------------------------
+
+* Beacon Builder Config overrides
+* UI string overrides based on Strings set in Beacon Builder
+* Compatibility with host projects using support lib 28 and AndroidX
+
+Bug fixes:
+
+* Push notifications token registration API (re-order of the API calls)
+* Fixed color of hyperlinks in previous message details
+* Corrected issue where file extensions were missing from files picked from Android media folders
+* Clear DeviceId/Install Id on Logout
+* Back arrow was not tinted according to text contrast colour
+* Support null/missing previous message subject
+
+
 Version 0.2.7 *(2018-11-21)*
 ----------------------------
 

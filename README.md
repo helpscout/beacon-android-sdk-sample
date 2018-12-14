@@ -1,22 +1,20 @@
-# Beacon SDK for Android
+# Beacon SDK Samples for Android
+
+## Latest version
 
 * Beacon Core [ ![Download Beacon Core](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
 * Beacon UI[ ![Download Beacon UI](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
+* [Change Log](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
 
+## Documentation
+
+The main SDK documentation is hosted on the [Help Scout developers site](https://developer.helpscout.com/beacon-2/android/). 
 
 ## Requirements
 
 The minimum supported SDK is **21** (Android 5.0), and your app must be compiled with at least API version **27** (Android 8.1).
 
-## Features
-
-* [Change Log](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
-
-### Coming Soon
-
-* Support for AndroidX
-* More options to override Beacon builder configuration locally i.e disable articles or hide subject from contact form
-* Live chat
+The Beacon SDK only needs Internet permission which is defined in the Core module.
 
 ## Installation
 The Beacon Android SDK is distributed as AAR and available from JCenter, so simply add the following lines to your app’s `build.gradle` file.
@@ -31,17 +29,9 @@ dependencies {
 Once you sync the Gradle project you'll be ready to initialize Beacon.
 
 
-### Alternate install
-Alternatively you can download the .aar files from our repository on [bintray.com](https://bintray.com/helpscout/beacon)
+# Initialize Beacon
 
-* Beacon Core [ ![Beacon Core download](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
-* Beacon UI [ ![Beacon UI download](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
-
-
-## Initialize Beacon
-
-After following the steps above, your app is set up for integrating with the Beacon SDK. Before you can continue any further, you'll need
- to get hold of the ID of the Beacon that you'd like to integrate with.
+After following the steps above, your app is set up for integrating with the Beacon SDK. Before you can continue any further, you'll need to get hold of the ID of the Beacon that you'd like to integrate with.
 
 You can find your Beacon ID by [logging into Help Scout](https://secure.helpscout.net/settings/beacons) and navigating to the Beacon you'd like to use. Inside the `Installation` section you'll see an Android tab which highlights the Beacon ID and a code snippet.
 
@@ -69,61 +59,8 @@ BeaconActivity.open(context);
 
 We've put together several [sample demo projects](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcase how you can integrate with Beacon SDK and launch the Beacon User Interface.
 
-## Authenticating users
 
-To allow your users to create new Conversations and link them to their previous Conversations in Help Scout you'll need to authenticate them with either Basic or Secure mode.
-`Beacon.login(..)` should be called immediately after successful login to your services.  
-
-### Basic Mode
-
-Basic mode authentication requires an user's email address as the user identifier.
-```java
-  Beacon.login("user@domain.com");
-```
-
-Alternatively, you can also identify the user's name.
-```java
-  Beacon.login("user@domain.com", "John Doe");
-```
-
-
-### Secure Mode
-
-Secure mode authentication requires a signature. The signature must be computed on a *per user* basis using the secret key. The Secret Key is provided on the Manage Beacon page > Messaging > Advance Options.
-For security reasons, you'll need to pass in the signature every time you want to open the Beacon UI.
-
-Note: the Secret key should *not* be stored in the app, instead your server should provide the computed signature value.  
-
-```java
-  BeaconActivity.openInSecureMode(context, "8235545a15c6f41b64e3c47e5c94d3...");
-```
-
-### User Attributes
-
-Beacon supports the addition of up to 30 attributes. These are arbitrary key-value pairs to allow you
-to add extra identifying information to a user.
-
-You may add an attribute like so:
-
-```java
-  Beacon.addAttributeWithKey("a key", "a value");
-```
-
-You may also remove specific attributes. This function will return true if it was successfully
-removed or false if the key wasn't found.
-
-```java
-  Beacon.removeAttribute("a key");
-```
-
-It's also possible to remove all the attributes:
-
-```java
-  Beacon.clearAttributes();
-```
-
-
-# Advance setup/configuration
+## Advance setup/configuration
 
 There are three main components that construct the Beacon SDK that are split over two modules.
 
@@ -150,71 +87,6 @@ Beacon beacon = Beacon.Builder()
 
 Once this is done, head over to LogCat.
 
-## Beacon UI Mode
-
-The easiest and recommended way to interact with Beacon is to use it's UI Mode with the `ui` artifact. The SDK takes care of everything, and
-this mode has all the features that Beacon provides:
-
-| Browse through Suggestions | Read an article from the Knowledge Base |
-| ------ | ----- |
-![suggestions](http://c.hlp.sc/1g2i292U470M/download/suggestions.png)|![article](http://c.hlp.sc/280630171d0U/download/article.png)|
-
-| Start and reply to Help Scout conversations | Visit Conversation history |
-| ------ | ----- |
-![reply](http://c.hlp.sc/3s1K0W1m2135/download/send_message.png)|![prev](http://c.hlp.sc/2R0t0r0f1m2e/download/previous.png)|
-
-### Select which screen to open
-
-For default the beacon will open on the Help & Support screen, if you want to open other screen you can do it by calling one of the `BeaconActivity.open()` methods.
-
-We support opening the following screens: Article, Search and Contact Form (send message).
-
-Examples:
-```java
-// This will open the search screen and it will search for the string "search term"
-BeaconActivity.open(this, BeaconScreens.SEARCH_SCREEN, arrayListOf("search term"));
-
-// This will open the article screen and it will open the article with id "12345abcd"
-BeaconActivity.open(this, BeaconScreens.ARTICLE_SCREEN, arrayListOf("12345abcd"));
-
-// This will open the contact form screen
-BeaconActivity.open(this, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf());
-```
-
-
-### Customization
-
-The Beacon SDK allows for some customization text and contact form pre-filled options.
-
-Head over to the [sample project that shows color customization](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) to get you started.
-
-#### Colors
-
-v0.2.7 ensures the Beacon color set on the server as part of the Beacon Builder is downloaded and used as the custom theme colour. In v0.2.8 this color will be overridable via Beacon local overrides.
-
-#### Strings
-
-Same goes for strings, there are a number of texts that can be overriden:
-
-```xml
-<string name="hs_beacon_toolbar_title">My new title</string>
-<string name="hs_beacon_suggestions_header_title">My new header</string>
-<string name="hs_beacon_search_hint">My new search hint</string>
-```
-
-### Pre-filling contact form
-
-We have added the option for us to pre-populate fields in the contact form using a `PreFilledForm` object. This should reduce the typing of your customers and especially useful if you already know the customer's name or you what to prompt for certain information in the message .
-
-```java
-
-Beacon.addPreFilledForm(new PreFilledForm(
-                "Testy Mc Test Face", //name
-                "Bug report from app :" + getAppVersion(), //subject
-                "Please include steps to reproduce the issue", //message
-                Collections.<Integer, String>emptyMap())); //custom field values. Note the Id must match one of your configured custom fields
-
-```
 
 ## Implementing your own User Interface
 
@@ -242,7 +114,3 @@ mechanism. Instead of being opinionated about it, we prefer to give you the opti
 best for you.
 
 There's also a demo project that [shows how to build your own](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-core) User Interface
-
-## Permissions
-
-The Beacon SDK only needs Internet permission which is defined in the Core module.
