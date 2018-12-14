@@ -1,11 +1,8 @@
 <resources>
-  <!-- overrides the Beacon's colours. note the title text with change between light/dark depending on the primary colour -->
-  <color name="hs_beacon_colorPrimary">@color/primary</color>
-    <color name="hs_beacon_colorPrimaryDark">@color/primary_dark</color>
-    <color name="hs_beacon_colorAccent">@color/accent</color>
+  <!-- overrides some of the Beacon strings -->
+  <string name="hs_beacon_home_title">Customised title</string>
+  <string name="hs_beacon_answers">Search Results</string>
+  <string name="hs_beacon_search_hint">Customised search hint</string>
+  <string name="hs_beacon_nothing_found">Customised nothing found</string>
 
-  <!-- overrides the Beacon strings -->
-  <string name="hs_beacon_toolbar_title">Customised title</string>
-  <string name="hs_beacon_suggestions_header_title">Customised header</string>
-  <string name="hs_beacon_search_hint">This is a customised search hint</string>
 </resources>

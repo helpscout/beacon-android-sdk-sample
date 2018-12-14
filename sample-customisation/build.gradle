@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     sourceSets {
@@ -34,6 +34,7 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -41,7 +42,18 @@ android {
 
 }
 
+ext {
+    androidXLibraryForThisProject = '1.0.0'
+    materialLibraryVersion = '1.1.0-alpha01'
+    constraintLayoutVersion = '2.0.0-alpha2'
+}
+
 dependencies {
+
+    implementation "com.google.android.material:material:$materialLibraryVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
 

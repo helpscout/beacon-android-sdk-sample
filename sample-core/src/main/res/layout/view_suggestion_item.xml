@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="48dp"
+  android:layout_gravity="center_vertical"
+  android:padding="8dp">
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/suggestion_item_label"
-    android:layout_width="match_parent"
-    android:layout_height="48dp"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
     android:background="?android:attr/selectableItemBackground"
-    android:padding="16dp"
+    android:gravity="center_vertical"
     android:textColor="@color/colorAccent"
     tools:text="This is just a simple article title" />
+
+  <ImageView
+    android:id="@+id/suggestion_item_is_link"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginStart="8dp"
+    android:src="@drawable/ic_launch_black_24dp"
+    android:tint="@color/colorAccent"
+    android:visibility="gone"
+    />
+
+</LinearLayout>
+
+

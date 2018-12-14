@@ -52,10 +52,7 @@ ext {
 dependencies {
 
     implementation "com.android.support:appcompat-v7:$supportLibraryForThisProject"
-
-    
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-
 
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
 
