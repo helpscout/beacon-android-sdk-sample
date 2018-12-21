@@ -1,5 +1,12 @@
 # Beacon SDK Samples for Android
 
+This repo contains 3 sample apps that implement the Beacon Android SDK. 
+
+* [Sample Kotlin](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) - demos Login and Logout with the Beacon UI.
+* [Sample Customisation](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) - illustrates how you can override the String and Colors of the Beacon UI and shows how to use Beacons in Secure mode.
+* [Sample Core](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-core) - shows how you might use the Beacon Core module to load suggested articles and view article details. 
+
+
 ## Latest version
 
 * Beacon Core [ ![Download Beacon Core](https://api.bintray.com/packages/helpscout/beacon/beacon-core/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-core/_latestVersion)
@@ -57,9 +64,6 @@ to invoke Beacon, use the code below to display the Beacon user interface.
 BeaconActivity.open(context);
 ```
 
-We've put together several [sample demo projects](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) that showcase how you can integrate with Beacon SDK and launch the Beacon User Interface.
-
-
 ## Advance setup/configuration
 
 There are three main components that construct the Beacon SDK that are split over two modules.
@@ -113,4 +117,4 @@ All the calls made to the `BeaconRepository` are synchronous. Meaning that you'l
 mechanism. Instead of being opinionated about it, we prefer to give you the option to use whatever mechanism works
 best for you.
 
-There's also a demo project that [shows how to build your own](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-core) User Interface
+The sample-core project [shows how to build your own](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-core) User Interface
