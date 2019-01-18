@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.internal.core.model.BeaconConfigOverrides;
 import com.helpscout.beacon.internal.core.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,7 +52,7 @@ public class CustomisationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 @SuppressLint("ResourceType") String colorHexString = getResources().getString(R.color.primary);
 
-                
+                Beacon.setConfigOverrides(new BeaconConfigOverrides(null, null, null,));
 
                 BeaconActivity.openInSecureMode(getBaseContext(), secureModeUserSignature);
             }
@@ -78,7 +80,8 @@ public class CustomisationActivity extends AppCompatActivity {
                 "My Secure user Scott",
                 "Bug report for app",
                 "Please include steps to reproduce the issue",
-                prePopulatedCustomFields
+                prePopulatedCustomFields,
+                Collections.<String>emptyList()
         ));
     }
 

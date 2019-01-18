@@ -9,8 +9,8 @@ import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
 import kotlinx.android.synthetic.main.activity_suggestions.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import net.helpscout.samples.beacon.core.R
 
 class CoreListArticlesActivity : AppCompatActivity() {
@@ -31,16 +31,17 @@ class CoreListArticlesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_suggestions)
 
         GlobalScope.launch(Dispatchers.Main) {
-            try {
-                val repository = Beacon.getRepositoryInstance()
-                val suggestionsJob = async { repository.suggestions }
-                val suggestions = suggestionsJob.await()
+            withContext(Dispatchers.IO) {
+                try {
+                    val repository = Beacon.getRepositoryInstance()
+                    val suggestions = repository.suggestions
 
-                suggestions_list.adapter = listAdapter
-                listAdapter.updateSuggestions(suggestions)
-                suggestions_loading.visibility = View.GONE
-            } catch (e: Exception) {
-                Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
+                    suggestions_list.adapter = listAdapter
+                    listAdapter.updateSuggestions(suggestions)
+                    suggestions_loading.visibility = View.GONE
+                } catch (e: Exception) {
+                    Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

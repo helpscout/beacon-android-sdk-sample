@@ -13,8 +13,8 @@ import com.helpscout.beacon.BuildConfig
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import net.helpscout.samples.beacon.core.R
 
 class CoreDetailActivity : AppCompatActivity() {
@@ -56,14 +56,14 @@ class CoreDetailActivity : AppCompatActivity() {
     private fun openArticleWithId(articleId: String) {
         GlobalScope.launch(Dispatchers.Main) {
 
-            val repository = Beacon.getRepositoryInstance()
-            val articleJob = async { repository.getArticleById(articleId) }
-
-            val article = articleJob.await()
-
-            title = article.name
-            webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
-            progressBar.visibility = View.GONE
+            withContext(Dispatchers.IO) {
+                val repository = Beacon.getRepositoryInstance()
+                val article = repository.getArticleById(articleId)
+                
+                title = article.name
+                webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
+                progressBar.visibility = View.GONE
+            }
         }
     }
 
