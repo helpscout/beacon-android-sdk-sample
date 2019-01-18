@@ -1,12 +1,13 @@
 Change Log
 ==========
-Version 0.2.9 *(TBD)*
+Version 0.2.9 *(2019-01-18)*
 ----------------------------
 
 * Suggested articles can now be overridden by the SDK
 * Beacon Open and Close Event listeners - ideal for analytics to track when Beacon is used
 * Contact form draft is now persisted so users can exit the Beacon and their draft message is restored when they resume their message. There's also a `contactFormReset()` so if you want it to reset and remove the draft.
 * Image attachments now show a preview of the image instead of an icon.
+* Push notifications are grouped by conversation, instead of getting new ones.
 
 Bug fixes:
 
