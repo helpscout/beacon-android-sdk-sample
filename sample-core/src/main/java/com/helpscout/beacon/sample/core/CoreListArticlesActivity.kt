@@ -7,16 +7,16 @@ import android.widget.Toast
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
 import kotlinx.android.synthetic.main.activity_suggestions.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import net.helpscout.samples.beacon.core.R
 
 class CoreListArticlesActivity : AppCompatActivity() {
 
-    private var listAdapter: SuggestionsAdapter
+    private val job = Job()
+    private val backgroundScope = CoroutineScope(Dispatchers.IO + job)
+    
 
+    private var listAdapter: SuggestionsAdapter
 
     init {
         listAdapter = SuggestionsAdapter(
@@ -30,20 +30,31 @@ class CoreListArticlesActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_suggestions)
 
-        GlobalScope.launch(Dispatchers.Main) {
-            withContext(Dispatchers.IO) {
-                try {
-                    val repository = Beacon.getRepositoryInstance()
-                    val suggestions = repository.suggestions
+        backgroundScope.launch {
+            loadSuggestedArticles()
+        }
+    }
 
-                    suggestions_list.adapter = listAdapter
-                    listAdapter.updateSuggestions(suggestions)
-                    suggestions_loading.visibility = View.GONE
-                } catch (e: Exception) {
-                    Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+    private suspend fun loadSuggestedArticles() {
+        try {
+            val repository = Beacon.getRepositoryInstance()
+            val suggestions = repository.suggestions
+
+            withContext(Dispatchers.Main) {
+                suggestions_list.adapter = listAdapter
+                listAdapter.updateSuggestions(suggestions)
+                suggestions_loading.visibility = View.GONE
+            }
+        } catch (e: Exception) {
+            withContext(Dispatchers.Main) {
+                Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onDestroy() {
+        job.cancel()
+        super.onDestroy()
     }
 
     private fun openSuggestion(suggestion: BeaconArticleSuggestion) {
