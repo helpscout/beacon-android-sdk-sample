@@ -1,5 +1,21 @@
 Change Log
 ==========
+Version 0.2.9 *(TBD)*
+----------------------------
+
+* Suggested articles can now be overridden by the SDK
+* Beacon Open and Close Event listeners - ideal for analytics to track when Beacon is used
+* Contact form draft is now persisted so users can exit the Beacon and their draft message is restored when they resume their message. There's also a `contactFormReset()` so if you want it to reset and remove the draft.
+* Image attachments now show a preview of the image instead of an icon.
+
+Bug fixes:
+
+* Related articles now correctly escaping HTML
+* Change to the way activities are launched to prevent multi copies of Home/Suggestions screen being loaded
+* Attachment button disabled once the limit of 3 reached.
+* The We're on it tick/circle now matches your Beacon color
+* The message text area expands to the bottom of the view on the contact screen to give more space for message text
+* New attachment icons to match the file extension type
 
 Version 0.2.8 *(2018-12-13)*
 ----------------------------
