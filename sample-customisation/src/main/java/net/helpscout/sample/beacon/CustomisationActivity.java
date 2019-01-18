@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.internal.core.model.BeaconConfigOverrides;
 import com.helpscout.beacon.internal.core.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
 
@@ -41,21 +42,36 @@ public class CustomisationActivity extends AppCompatActivity {
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BeaconActivity.openInSecureMode(getBaseContext(), secureModeUserSignature);
+                setColorOverrides(false);
+                openBeaconInSecureMode();
             }
         });
 
         findViewById(R.id.action_open_beacon_color).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                @SuppressLint("ResourceType") String colorHexString = getResources().getString(R.color.primary);
-
-                
-
-                BeaconActivity.openInSecureMode(getBaseContext(), secureModeUserSignature);
+                setColorOverrides(true);
+                openBeaconInBasicMode();
             }
         });
 
+    }
+
+    private void setColorOverrides(boolean enabled) {
+        if (enabled) {
+            @SuppressLint("ResourceType") String colorHexString = getResources().getString(R.color.primary);
+            Beacon.setConfigOverrides(new BeaconConfigOverrides(null, null, null, null, colorHexString));
+        } else {
+            Beacon.setConfigOverrides(new BeaconConfigOverrides(null, null, null, null, null));
+        }
+    }
+
+    private void openBeaconInBasicMode() {
+        BeaconActivity.open(this);
+    }
+
+    private void openBeaconInSecureMode() {
+        BeaconActivity.openInSecureMode(this, secureModeUserSignature);
     }
 
     /**

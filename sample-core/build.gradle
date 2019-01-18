@@ -46,12 +46,14 @@ android {
 
 ext {
     supportLibraryForThisProject = '27.0.2'
-    beaconCoreVersion = '0.2.7'
 }
 
 dependencies {
 
     implementation "com.android.support:appcompat-v7:$supportLibraryForThisProject"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"

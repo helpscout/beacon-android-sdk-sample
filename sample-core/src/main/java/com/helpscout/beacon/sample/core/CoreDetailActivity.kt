@@ -11,12 +11,12 @@ import android.widget.ProgressBar
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.BuildConfig
 import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.*
 import net.helpscout.samples.beacon.core.R
 
 class CoreDetailActivity : AppCompatActivity() {
+    private val job = Job()
+    private val backgroundScope = CoroutineScope(Dispatchers.IO + job)
 
     private val progressBar: ProgressBar by lazy { findViewById<ProgressBar>(R.id.suggestion_loading) }
     private val webView: WebView by lazy { findViewById<WebView>(R.id.suggestion_web_view) }
@@ -45,22 +45,20 @@ class CoreDetailActivity : AppCompatActivity() {
         val articleId = intent.getStringExtra(EXTRA_ARTICLE_ID)
         val articleUrl = intent.getStringExtra(EXTRA_ARTICLE_URL)
 
-
         if (articleId.isNullOrEmpty()) {
             openArticleUrl(articleUrl!!)
         } else {
-            openArticleWithId(articleId)
+            backgroundScope.launch {
+                openArticleWithId(articleId)
+            }
         }
     }
 
-    private fun openArticleWithId(articleId: String) {
-        launch(UI) {
+    private suspend fun openArticleWithId(articleId: String) {
+        val repository = Beacon.getRepositoryInstance()
+        val article = repository.getArticleById(articleId)
 
-            val repository = Beacon.getRepositoryInstance()
-            val articleJob = async { repository.getArticleById(articleId) }
-
-            val article = articleJob.await()
-
+        withContext(Dispatchers.Main) {
             title = article.name
             webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
             progressBar.visibility = View.GONE
@@ -74,4 +72,8 @@ class CoreDetailActivity : AppCompatActivity() {
         finish()
     }
 
+    override fun onDestroy() {
+        job.cancel()
+        super.onDestroy()
+    }
 }
