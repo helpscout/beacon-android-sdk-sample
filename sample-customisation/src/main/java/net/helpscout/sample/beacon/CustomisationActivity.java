@@ -12,7 +12,10 @@ import com.helpscout.beacon.internal.core.model.BeaconConfigOverrides;
 import com.helpscout.beacon.internal.core.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import net.helpscout.sample.beacon.customisation.R;
@@ -26,6 +29,9 @@ public class CustomisationActivity extends AppCompatActivity {
     private static final String secureModeUserEmail = "beacon_secure@scottyab.com";
     private static final String secureModeUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
 
+    // Replace this list with max three article string ids from your docs
+    private static final List<String> articleSuggestionsOverride = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,8 @@ public class CustomisationActivity extends AppCompatActivity {
         addPreFilledData();
 
         addUserAttributes();
+
+        addArticlesSuggestionOverride();
 
 
         findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
@@ -96,6 +104,13 @@ public class CustomisationActivity extends AppCompatActivity {
                 "Please include steps to reproduce the issue",
                 prePopulatedCustomFields
         ));
+    }
+
+    /**
+     * Add suggested articles
+     */
+    private void addArticlesSuggestionOverride() {
+        Beacon.setOverrideSuggestedArticles(articleSuggestionsOverride);
     }
 
     private String getAppVersion() {
