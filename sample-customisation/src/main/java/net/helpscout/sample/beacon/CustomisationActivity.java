@@ -29,7 +29,7 @@ public class CustomisationActivity extends AppCompatActivity {
     private static final String secureModeUserEmail = "beacon_secure@scottyab.com";
     private static final String secureModeUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
 
-    // Replace this list with max three article string ids from your docs
+    // Replace this list with max five article string ids from your docs
     private static final List<String> articleSuggestionsOverride = new ArrayList<>();
 
     @Override
