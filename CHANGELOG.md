@@ -7,12 +7,12 @@ Version 0.3.0 *(2019-02-04)*
 
 Bug Fixes:
 
-* You can now correctly override the `messageEnabled` and `docsEnabled` flags on your Beacon.
-* [#33](https://github.com/helpscout/beacon-android-sdk-sample/issues/33) Fix crash when launching BeaconActivity with Context rather than Activity.
-* [#36](https://github.com/helpscout/beacon-android-sdk-sample/issues/36) Fix crash when `lastThread` is null on `ConversationsAdapter`.
-* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix colors when a button has low contrast.
-* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix white message icons on white backgrounds.
-* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix back/navigate up button to have the correct Android design. (Use arrow_back, not keyboard_backspace)
+* You can now correctly override the `messageEnabled` and `docsEnabled` flags on your Beacon
+* [#33](https://github.com/helpscout/beacon-android-sdk-sample/issues/33) Fixed crash when launching BeaconActivity with Context rather than Activity
+* [#36](https://github.com/helpscout/beacon-android-sdk-sample/issues/36) Fixed crash when `lastThread` is null on `ConversationsAdapter`
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fixed button coloring in low contrast conditions
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fixed white message icons on white backgrounds
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fixed back/navigate up button to have the correct Android design (use arrow_back, not keyboard_backspace)
 
 Version 0.2.9 *(2019-01-18)*
 ----------------------------
