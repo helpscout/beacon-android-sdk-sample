@@ -1,5 +1,19 @@
 Change Log
 ==========
+Version 0.3.0 *(2019-02-04)*
+----------------------------
+
+* Prefill attachments  
+
+Bug Fixes:
+
+* Ensured all places the Beacon Config is accessed it has the overrides applied 
+* Crash when launching BeaconActivity with Context rather than Activity 
+* Crash when `lastThread` is null on `ConversationsAdapter`
+* Fix colors when button has low contrast
+* Fix message icon is white on white background
+* Fix back/navigate up button should have the correct Android design. (Use arrow_back, not keyboard_backspace)
+
 Version 0.2.9 *(2019-01-18)*
 ----------------------------
 
