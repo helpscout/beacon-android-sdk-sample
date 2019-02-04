@@ -3,16 +3,16 @@ Change Log
 Version 0.3.0 *(2019-02-04)*
 ----------------------------
 
-* Prefill attachments  
+* Prefill attachments 
 
 Bug Fixes:
 
-* Ensured all places the Beacon Config is accessed it has the overrides applied 
-* Crash when launching BeaconActivity with Context rather than Activity 
-* Crash when `lastThread` is null on `ConversationsAdapter`
-* Fix colors when button has low contrast
-* Fix message icon is white on white background
-* Fix back/navigate up button should have the correct Android design. (Use arrow_back, not keyboard_backspace)
+* You can now correctly override the `messageEnabled` and `docsEnabled` flags on your Beacon.
+* [#33](https://github.com/helpscout/beacon-android-sdk-sample/issues/33) Fix crash when launching BeaconActivity with Context rather than Activity.
+* [#36](https://github.com/helpscout/beacon-android-sdk-sample/issues/36) Fix crash when `lastThread` is null on `ConversationsAdapter`.
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix colors when a button has low contrast.
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix white message icons on white backgrounds.
+* [#39](https://github.com/helpscout/beacon-android-sdk-sample/issues/39) Fix back/navigate up button to have the correct Android design. (Use arrow_back, not keyboard_backspace)
 
 Version 0.2.9 *(2019-01-18)*
 ----------------------------
