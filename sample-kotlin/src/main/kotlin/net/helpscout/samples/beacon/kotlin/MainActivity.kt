@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.helpscout.beacon.Beacon
-import com.helpscout.beacon.internal.core.model.BeaconScreens
+import com.helpscout.beacon.model.BeaconScreens
 import com.helpscout.beacon.ui.BeaconActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

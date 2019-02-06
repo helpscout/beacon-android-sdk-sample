@@ -3,17 +3,22 @@ package net.helpscout.sample.beacon;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
-import com.helpscout.beacon.internal.core.model.BeaconConfigOverrides;
-import com.helpscout.beacon.internal.core.model.PreFilledForm;
+import com.helpscout.beacon.model.BeaconConfigOverrides;
+import com.helpscout.beacon.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +27,7 @@ import net.helpscout.sample.beacon.customisation.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import timber.log.Timber;
 
 public class CustomisationActivity extends AppCompatActivity {
 
@@ -102,7 +108,8 @@ public class CustomisationActivity extends AppCompatActivity {
                 "My Secure user Scott",
                 "Bug report for app",
                 "Please include steps to reproduce the issue",
-                prePopulatedCustomFields
+                prePopulatedCustomFields,
+                generateLogFileUri()
         ));
     }
 
@@ -111,6 +118,28 @@ public class CustomisationActivity extends AppCompatActivity {
      */
     private void addArticlesSuggestionOverride() {
         Beacon.setOverrideSuggestedArticles(articleSuggestionsOverride);
+    }
+
+    /**
+     * Create a pre-fill log file to be attached in messages
+     */
+    private List<String> generateLogFileUri() {
+        List<String> uris = new ArrayList<>();
+
+        try {
+            File logAFile = new File(getFilesDir() + File.separator + "log_a.txt");
+            logAFile.createNewFile();
+            FileOutputStream fileOutputStream = new FileOutputStream(logAFile);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+            outputStreamWriter.append("This is a sample log called log_a.txt");
+            outputStreamWriter.close();
+            fileOutputStream.close();
+            uris.add(Uri.fromFile(logAFile).toString());
+        } catch (IOException exception) {
+            Timber.e(this.getClass().getName(), exception.getLocalizedMessage());
+        }
+
+        return uris;
     }
 
     private String getAppVersion() {
