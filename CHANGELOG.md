@@ -1,5 +1,21 @@
 Change Log
 ==========
+
+Version 0.3.1 *(2019-02-27)*
+----------------------------
+
+* We now support device rotation 🎉
+
+Bug Fixes:
+
+* Crash when Article preview was blank
+* [#36](https://github.com/helpscout/beacon-android-sdk-sample/issues/36) Crash when loading conversation if any of the conversation threads was missing a creator. 
+* Contact us FAB was incorrectly shown on the search error screen
+* Hyperlinks in conversation body are now converted to clickable links
+* Tweak to text color formula to match web/iOS
+* Crash on some devices running Android version <5.0 (unsupported)
+
+
 Version 0.3.0 *(2019-02-04)*
 ----------------------------
 
