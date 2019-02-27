@@ -15,3 +15,5 @@ Beacon should...
 
 **Screenshots or GIFs**
 Any examples of the issue
+
+Thanks for raising a Beacon SDK issue and filling out the details above. We aim to respond in 1-2 business days.
