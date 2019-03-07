@@ -10,10 +10,10 @@ Version 1.0 *(2019-03-TBD)*
 
 Bug Fixes:
 
-* Fixed bug were the Send Message toolbar could be pulled down after a successful message was sent
-* Fix an animation bug when the Send Message toolbar was swiped-up too quickly
-* The back arrow now is now correctly visible when viewing the Previous Conversations screen after a success sent message 
-* Fixed navigation bugs during article search and viewing previous conversations
+* The Send Message toolbar could be pulled down after a successful message was sent
+* An animation bug when the Send Message toolbar was swiped-up too quickly
+* The back arrow now is now correctly visible when viewing the Previous Conversations screen after a message was successfully sent 
+* Navigation bugs during article search and viewing previous conversations
 
 Version 0.3.1 *(2019-02-27)*
 ----------------------------
