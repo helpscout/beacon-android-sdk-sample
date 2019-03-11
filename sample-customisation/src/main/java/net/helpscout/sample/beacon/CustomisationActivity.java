@@ -12,6 +12,7 @@ import android.view.View;
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
 import com.helpscout.beacon.model.PreFilledForm;
+import com.helpscout.beacon.model.SuggestedArticle;
 import com.helpscout.beacon.ui.BeaconActivity;
 
 import java.io.File;
@@ -35,8 +36,8 @@ public class CustomisationActivity extends AppCompatActivity {
     private static final String secureModeUserEmail = "beacon_secure@scottyab.com";
     private static final String secureModeUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
 
-    // Replace this list with max five article string ids from your docs
-    private static final List<String> articleSuggestionsOverride = new ArrayList<>();
+    // Replace this list with max five article string ids from your docs or a URL
+    private static final List<SuggestedArticle> articleSuggestionsOverride = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,7 +118,7 @@ public class CustomisationActivity extends AppCompatActivity {
      * Add suggested articles
      */
     private void addArticlesSuggestionOverride() {
-        Beacon.setOverrideSuggestedArticles(articleSuggestionsOverride);
+        Beacon.setOverrideSuggestedArticlesOrLinks(articleSuggestionsOverride);
     }
 
     /**
