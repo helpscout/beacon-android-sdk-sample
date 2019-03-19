@@ -1,3 +1,5 @@
+Thank you for taking the time to submit an issue with all the details shown below. Our engineering team monitors issues submitted and strives to respond with 1-2 business days.
+
 * Beacon version: 
 * Android OS version:
 * Device make/model:
@@ -15,5 +17,3 @@ Beacon should...
 
 **Screenshots or GIFs**
 Any examples of the issue
-
-Thanks for raising a Beacon SDK issue and filling out the details above. We aim to respond in 1-2 business days.
