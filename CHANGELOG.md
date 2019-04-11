@@ -10,9 +10,9 @@ Bug Fixes:
 
 * Added meta data flag to ensure Firebase Analytics (that we do not use but is automatically included by Firebase Cloud Messaging) doesn't collect the Android Advertising ID
 * The order of open articles is retained when rotating screen
-* Agents avatars in the previous conversation list were being incorrectly displayed
+* Agents avatars on previous conversations now display the correct agents
 * Coloured the Agent avatar circle to match the Beacon color if no photo available
-* When showing dates not from the current year ensure the year is shown.
+* When showing dates from previous years ensure the year is shown.
 
 
 Version 1.0 *(2019-03-11)*
