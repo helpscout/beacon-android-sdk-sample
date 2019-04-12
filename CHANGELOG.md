@@ -12,7 +12,8 @@ Bug Fixes:
 * The order of open articles is retained when rotating screen
 * Agents avatars on previous conversations now display the correct agents
 * Coloured the Agent avatar circle to match the Beacon color if no photo available
-* When showing dates from previous years ensure the year is shown.
+* When showing dates from previous years ensure the year is shown
+* Fixed a cache bug when having multiple Beacons on the same application
 
 
 Version 1.0 *(2019-03-11)*
