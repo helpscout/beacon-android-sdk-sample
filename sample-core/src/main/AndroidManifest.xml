@@ -28,6 +28,11 @@
             android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"
             android:parentActivityName="com.helpscout.beacon.sample.core.CoreListArticlesActivity"/>
 
+
+      <meta-data
+        android:name="com.helpscout.beacon.SDKAutoInitialise"
+        android:value="true" />
+
     </application>
 
 </manifest>
