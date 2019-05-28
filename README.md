@@ -19,9 +19,9 @@ The main SDK documentation is hosted on the [Help Scout developers site](https:/
 
 ## Requirements
 
-The minimum supported SDK is **21** (Android 5.0), and your app must be compiled with at least API version **27** (Android 8.1).
-
-The Beacon SDK only needs Internet permission which is defined in the Core module.
+* The minimum supported SDK is **21** (Android 5.0), and your app must be compiled with at least API version **27** (Android 8.1).
+* The Beacon SDK only needs Internet permission which is defined in the Core module.
+* Help Scout account to obtain your Beacon Id.
 
 ## Installation
 The Beacon Android SDK is distributed as AAR and available from JCenter, so simply add the following lines to your app’s `build.gradle` file.
