@@ -1,6 +1,18 @@
 Change Log
 ==========
 
+Version 1.0.3 *(2019-07-08)*
+----------------------------
+
+Bug Fixes:
+
+* Improved typing performance on the Reply screen
+* Updated CSS for Articles
+
+Version 1.0.2 *(2019-06-01) Internal only release*
+----------------------------
+
+* Refactor to use Koin 2.0
 
 
 Version 1.0.1 *(2019-04-11)*
