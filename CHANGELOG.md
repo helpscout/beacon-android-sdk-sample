@@ -4,6 +4,9 @@ Change Log
 Version 1.0.3 *(2019-07-08)*
 ----------------------------
 
+API change:
+* Removed static modifier from `BeaconPushNotificationsProcessor.process()` method. `BeaconPushNotificationsProcessor.process(..)` becomes `new BeaconPushNotificationsProcessor().process()`.  
+
 Bug Fixes:
 
 * Improved typing performance on the Reply screen
