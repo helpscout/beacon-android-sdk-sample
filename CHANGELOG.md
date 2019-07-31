@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 1.0.4 *(2019-07-31)*
+----------------------------
+
+Bug Fix:
+
+* Fix to issue loading suggested article external links
+
+
 Version 1.0.3 *(2019-07-08)*
 ----------------------------
 
