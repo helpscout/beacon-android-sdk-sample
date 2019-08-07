@@ -15,7 +15,7 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="GoogleAppIndexingWarning"
-    tools:replace="android:appComponentFactory">
+    tools:replace="android:appComponentFactory, android:supportsRtl">
 
     <activity
       android:name="net.helpscout.samples.beacon.kotlin.MainActivity"

@@ -3,36 +3,36 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="net.helpscout.samples.beacon.core">
 
-    <application
-        android:name="com.helpscout.beacon.sample.core.CoreApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-      android:theme="@style/AppTheme"
-      tools:ignore="GoogleAppIndexingWarning"
-      android:networkSecurityConfig="@xml/debug_trust_user_certs"
-      >
-        <activity
-            android:name="com.helpscout.beacon.sample.core.CoreListArticlesActivity"
-          android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <application
+    android:name="com.helpscout.beacon.sample.core.CoreApplication"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:networkSecurityConfig="@xml/debug_trust_user_certs"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    tools:ignore="GoogleAppIndexingWarning"
+    tools:replace="android:supportsRtl">
+    <activity
+      android:name="com.helpscout.beacon.sample.core.CoreListArticlesActivity"
+      android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
 
-        <activity
-            android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"
-            android:parentActivityName="com.helpscout.beacon.sample.core.CoreListArticlesActivity"/>
+    <activity
+      android:name="com.helpscout.beacon.sample.core.CoreDetailActivity"
+      android:parentActivityName="com.helpscout.beacon.sample.core.CoreListArticlesActivity" />
 
 
-      <meta-data
-        android:name="com.helpscout.beacon.SDKAutoInitialise"
-        android:value="true" />
+    <meta-data
+      android:name="com.helpscout.beacon.SDKAutoInitialise"
+      android:value="true" />
 
-    </application>
+  </application>
 
 </manifest>
