@@ -8,6 +8,8 @@ Bug Fixes:
 * Fix crash when using an app name in Chinese [#57](https://github.com/helpscout/beacon-android-sdk-sample/issues/57)
 * Fix an issue with Koin library crashing Roboelectric tests [#59](https://github.com/helpscout/beacon-android-sdk-sample/issues/59)
 
+**Note**: We removed support for right-to-left layouts, if you support it in your app please use `tools:replace="android:supportsRtl"` in your Manifest. For more information check the samples apps.
+
 Version 1.0.4 *(2019-07-31)*
 ----------------------------
 
