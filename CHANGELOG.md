@@ -1,5 +1,12 @@
 Change Log
 ==========
+Version 1.0.5 *(2019-08-07)*
+----------------------------
+
+Bug Fixes:
+
+* Fix crash when using an app name in Chinese [#57](https://github.com/helpscout/beacon-android-sdk-sample/issues/57)
+* Fix an issue with Koin library crashing Roboelectric tests [#59](https://github.com/helpscout/beacon-android-sdk-sample/issues/59)
 
 Version 1.0.4 *(2019-07-31)*
 ----------------------------
