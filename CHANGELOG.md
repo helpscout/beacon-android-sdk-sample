@@ -5,7 +5,7 @@ Version 1.0.6 *(2019-09-19)*
 ----------------------------
 
 * Added a navigate option to allow you to open the Beacon directly to Previous Messages or Chat (beta coming soon)
-* It now possible to hide custom fields that you've pre-filled using the `Beacon.showPrefilledCustomFields(false)` 
+* It is now possible to hide custom fields that you've pre-filled using the `Beacon.showPrefilledCustomFields(false)` 
 
 Bug Fixes:
 
