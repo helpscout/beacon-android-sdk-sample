@@ -1,5 +1,17 @@
 Change Log
 ==========
+
+Version 1.0.6 *(2019-09-19)*
+----------------------------
+
+* Added a navigate option to allow you to open the Beacon directly to Previous Messages or Chat (beta coming soon)
+* It now possible to hide custom fields that you've pre-filled using the `Beacon.showPrefilledCustomFields(false)` 
+
+Bug Fixes:
+
+* Edited obfuscation config due to incompatibility with Firebase perf monitoring [#62](https://github.com/helpscout/beacon-android-sdk-sample/issues/62) 
+* Fixed bug added in 1.0.5. Crash with message parameter chat should be non-null [#60](https://github.com/helpscout/beacon-android-sdk-sample/issues/60) 
+
 Version 1.0.5 *(2019-08-07)*
 ----------------------------
 
