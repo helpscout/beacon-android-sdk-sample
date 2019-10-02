@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 1.0.7 *(2019-10-01)*
+----------------------------
+* Behind the scenes updates for up and coming real-time chat beta
+
+
 Version 1.0.6 *(2019-09-19)*
 ----------------------------
 
