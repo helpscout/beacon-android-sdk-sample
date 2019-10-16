@@ -61,9 +61,9 @@ dependencies {
     }
 
 
-    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
+    implementation "com.helpscout:beacon-core:$beaconVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
-    //implementation "com.helpscout:beacon-chat:$beaconUiVersion"
+    implementation "com.helpscout:beacon-chat:$beaconChatVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
