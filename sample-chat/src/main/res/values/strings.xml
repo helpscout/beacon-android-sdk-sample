@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Beacon Chat Sample</string>
+  <string name="chat_sample_description">This sample aims to be as simple as possible and show the bare minimum code needed to get Beacon with Chat up and running in your app.</string>
+  <string name="button_open_beacon">Open Beacon</string>
+</resources>
