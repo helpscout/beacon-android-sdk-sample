@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-Version 1.0.9 *(2019-11-07)*
+Version 1.0.9 *(2019-11-06)*
 ----------------------------
 * Session Attributes: You are now able to include session-specific information on new messages. [Check out our docs for more information](https://developer.helpscout.com/beacon-2/android/#session-attributes).
 
