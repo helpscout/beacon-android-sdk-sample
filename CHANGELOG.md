@@ -1,15 +1,15 @@
 Change Log
 ==========
 
-Version 1.0.9 *(2019-11-06)*
+Version 1.0.9 *(2019-11-07)*
 ----------------------------
-* Session Attributes: You are now able to include session-specific information on new messages. [Check out our docs for more information](https://developer.helpscout.com/beacon-2/android/#session-attributes).
+* Session Attributes: You are now able to include session-specific information on new messages. [Check out our docs for more details](https://developer.helpscout.com/beacon-2/android/#session-attributes).
 
 Bug Fixes: 
 
-* Removed Stetho dependency [#64](https://github.com/helpscout/beacon-android-sdk-sample/issues/64).
-* Remapped some mobile-only translation strings to use Beacon Builder strings.
-* Beacon SDK 3rd party dependencies are now private (moved `api` to `implementation`) to avoid conflicts in host apps [#66](https://github.com/helpscout/beacon-android-sdk-sample/issues/66).  
+* Removed Stetho dependency [#64](https://github.com/helpscout/beacon-android-sdk-sample/issues/64)
+* Remapped some mobile-only translation strings to use Beacon Builder strings
+* Beacon SDK 3rd party dependencies are now private (moved `api` to `implementation`) to avoid conflicts in host apps [#66](https://github.com/helpscout/beacon-android-sdk-sample/issues/66)  
 
 
 Version 1.0.7 *(2019-10-01)* & 1.0.8 *(2019-10-10)*
