@@ -8,7 +8,7 @@ Version 2.0.0-beta *(2019-11-21)*
 
 Breaking changes: 
 
-* Migrate to AndroidX - The Beacon SDK dependencies have been upgraded to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. If you've not updated to AndroidX you'll need to do so to use version 2.0.0+ of the Beacon SDK.   
+* Migrate to AndroidX - The Beacon SDK dependencies have been migrated to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. To update your app to use AndroidX follow the instructions in [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).     
 
 Bug Fixes:
 * Remove @GlideModuleclass as it causes a clash if the host app also uses Glide
