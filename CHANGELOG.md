@@ -1,6 +1,20 @@
 Change Log
 ==========
 
+Version 2.0.0-beta *(2019-11-21)*
+----------------------------
+
+* Live chat - Now customers can start a chat from your app on their Android device, accessing great support no matter where they are. 
+
+Breaking changes: 
+
+* Migrate to AndroidX - The Beacon SDK dependencies have been migrated to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. To update your app to use AndroidX follow the instructions in [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).     
+
+Bug Fixes:
+* Remove @GlideModuleclass as it causes a clash if the host app also uses Glide
+* Fixed issue where email used wasn't updated when changed on contact form [#67](https://github.com/helpscout/beacon-android-sdk-sample/issues/67)
+ 
+
 Version 1.0.9 *(2019-11-07)*
 ----------------------------
 * Session Attributes: You are now able to include session-specific information on new messages. [Check out our docs for more details](https://developer.helpscout.com/beacon-2/android/#session-attributes).
