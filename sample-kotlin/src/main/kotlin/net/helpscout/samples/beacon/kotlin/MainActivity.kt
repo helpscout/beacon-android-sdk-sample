@@ -1,8 +1,8 @@
 package net.helpscout.samples.beacon.kotlin
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.model.BeaconScreens
 import com.helpscout.beacon.ui.BeaconActivity
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_logout_beacon.setOnClickListener {
-            if (Beacon.isLoggedIn()) {
+            if (Beacon.datastore().userHasEmail()) {
                 val currentUser = Beacon.email()
                 Beacon.logout()
                 toast("Logged out user: $currentUser")

@@ -19,13 +19,13 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
       android:id="@+id/button_open_beacon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/button_open_beacon" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
       android:id="@+id/button_open_beacon_to_contact"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -40,13 +40,13 @@
       android:layout_marginBottom="32dp"
       android:background="@color/colorAccent" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
       android:id="@+id/button_login_beacon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/button_login_basic_mode" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
       android:id="@+id/button_logout_beacon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

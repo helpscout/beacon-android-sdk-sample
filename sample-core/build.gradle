@@ -19,7 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     sourceSets {
@@ -42,32 +42,16 @@ android {
 
 }
 
-ext {
-    supportLibraryForThisProject = '27.0.2'
-}
 
 dependencies {
 
-    implementation "com.android.support:appcompat-v7:$supportLibraryForThisProject"
+    implementation "androidx.appcompat:appcompat:$androidXAppcompatVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
-
-    configurations.all {
-        resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:support-v4:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:support-compat:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:support-core-ui:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:recyclerview-v7:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:appcompat-v7:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:cardview-v7:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:design-v7:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:palette-v7:$supportLibraryForThisProject"
-        resolutionStrategy.force "com.android.support:customtabs:$supportLibraryForThisProject"
-    }
 }
 
 
