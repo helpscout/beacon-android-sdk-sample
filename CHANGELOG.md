@@ -8,10 +8,10 @@ Version 2.0.0-beta *(2019-11-21)*
 
 Breaking changes: 
 
-* Migrate to AndroidX - The Beacon SDK dependencies have been upgraded to use Google's AndroidX libraries. This removes the need to use Jetifier and so should speed up your build. If you've not updated to AndroidX you'll need to do so to use version 2.0.0+ of Beacon SDK.      
+* Migrate to AndroidX - The Beacon SDK dependencies have been upgraded to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. If you've not updated to AndroidX you'll need to do so to use version 2.0.0+ of the Beacon SDK.   
 
 Bug Fixes:
-* Remove @GlideModuleclass as it causes clash if host app also uses Glide
+* Remove @GlideModuleclass as it causes a clash if the host app also uses Glide
 * Fixed issue where email used wasn't updated when changed on contact form [#67](https://github.com/helpscout/beacon-android-sdk-sample/issues/67)
  
 
