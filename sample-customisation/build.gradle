@@ -35,7 +35,6 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled true
-            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -54,6 +53,7 @@ dependencies {
     implementation "com.google.android.material:material:$materialLibraryVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
+    implementation "com.jakewharton.timber:timber:$timberVersion"
 
     implementation "com.helpscout:beacon-core:$beaconCoreVersion"
     implementation "com.helpscout:beacon-ui:$beaconUiVersion"
