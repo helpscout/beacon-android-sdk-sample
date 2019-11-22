@@ -42,15 +42,9 @@ android {
 
 }
 
-ext {
-    androidXLibraryForThisProject = '1.0.0'
-    materialLibraryVersion = '1.1.0-alpha01'
-    constraintLayoutVersion = '2.0.0-alpha2'
-}
 
 dependencies {
-
-    implementation "com.google.android.material:material:$materialLibraryVersion"
+    implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
     implementation "com.jakewharton.timber:timber:$timberVersion"

@@ -20,10 +20,12 @@ ext {
     timberVersion = '4.7.1'
 
     // Android libraries
-    constraintLayoutVersion = '1.0.2'
+    materialVersion = '1.0.0'
+    androidXAppcompatVersion = '1.1.0'
+    constraintLayoutVersion = '2.0.0-beta2'
 
     // Beacon
-    beaconCoreVersion = '1.0.9'
-    beaconUiVersion = '1.0.9'
+    beaconCoreVersion = '2.0.0-beta'
+    beaconUiVersion = '2.0.0-beta'
 
 }
