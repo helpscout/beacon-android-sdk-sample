@@ -5,7 +5,7 @@ Change Log
 Version 2.0.0 *(2019-12-09)*
 ----------------------------
 
-* See 2.0.0-beta for breaking changes
+* See [2.0.0-beta](https://github.com/helpscout/beacon-android-sdk-sample/blob/5e1f6aae61d086838f1abc6cb0b4831d1fa53654/CHANGELOG.md#version-200-beta-2019-11-21) for breaking changes. 
 * Added email to Pre-filled form. 
 
 Behavior change: 
@@ -15,8 +15,8 @@ Behavior change:
 Bug Fixes:  
  
 * Removed Beacon SDK use of Koin's global scope to fix issues for host apps using Koin.   
-* Reduced visibility of Beacon SDK's Kotlin extensions [#70](https://github.com/helpscout/beacon-android-sdk-sample/issues/70)
-* Removed com.commonsware.cwac.document repo dependency [#73](https://github.com/helpscout/beacon-android-sdk-sample/issues/73)
+* Reduced visibility of Beacon SDK's Kotlin extensions. [#70](https://github.com/helpscout/beacon-android-sdk-sample/issues/70)
+* Removed com.commonsware.cwac.document repo dependency. [#73](https://github.com/helpscout/beacon-android-sdk-sample/issues/73)
 * Fixed issue where users could initiate a chat via Beacon.navigate() method when no agents are available.                             
                        
 
