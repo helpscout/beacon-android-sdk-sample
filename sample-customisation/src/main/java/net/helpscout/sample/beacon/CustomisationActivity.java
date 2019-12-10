@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.helpscout.beacon.Beacon;
@@ -110,7 +109,8 @@ public class CustomisationActivity extends AppCompatActivity {
                 "Bug report for app",
                 "Please include steps to reproduce the issue",
                 prePopulatedCustomFields,
-                generateLogFileUri()
+                generateLogFileUri(),
+                "my@email.com"
         ));
     }
 
