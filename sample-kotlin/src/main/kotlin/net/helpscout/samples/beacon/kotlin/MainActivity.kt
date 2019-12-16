@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_logout_beacon.setOnClickListener {
-            if (Beacon.datastore().userHasEmail()) {
+            if (Beacon.userHasEmail()) {
                 val currentUser = Beacon.email()
                 Beacon.logout()
                 toast("Logged out user: $currentUser")
