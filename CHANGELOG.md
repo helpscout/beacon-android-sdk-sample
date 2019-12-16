@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 2.0.1 *(2019-12-16)*
+----------------------------
+
+Bug Fixes:
+
+* This release includes a fix to prevent a crash when using _non-image_ attachments in Chat.
+* We've reduced visibility of an internal API, `Beacon.datastore()`. This is to prevent accidental usage which may result in the SDK getting into an unknown state.
+
 
 Version 2.0.0 *(2019-12-10)*
 ----------------------------

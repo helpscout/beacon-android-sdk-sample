@@ -44,7 +44,7 @@ public class CustomisationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customisation);
 
         //typically this should be set after successfully logging on to your service
-        Beacon.login(secureModeUserEmail);
+        Beacon.identify(secureModeUserEmail);
 
         addPreFilledData();
 

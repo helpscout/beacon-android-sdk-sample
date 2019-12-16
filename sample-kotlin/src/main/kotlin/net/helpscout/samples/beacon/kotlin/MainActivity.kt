@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
 
 
         button_login_beacon.setOnClickListener {
-            Beacon.login(userEmail)
+            Beacon.identify(userEmail)
             toast("Log in (Basic mode) as $userEmail")
         }
 
         button_logout_beacon.setOnClickListener {
-            if (Beacon.datastore().userHasEmail()) {
+            if (Beacon.userHasEmail()) {
                 val currentUser = Beacon.email()
                 Beacon.logout()
                 toast("Logged out user: $currentUser")
