@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
 
         button_login_beacon.setOnClickListener {
-            Beacon.login(userEmail)
+            Beacon.identify(userEmail)
             toast("Log in (Basic mode) as $userEmail")
         }
 
