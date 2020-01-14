@@ -1,6 +1,27 @@
 Change Log
 ==========
 
+Version 2.0.2 *(2020-01-14)*
+----------------------------
+
+* Added support for special attributes on the Help Scout customer profile: avatar, company, and job title. See the new method, `Beacon.identify(email, name, company, jobTitle, avatar)`.
+* Tapping on images within a Chat now enlarges them.
+
+Breaking changes:
+Due to an update in the [OKHttp dependency](https://cashapp.github.io/2019-02-05/okhttp-3-13-requires-android-5), your app needs to define both sourceCompatibility and targetCompatibility to Java 1.8. Your app's build.gradle file should appear as follows:
+```
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+```
+
+Bug Fixes:
+
+* Better client-side handling of the attachment limit (20) for real-time chats
+* Fixed an issue with the Up/Back button when using a Contact-only Beacon [#75](https://github.com/helpscout/beacon-android-sdk-sample/issues/75)
+
+
 Version 2.0.1 *(2019-12-16)*
 ----------------------------
 
