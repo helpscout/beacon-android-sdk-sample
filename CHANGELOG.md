@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 2.0.3 *(2020-03-11)*
+----------------------------
+
+* Fixed a crash when manually initializing the Beacon [#79](https://github.com/helpscout/beacon-android-sdk-sample/issues/79) 
+* Other bug fixes and performance improvements
+
+
 Version 2.0.2 *(2020-01-14)*
 ----------------------------
 
