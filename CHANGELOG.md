@@ -41,8 +41,10 @@ Bug Fixes:
 Version 2.0.0 *(2019-12-10)*
 ----------------------------
 
-* See [2.0.0-beta](https://github.com/helpscout/beacon-android-sdk-sample/blob/5e1f6aae61d086838f1abc6cb0b4831d1fa53654/CHANGELOG.md#version-200-beta-2019-11-21) for breaking changes. 
+Breaking changes:
+
 * Added email to Pre-filled form. 
+* See [2.0.0-beta](https://github.com/helpscout/beacon-android-sdk-sample/blob/5e1f6aae61d086838f1abc6cb0b4831d1fa53654/CHANGELOG.md#version-200-beta-2019-11-21) for more breaking changes. 
 
 Behavior change: 
 
