@@ -6,7 +6,7 @@ Version 2.1.0 *(2020-04-21)*
 
 * New visually redesigned landing page with Answers and Ask tabs.
 * Now supports Focus mode - see [Settings Customization](https://developer.helpscout.com/beacon-2/android/#settings-customization)
-* 
+
 
 Version 2.0.3 *(2020-03-11)*
 ----------------------------
