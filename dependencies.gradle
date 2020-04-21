@@ -2,14 +2,14 @@ ext {
 
     // Sdk and tools
     minSdkVersion = 21
-    targetSdkVersion = 28
-    compileSdkVersion = 28
+    targetSdkVersion = 29
+    compileSdkVersion = 29
     dexcountVersion = '0.8.2'
 
-    buildToolsVersion = '28.0.3'
+    buildToolsVersion = '29.0.3'
     coroutinesVersion = '1.0.0'
-    gradlePluginVersion = '3.5.2'
-    kotlinVersion = '1.3.61'
+    gradlePluginVersion = '3.6.2'
+    kotlinVersion = '1.3.71'
 
     // Testing
     jUnitVersion = '4.12'
@@ -25,7 +25,7 @@ ext {
     constraintLayoutVersion = '2.0.0-beta2'
 
     // Beacon
-    beaconCoreVersion = '2.0.1'
-    beaconUiVersion = '2.0.1'
+    beaconCoreVersion = '2.1.0'
+    beaconUiVersion = '2.1.0'
 
 }
