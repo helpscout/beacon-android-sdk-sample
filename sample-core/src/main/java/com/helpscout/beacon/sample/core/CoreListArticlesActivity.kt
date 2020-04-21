@@ -1,27 +1,30 @@
 package com.helpscout.beacon.sample.core
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.helpscout.beacon.Beacon
-import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
+import com.helpscout.beacon.internal.core.model.ArticleApi
 import kotlinx.android.synthetic.main.activity_suggestions.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import net.helpscout.samples.beacon.core.R
 
 class CoreListArticlesActivity : AppCompatActivity() {
 
     private val job = Job()
     private val backgroundScope = CoroutineScope(Dispatchers.IO + job)
-    
 
-    private var listAdapter: SuggestionsAdapter
+    private var listAdapter: ArticleSuggestionsAdapter
 
     init {
-        listAdapter = SuggestionsAdapter(
-                suggestions = emptyList(),
-                itemClick = { suggestion -> openSuggestion(suggestion) }
+        listAdapter = ArticleSuggestionsAdapter(
+            articles = listOf(),
+            itemClick = { article -> openArticle(article) }
         )
     }
 
@@ -47,7 +50,11 @@ class CoreListArticlesActivity : AppCompatActivity() {
             }
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {
-                Toast.makeText(this@CoreListArticlesActivity, "Error while downloading suggestions: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@CoreListArticlesActivity,
+                    "Error while downloading suggestions: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
@@ -57,7 +64,7 @@ class CoreListArticlesActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun openSuggestion(suggestion: BeaconArticleSuggestion) {
-        startActivity(CoreDetailActivity.open(this, suggestion))
+    private fun openArticle(article: ArticleApi) {
+        startActivity(CoreDetailActivity.open(this, article))
     }
 }

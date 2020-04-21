@@ -4,14 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.webkit.WebView
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
 import com.helpscout.beacon.Beacon
-import com.helpscout.beacon.BuildConfig
-import com.helpscout.beacon.internal.core.model.BeaconArticleSuggestion
-import kotlinx.coroutines.*
+import com.helpscout.beacon.internal.core.model.ArticleApi
+import com.helpscout.beacon.internal.core.model.ArticleApi.ArticleDocPreview
+import com.helpscout.beacon.internal.core.model.ArticleApi.CustomLink
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import net.helpscout.samples.beacon.core.BuildConfig
 import net.helpscout.samples.beacon.core.R
 
 class CoreDetailActivity : AppCompatActivity() {
@@ -23,15 +29,14 @@ class CoreDetailActivity : AppCompatActivity() {
 
     companion object {
 
-        private val EXTRA_ARTICLE_ID = BuildConfig.APPLICATION_ID + ".ARTICLE_ID"
-        private val EXTRA_ARTICLE_URL = BuildConfig.APPLICATION_ID + ".ARTICLE_URL"
+        private const val EXTRA_ARTICLE_ID = BuildConfig.APPLICATION_ID + ".ARTICLE_ID"
+        private const val EXTRA_ARTICLE_URL = BuildConfig.APPLICATION_ID + ".ARTICLE_URL"
 
-        fun open(context: Context, article: BeaconArticleSuggestion): Intent {
+        fun open(context: Context, article: ArticleApi): Intent {
             return Intent(context, CoreDetailActivity::class.java).apply {
-                if (article.isLink()) {
-                    putExtra(EXTRA_ARTICLE_URL, article.suggestion.url)
-                } else {
-                    putExtra(EXTRA_ARTICLE_ID, article.suggestion.id)
+                when (article) {
+                    is CustomLink -> putExtra(EXTRA_ARTICLE_URL, article.url)
+                    is ArticleDocPreview -> putExtra(EXTRA_ARTICLE_ID, article.id)
                 }
             }
         }
@@ -46,7 +51,7 @@ class CoreDetailActivity : AppCompatActivity() {
         val articleUrl = intent.getStringExtra(EXTRA_ARTICLE_URL)
 
         if (articleId.isNullOrEmpty()) {
-            openArticleUrl(articleUrl!!)
+            openArticleUrl(articleUrl)
         } else {
             backgroundScope.launch {
                 openArticleWithId(articleId)
@@ -60,7 +65,13 @@ class CoreDetailActivity : AppCompatActivity() {
 
         withContext(Dispatchers.Main) {
             title = article.name
-            webView.loadDataWithBaseURL("\'file:///android_asset/\'", article.text, "text/html", "utf-8", null)
+            webView.loadDataWithBaseURL(
+                "\'file:///android_asset/\'",
+                article.text,
+                "text/html",
+                "utf-8",
+                null
+            )
             progressBar.visibility = View.GONE
         }
     }
