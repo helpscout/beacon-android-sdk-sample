@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+Version 2.1.1 *(2020-05-29)*
+----------------------------
+Changes:
+
+* We've given the Message, Conversations and Reply screens a fresh new look.
+Conversations with over 20 threads are now collapsed by default, allowing users to focus on the most recent messages. 
+
+Bug fixes:
+
+* Fixed crash with PreFilledForm when the host app uses Moshi Kotlin. Resolves #91
+* We've updated to the latest version of PhotoView and removed the external dependency. There's no longer a need to add JitPack to your  repositories. Resolves #87 
+* Resolved issue with state restoration on Message form when the Developer setting "don't keep activities" is enabled. Resolves #83
+
 Version 2.1.0 *(2020-04-21)*
 ----------------------------
 
