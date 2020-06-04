@@ -1,19 +1,11 @@
 Change Log
 ==========
 
-Version 2.1.1 *(2020-06-01)*
+Version 2.1.1 *(2020-06-01)* - _Removed_
 ----------------------------
-Changes:
 
-* We've given the message, conversations, and reply screens a fresh new look.
-* Conversations with over 20 threads are now collapsed by default, allowing users to focus on the most recent messages. 
+* We discovered a regression issue when upgrading from Beacon SDK below version 2.0.2 directly to 2.1.1. Therefore removed 2.1.1 and aim to resolve this issue in the next release. Please use 2.1.0 in the mean time, thank you for your patience.  
 
-Bug fixes:
-
-* Fixed a crash with PreFilledForm when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91)
-* We've updated to the latest version of PhotoView and removed the external dependency. There's no longer a need to add JitPack to your repositories. Resolves [#87](https://github.com/helpscout/beacon-android-sdk-sample/issues/87) 
-* Resolved an issue with state restoration on the message form when the Developer setting "don't keep activities" is enabled. Resolves [#83](https://github.com/helpscout/beacon-android-sdk-sample/issues/83)
-* Fixed a issue where links were not actionable via Previous Messages [#93](https://github.com/helpscout/beacon-android-sdk-sample/issues/93)
 
 Version 2.1.0 *(2020-04-21)*
 ----------------------------
