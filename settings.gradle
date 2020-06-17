@@ -1,1 +1,1 @@
-include ':sample-kotlin', ':sample-customisation', ':sample-core'
+include ':sample-kotlin', ':sample-customisation'
