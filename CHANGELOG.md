@@ -1,6 +1,26 @@
 Change Log
 ==========
 
+Version 2.1.2 *(2020-07-30)* 
+----------------------------
+
+* We now support anonymous chats. To enable, uncheck email required on the Beacon builder contact options.
+* It's now possible for users to rate Docs articles. 
+* Updated the UI when displaying an invalid email message in chat.
+* Added animations when the Beacon is loaded, transitioning to chat or contact form, and when you rate an article.
+* We've given the message, conversations, and reply screens a fresh new look.
+* Conversations with over 20 threads are now collapsed by default, allowing users to focus on the most recent messages. 
+
+Bug Fixes:
+
+* Fixed a crash with PreFilledForm when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91) 
+* We've updated to the latest version of PhotoView and removed the external dependency. There's no longer a need to add JitPack to your repositories. Resolves [#87](https://github.com/helpscout/beacon-android-sdk-sample/issues/87)
+* Resolved an issue with state restoration on the Message form when the Developer setting "don't keep activities" is enabled. Resolves [#83](https://github.com/helpscout/beacon-android-sdk-sample/issues/83)
+* Fixed a issue where links were not actionable via Previous Messages [#93](https://github.com/helpscout/beacon-android-sdk-sample/issues/93)
+* Fixed the upgrade issue found in version 2.1.1
+
+
+
 Version 2.1.1 *(2020-06-01)* - _Removed_
 ----------------------------
 
