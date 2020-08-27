@@ -1,6 +1,25 @@
 Change Log
 ==========
 
+Version 2.2.0 *(2020-08-27)* 
+----------------------------
+
+* We now support anchor links within docs articles. [#101](https://github.com/helpscout/beacon-android-sdk-sample/issues/101) [#116](https://github.com/helpscout/beacon-android-sdk-sample/issues/116)  
+* You can disable access to previous messages with a local override.
+
+Breaking changes 
+
+* We have merged the beacon-core module into the beacon-ui module. Please remove the beacon-core module from your build.gradle file as it may cause compatibility issues.
+
+Bug Fixes:
+
+* Beacon will now skip opening the ask chooser when chat is disabled on your Beacon. [#95](https://github.com/helpscout/beacon-android-sdk-sample/issues/95) 
+* Fixed article links within the Beacon activity note, so they now open the article. [#110](https://github.com/helpscout/beacon-android-sdk-sample/issues/110)
+* Users are now returned to the previously active ask screen when using Android's back button [#100](https://github.com/helpscout/beacon-android-sdk-sample/issues/100). 
+* Added visual polish to the chat header, push notifications, and the "home to chat" transition.
+* Fixed several memory leaks
+
+
 Version 2.1.2 *(2020-07-30)* 
 ----------------------------
 
