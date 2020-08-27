@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.getkeepsafe.dexcount'
 
 apply from: '../signing/signing.gradle'
 apply from: '../dependencies.gradle'
@@ -52,8 +51,7 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
-    implementation "com.helpscout:beacon-core:$beaconCoreVersion"
-    implementation "com.helpscout:beacon-ui:$beaconUiVersion"
+    implementation "com.helpscout:beacon-ui:$beaconVersion"
 
     testImplementation "junit:junit:$jUnitVersion"
 }
