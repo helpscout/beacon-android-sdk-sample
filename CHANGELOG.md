@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 2.2.1 *(2020-09-09)* 
+----------------------------
+* We now support opening hyperlinks to Articles contained in previous conversations in Beacon rather than a separate browser.
+* We fixed a bug that prevented the push token from being registered for realtime chat when calling `Beacon.identify()` .
+* Minor UI polish.
+
 Version 2.2.0 *(2020-08-27)* 
 ----------------------------
 
@@ -9,7 +15,7 @@ Version 2.2.0 *(2020-08-27)*
 
 Breaking changes 
 
-* We have merged the beacon-core module into the beacon-ui module. Please remove the beacon-core module from your build.gradle file as it may cause compatibility issues.
+* We have merged the `beacon-core` module into the `beacon-ui` module. Please remove the `beacon-core` module from your `build.gradle` file as it may cause compatibility issues.
 
 Bug Fixes:
 
@@ -32,7 +38,7 @@ Version 2.1.2 *(2020-07-30)*
 
 Bug Fixes:
 
-* Fixed a crash with PreFilledForm when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91) 
+* Fixed a crash with `PreFilledForm` when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91) 
 * We've updated to the latest version of PhotoView and removed the external dependency. There's no longer a need to add JitPack to your repositories. Resolves [#87](https://github.com/helpscout/beacon-android-sdk-sample/issues/87)
 * Resolved an issue with state restoration on the Message form when the Developer setting "don't keep activities" is enabled. Resolves [#83](https://github.com/helpscout/beacon-android-sdk-sample/issues/83)
 * Fixed a issue where links were not actionable via Previous Messages [#93](https://github.com/helpscout/beacon-android-sdk-sample/issues/93)
@@ -123,7 +129,7 @@ Breaking changes:
 * Migrate to AndroidX - The Beacon SDK dependencies have been migrated to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. To update your app to use AndroidX follow the instructions in [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).     
 
 Bug Fixes:
-* Remove @GlideModuleclass as it causes a clash if the host app also uses Glide
+* Remove `@GlideModule` class as it causes a clash if the host app also uses Glide
 * Fixed issue where email used wasn't updated when changed on contact form [#67](https://github.com/helpscout/beacon-android-sdk-sample/issues/67)
  
 
