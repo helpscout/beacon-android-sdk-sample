@@ -18,7 +18,7 @@ You can find the primary SDK documentation on the [Help Scout developers site](h
 
 * The minimum supported SDK is **21** (Android 5.0)
 * Your app must be compiled with at least an API version **29** 
-* The Beacon SDK requires you to grant Internet permission as defined in the Core module.
+* The Beacon SDK requires you to grant Internet permission.
 * A Help Scout account to obtain your Beacon Id.
 
 ## Installation
