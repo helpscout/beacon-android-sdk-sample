@@ -1,6 +1,15 @@
 Change Log
 ==========
 
+Version 2.2.2 *(2020-09-24)* 
+----------------------------
+* We fixed a crash when starting `BeaconActivity` caused by a third-party library that we use internally – [Koin](https://github.com/InsertKoinIO/koin) – when using Kotlin version 1.4.x. We decided to use a beta version of  Koin to prevent the application from crashing. Please, let us know if you run into any issues. [#124](https://github.com/helpscout/beacon-android-sdk-sample/issues/124)
+* Users will no longer experience a crash when starting `BeaconActivity` when the `targetSdk` is `30` due to some checks a third-party dependency – [OkHttp](https://square.github.io/okhttp/) – did during start up. [#132](https://github.com/helpscout/beacon-android-sdk-sample/issues/132)
+* We fixed a crash when opening the `ArticleActivity` when the host application set a fixed orientation, and the user's device was running **Android 8.0**. [#133](https://github.com/helpscout/beacon-android-sdk-sample/issues/133)
+* Users who have an active chat and open the `ChatActivity`  will no longer experience a crash when updating to a newer SDK version. This crash only impacted users if the SDK version in use is 2.1.2 or below. [#134](https://github.com/helpscout/beacon-android-sdk-sample/issues/134)
+* Improved the user experience when starting a new conversation and replying to it. [#135](https://github.com/helpscout/beacon-android-sdk-sample/issues/135)
+* Beacon color settings are now correctly set when a user with an active chat updates the SDK.
+
 Version 2.2.1 *(2020-09-09)* 
 ----------------------------
 * We now support opening hyperlinks to Articles contained in previous conversations in Beacon rather than a separate browser.
