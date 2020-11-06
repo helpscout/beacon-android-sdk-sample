@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         openBeaconButton.setOnClickListener {
-            //open the Beacon
+            // open the Beacon
             BeaconActivity.open(baseContext)
         }
 
         openBeaconToContactButton.setOnClickListener {
-            //open the Beacon to contact page (note this assumes the Beacon supports contact)
+            // open the Beacon to contact page (note this assumes the Beacon supports contact)
+            // more info https://developer.helpscout.com/beacon-2/android/#navigate-to-a-specific-screen
             BeaconActivity.open(baseContext, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf())
         }
     }

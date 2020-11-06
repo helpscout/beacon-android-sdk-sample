@@ -1,35 +1,36 @@
 package net.helpscout.sample.beacon;
 
 import android.app.Application;
-
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.ui.BeaconEventLifecycleHandler;
 import com.helpscout.beacon.ui.BeaconOnClosedListener;
 import com.helpscout.beacon.ui.BeaconOnOpenedListener;
-
 import timber.log.Timber;
 
 public class CustomisationApplication extends Application {
 
-    private static String secureBeaconId = "YOUR_BEACON_ID";
+    // TODO replace with your Beacon Id from Help Scout
+    private static String beaconId = "6563caf4-4fbe-4e27-924e-20e088d2ce81";
 
     @Override
     public void onCreate() {
         super.onCreate();
         initBeacon();
-
-        // Use this to start listening to close and open events on the Beacon
-        initBeaconListener();
+        initBeaconListeners();
     }
 
     private void initBeacon() {
+        // We recommend initialing Beacon as part of Application.onCreate or via your Dependency
+        // Injection
         new Beacon.Builder()
-                .withBeaconId(secureBeaconId)
-                .withLogsEnabled(true)
+                .withBeaconId(beaconId)
+                .withLogsEnabled(true)  // Logging should be disabled in production
                 .build();
     }
 
-    private void initBeaconListener() {
+    private void initBeaconListeners() {
+        // Use the BeaconEventLifecycleHandler to start listening to close and open events on the
+        // Beacon. i.e for Analytics more info https://developer.helpscout.com/beacon-2/android/#open-and-close-events
         BeaconEventLifecycleHandler eventLifecycleHandler = new BeaconEventLifecycleHandler(
                 new BeaconOnOpenedListener() {
                     @Override
