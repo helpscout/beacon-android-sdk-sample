@@ -1,57 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:orientation="vertical"
   android:padding="16dp">
 
   <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
+    android:paddingBottom="8dp"
     android:text="@string/kotlin_sample_description" />
 
-  <LinearLayout
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/openBeaconButton"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:layout_centerHorizontal="true"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:text="@string/button_open_beacon" />
 
-    <com.google.android.material.button.MaterialButton
-      android:id="@+id/button_open_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/button_open_beacon" />
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp"
+    android:text="@string/button_open_beacon_to_contact_page_help" />
 
-    <com.google.android.material.button.MaterialButton
-      android:id="@+id/button_open_beacon_to_contact"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/button_open_beacon_to_contact_page" />
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/openBeaconToContactButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/button_open_beacon_to_contact_page" />
 
-    <View
-      android:layout_width="match_parent"
-      android:layout_height="2dp"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="32dp"
-      android:layout_marginEnd="16dp"
-      android:layout_marginBottom="32dp"
-      android:background="@color/colorAccent" />
-
-    <com.google.android.material.button.MaterialButton
-      android:id="@+id/button_login_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/button_login_basic_mode" />
-
-    <com.google.android.material.button.MaterialButton
-      android:id="@+id/button_logout_beacon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/button_logout" />
-
-  </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

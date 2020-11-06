@@ -1,4 +1,5 @@
 # Sample Kotlin
 
-This sample illustrates Login and Logout with the [Beacon UI](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion).    
+This sample illustrates how to install, initialise, and opening your Help Scout Beacon.
 
+![Screenshot](../docs/screenshot-sample.png?raw=true)
