@@ -49,21 +49,4 @@ public class Utils {
             throw new RuntimeException(e);
         }
     }
-
-    /**
-     * @return a example list of SuggestedArticles to be used to override those downloaded from Beacon
-     */
-//    public static List<SuggestedArticle> getArticleOverrideSuggestions() {
-//        List<SuggestedArticle> articleSuggestionsOverride = new ArrayList<SuggestedArticle>();
-//        articleSuggestionsOverride.add(
-//                SuggestedArticle.SuggestedArticleWithUrl("Custom suggestion", "https://helpscout.com")
-//        );
-//        articleSuggestionsOverride.add(
-//                SuggestedArticle.SuggestedArticleWithUrl("Help Scout", "https://helpscout.com")
-//        );
-//        return articleSuggestionsOverride;
-//    }
-    public static ArrayList getArticleOverrideSuggestions() {
-        return new ArrayList();
-    }
 }

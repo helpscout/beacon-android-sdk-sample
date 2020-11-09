@@ -2,6 +2,7 @@ package net.helpscout.samples.beacon.kotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.model.BeaconScreens
 import com.helpscout.beacon.ui.BeaconActivity
 import kotlinx.android.synthetic.main.activity_main.*

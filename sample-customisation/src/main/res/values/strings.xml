@@ -3,8 +3,8 @@
   <string name="customisation_sample_description">This Java based sample shows how to utilise some of
     the SDK customisation options to add additional meta data via Identify, prefill and session attributes</string>
   <string name="label_identify">Use Identify to save the user typing their email</string>
-  <string name="label_session_attributes">Adding session attributes</string>
-  <string name="label_prefil">Prefil the contact form</string>
+  <string name="label_session_attributes">Add session attributes</string>
+  <string name="label_prefil">Prefill the contact form</string>
   <string name="overrides_desc">Beacon will derive the configuration from the Help Scout Beacon Builder.
     However at runtime you can override certain features and configuration</string>
   <string name="label_override_article_suggestion">Override the Instant Answers</string>

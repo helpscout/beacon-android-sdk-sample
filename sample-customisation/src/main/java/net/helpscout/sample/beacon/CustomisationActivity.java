@@ -126,12 +126,16 @@ public class CustomisationActivity extends AppCompatActivity {
      */
     private void overrideInstantAnswers(boolean enabled) {
         if (enabled) {
-            Beacon.setOverrideSuggestedArticlesOrLinks(Utils.getArticleOverrideSuggestions());
+            ArrayList<String> overrides = new ArrayList();
+            // TODO replace the article IDs with Articles from your Docs Collection.
+            // https://secure.helpscout.net/docs/[COLLECTION ID]/article/[ARTICLE ID]/
+            overrides.add("11122bbb0428631d7a89ff4a");
+            overrides.add("11122ffd2c7d3a0fa9a29d22");
+            Beacon.setOverrideSuggestedArticles(overrides);
         } else {
             Beacon.resetSuggestedArticlesOverrides();
         }
     }
-
 
     private void initViews() {
         overrideContactFormCheck = findViewById(R.id.overrideContactFormCheck);
