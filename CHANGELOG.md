@@ -1,6 +1,21 @@
 Change Log
 ==========
 
+Version 2.2.2 *(2020-09-24)* 
+----------------------------
+* We fixed a crash when starting `BeaconActivity` caused by a third-party library that we use internally – [Koin](https://github.com/InsertKoinIO/koin) – when using Kotlin version 1.4.x. We decided to use a beta version of  Koin to prevent the application from crashing. Please, let us know if you run into any issues. [#124](https://github.com/helpscout/beacon-android-sdk-sample/issues/124)
+* Users will no longer experience a crash when starting `BeaconActivity` when the `targetSdk` is `30` due to some checks a third-party dependency – [OkHttp](https://square.github.io/okhttp/) – did during start up. [#132](https://github.com/helpscout/beacon-android-sdk-sample/issues/132)
+* We fixed a crash when opening the `ArticleActivity` when the host application set a fixed orientation, and the user's device was running **Android 8.0**. [#133](https://github.com/helpscout/beacon-android-sdk-sample/issues/133)
+* Users who have an active chat and open the `ChatActivity`  will no longer experience a crash when updating to a newer SDK version. This crash only impacted users if the SDK version in use is 2.1.2 or below. [#134](https://github.com/helpscout/beacon-android-sdk-sample/issues/134)
+* Improved the user experience when starting a new conversation and replying to it. [#135](https://github.com/helpscout/beacon-android-sdk-sample/issues/135)
+* Beacon color settings are now correctly set when a user with an active chat updates the SDK.
+
+Version 2.2.1 *(2020-09-09)* 
+----------------------------
+* We now support opening hyperlinks to Articles contained in previous conversations in Beacon rather than a separate browser.
+* We fixed a bug that prevented the push token from being registered for realtime chat when calling `Beacon.identify()` .
+* Minor UI polish.
+
 Version 2.2.0 *(2020-08-27)* 
 ----------------------------
 
@@ -9,7 +24,7 @@ Version 2.2.0 *(2020-08-27)*
 
 Breaking changes 
 
-* We have merged the beacon-core module into the beacon-ui module. Please remove the beacon-core module from your build.gradle file as it may cause compatibility issues.
+* We have merged the `beacon-core` module into the `beacon-ui` module. Please remove the `beacon-core` module from your `build.gradle` file as it may cause compatibility issues.
 
 Bug Fixes:
 
@@ -32,7 +47,7 @@ Version 2.1.2 *(2020-07-30)*
 
 Bug Fixes:
 
-* Fixed a crash with PreFilledForm when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91) 
+* Fixed a crash with `PreFilledForm` when the host app uses Moshi Kotlin. Resolves [#91](https://github.com/helpscout/beacon-android-sdk-sample/issues/91) 
 * We've updated to the latest version of PhotoView and removed the external dependency. There's no longer a need to add JitPack to your repositories. Resolves [#87](https://github.com/helpscout/beacon-android-sdk-sample/issues/87)
 * Resolved an issue with state restoration on the Message form when the Developer setting "don't keep activities" is enabled. Resolves [#83](https://github.com/helpscout/beacon-android-sdk-sample/issues/83)
 * Fixed a issue where links were not actionable via Previous Messages [#93](https://github.com/helpscout/beacon-android-sdk-sample/issues/93)
@@ -123,7 +138,7 @@ Breaking changes:
 * Migrate to AndroidX - The Beacon SDK dependencies have been migrated to use Google's AndroidX libraries. This removes the need to use Jetifier and should speed up your build process. To update your app to use AndroidX follow the instructions in [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate).     
 
 Bug Fixes:
-* Remove @GlideModuleclass as it causes a clash if the host app also uses Glide
+* Remove `@GlideModule` class as it causes a clash if the host app also uses Glide
 * Fixed issue where email used wasn't updated when changed on contact form [#67](https://github.com/helpscout/beacon-android-sdk-sample/issues/67)
  
 
