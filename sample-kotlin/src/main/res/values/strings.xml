@@ -3,5 +3,5 @@
   <string name="kotlin_sample_description">This sample aims to be as simple as possible and show the bare minimum code needed to get Beacon up and running in your app.</string>
   <string name="button_open_beacon">Open Beacon</string>
   <string name="button_open_beacon_to_contact_page">Open Beacon to Contact form</string>
-  <string name="button_open_beacon_to_contact_page_help">Using custom navigation you can open direct to the contact form, article, search results and previous messages depending on your Beacon configuration.</string>
+  <string name="button_open_beacon_to_contact_page_help">Using custom navigation you can take the user directly to the contact form, article, search results and previous messages depending on your Beacon configuration.</string>
 </resources>

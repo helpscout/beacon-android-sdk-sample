@@ -116,7 +116,7 @@ public class CustomisationActivity extends AppCompatActivity {
                         true,  // allowAttachments
                         false, // customFieldsEnabled
                         true), // showGetInTouch
-                colorOverride  // override color #000000
+                colorOverride  // override color in #000000 format
         ));
     }
 
@@ -142,7 +142,7 @@ public class CustomisationActivity extends AppCompatActivity {
         overrideInstantAnswersCheck = findViewById(R.id.overrideInstantAnswersCheck);
         overrideColorCheck = findViewById(R.id.overrideColorCheck);
         sessionAttributesCheck = findViewById(R.id.sessionAttributesCheck);
-        prefilCheck = findViewById(R.id.prefilCheck);
+        prefillCheck = findViewById(R.id.prefillCheck);
         identifyCheck = findViewById(R.id.identifyCheck);
 
         findViewById(R.id.openBeaconButton).setOnClickListener(view -> openBeacon());

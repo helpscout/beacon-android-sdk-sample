@@ -17,7 +17,7 @@ import java.util.List;
 public class Utils {
 
     /**
-     * Create a log file to show how it's possible to prefil files in the Contact form
+     * Create a dummy log file to show how it's possible to prefill files in the Contact form
      */
     public static List<String> generateSampleLogFileUri(Context context) {
         List<String> uris = new ArrayList<>();

@@ -1,5 +1,5 @@
 <resources>
-  <!-- This  overrides some of the Beacon strings -->
+  <!-- This overrides some of the Beacon strings -->
   <string name="hs_beacon_home_title">Customised title</string>
   <string name="hs_beacon_answers">Search Results</string>
   <string name="hs_beacon_search_hint">Customised search hint</string>

@@ -20,7 +20,7 @@ public class CustomisationApplication extends Application {
     }
 
     private void initBeacon() {
-        // We recommend initialing Beacon as part of Application.onCreate or via your Dependency
+        // We recommend initializing Beacon as part of Application.onCreate or through Dependency
         // Injection
         new Beacon.Builder()
                 .withBeaconId(beaconId)
