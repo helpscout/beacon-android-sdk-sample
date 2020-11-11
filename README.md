@@ -2,9 +2,8 @@
 
 This repo contains 2 sample apps that implement the Beacon Android SDK.
 
-* [Sample Kotlin](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) - A simple and concise demo that shows how to install, initialise and two different ways to open your Help Scout Beacon.
-.
-* [Sample Customisation](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) - Java based sample illustrates some of the key features you can use to customise the Beacon SDK to add additional data about theuser and how to override certain Beacon settings.
+* [Sample Kotlin](./sample-kotlin) - A simple and concise demo that shows how to install, initialise and two different ways to open your Help Scout Beacon.
+* [Sample Customisation](./sample-customisation) - Java based sample illustrates some of the key features you can use to customise the Beacon SDK to add additional data about theuser and how to override certain Beacon settings.
 
 ## Beacon SDK version [![Download Beacon](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
 

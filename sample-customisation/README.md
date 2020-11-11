@@ -20,4 +20,4 @@ For more information see the [Android technical documentation](https://developer
 See the [translation strings](https://developer.helpscout.com/beacon-2/android/#translation-strings) in the documentation for a full list of the overridable strings.
 
 
-<img src="../docs/screenshot-customise-sample.png" width="720" alt="Screenshot">
+![Screenshot](../docs/screenshot-customise-sample.png)
