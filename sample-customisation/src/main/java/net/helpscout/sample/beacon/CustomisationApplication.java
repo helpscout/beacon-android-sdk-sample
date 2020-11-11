@@ -10,7 +10,7 @@ import timber.log.Timber;
 public class CustomisationApplication extends Application {
 
     // TODO replace with your Beacon Id from Help Scout
-    private static String beaconId = "6563caf4-4fbe-4e27-924e-20e088d2ce81";
+    private static String beaconId = "";
 
     @Override
     public void onCreate() {

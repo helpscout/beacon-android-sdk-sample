@@ -2,4 +2,4 @@
 
 This sample illustrates how to install, initialise, and open your Help Scout Beacon.
 
-![Screenshot](../docs/screenshot-sample.png?raw=true)
+<img src="../docs/screenshot-sample.png" width="720" alt="Screenshot">

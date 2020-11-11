@@ -1,5 +1,6 @@
 package net.helpscout.sample.beacon;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.CheckBox;
@@ -15,16 +16,17 @@ import net.helpscout.sample.beacon.util.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CustomisationActivity extends AppCompatActivity {
 
-    CheckBox overrideContactFormCheck;
-    CheckBox overrideInstantAnswersCheck;
-    CheckBox overrideColorCheck;
-    CheckBox sessionAttributesCheck;
-    CheckBox prefilCheck;
-    CheckBox identifyCheck;
+    private CheckBox overrideContactFormCheck;
+    private CheckBox overrideInstantAnswersCheck;
+    private CheckBox overrideColorCheck;
+    private CheckBox sessionAttributesCheck;
+    private CheckBox prefillCheck;
+    private CheckBox identifyCheck;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,12 +54,12 @@ public class CustomisationActivity extends AppCompatActivity {
                     "https://p-zkf42x.t2.n0.cdn.getcloudapp.com/items/5zuwqrLg/avataaars.png");
         }
 
-        addPreFilledData(prefilCheck.isChecked());
+        addPreFilledData(prefillCheck.isChecked());
         addSessionAttributes(sessionAttributesCheck.isChecked());
     }
 
     private void configureOverrides() {
-        overrideBeaconConfig(!overrideContactFormCheck.isChecked(), overrideColorCheck.isChecked());
+        overrideBeaconConfig(!overrideContactFormCheck.isChecked(), !overrideContactFormCheck.isChecked(), overrideColorCheck.isChecked());
         overrideInstantAnswers(overrideInstantAnswersCheck.isChecked());
     }
 
@@ -66,7 +68,7 @@ public class CustomisationActivity extends AppCompatActivity {
      * more info https://developer.helpscout.com/beacon-2/android/#session-attributes
      */
     private void addSessionAttributes(boolean enabled) {
-        Map attributes = new HashMap<String, String>();
+        Map<String, String> attributes = new HashMap<>();
         if (enabled) {
             attributes.put("App version", Utils.getAppVersion(this));
             attributes.put("OS version", Build.VERSION.RELEASE);
@@ -85,7 +87,7 @@ public class CustomisationActivity extends AppCompatActivity {
             Map<Integer, String> prePopulatedCustomFields = new HashMap<>();
             prePopulatedCustomFields.put(123, "TEST");
 
-            ArrayList attachments = new ArrayList(Utils.generateSampleLogFileUri(this));
+            List<String> attachments = new ArrayList<>(Utils.generateSampleLogFileUri(this));
 
             Beacon.addPreFilledForm(new PreFilledForm(
                     "Prefill Name",
@@ -101,18 +103,22 @@ public class CustomisationActivity extends AppCompatActivity {
     /**
      * More info on settings overrides https://developer.helpscout.com/beacon-2/android/#settings-customization
      */
-    private void overrideBeaconConfig(boolean shouldDisableNameSubject, boolean colorOverrideEnabled) {
+    private void overrideBeaconConfig(boolean shouldDisableName, boolean shouldDisableSubject, boolean colorOverrideEnabled) {
 
         //Demonstrates how to use Android Color Resource Hex to override the Beacon color
-        String colorOverride = colorOverrideEnabled ? getResources().getString(R.color.custom_beacon_color) : null;
+        @SuppressLint("ResourceType") String colorOverride = colorOverrideEnabled ? getResources().getString(R.color.custom_beacon_color) : null;
 
+        // [docs|messaging|chat]Enabled - is primarily designed for runtime disabling of features
+        // When set to false this will locally override and disable a feature
+        // When set to true the remote config will be used and does not enable a feature if
+        // it isn't enabled on the Beacon on Help Scout
         Beacon.setConfigOverrides(new BeaconConfigOverrides(
                 true, // docsEnabled
                 true, // messagingEnabled
                 true, // chatEnabled
                 new ContactFormConfigApi(  // ContactForm overrides
-                        shouldDisableNameSubject, // showName
-                        shouldDisableNameSubject, // showSubject
+                        shouldDisableName, // showName
+                        shouldDisableSubject, // showSubject
                         true,  // allowAttachments
                         false, // customFieldsEnabled
                         true), // showGetInTouch
@@ -126,7 +132,7 @@ public class CustomisationActivity extends AppCompatActivity {
      */
     private void overrideInstantAnswers(boolean enabled) {
         if (enabled) {
-            ArrayList<String> overrides = new ArrayList();
+            List<String> overrides = new ArrayList<>();
             // TODO replace the article IDs with Articles from your Docs Collection.
             // https://secure.helpscout.net/docs/[COLLECTION ID]/article/[ARTICLE ID]/
             overrides.add("11122bbb0428631d7a89ff4a");
