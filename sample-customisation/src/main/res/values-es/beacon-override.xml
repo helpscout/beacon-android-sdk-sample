@@ -4,7 +4,7 @@
     See https://developer.helpscout.com/beacon-2/android/#translation-strings for full list
    -->
   <string name="hs_beacon_answers">Respuestas</string>
-  <string name="hs_beacon_search_hint">Pista de búsqueda</string>
-  <string name="hs_beacon_nothing_found">Nada Encontrado</string>
+  <string name="hs_beacon_search_hint">¿Cómo te podemos ayudar?</string>
+  <string name="hs_beacon_nothing_found">No hemos encontrado ningún artículo que coincida con tu búsqueda</string>
 
 </resources>
