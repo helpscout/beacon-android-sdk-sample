@@ -1,28 +1,23 @@
 ext {
-
     // Sdk and tools
     minSdkVersion = 21
     targetSdkVersion = 29
     compileSdkVersion = 29
-    dexcountVersion = '0.8.2'
 
     buildToolsVersion = '29.0.3'
-    coroutinesVersion = '1.0.0'
     gradlePluginVersion = '3.6.2'
-    kotlinVersion = '1.3.71'
+    kotlinVersion = '1.4.10'
 
     // Testing
-    jUnitVersion = '4.12'
-    mockitoVersion = '1.10.19'
-    assertJ = '1.7.1'
+    jUnitVersion = '4.13'
 
-    //debug
+    //debug logging library
     timberVersion = '4.7.1'
 
     // Android libraries
-    materialVersion = '1.1.0'
-    constraintLayoutVersion = '2.0.0-beta7'
+    materialVersion = '1.2.1'
+    constraintLayoutVersion = '2.0.4'
 
-    // Beacon
-    beaconVersion = '+' // Get the latest
+    // Beacon Note: We recommend to always use the latest version of the SDK. See changelog.md for changes.
+    beaconVersion = '+'
 }

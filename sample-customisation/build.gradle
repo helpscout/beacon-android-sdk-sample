@@ -20,11 +20,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-    }
-
     buildTypes {
         debug {
             debuggable true
@@ -33,12 +28,15 @@ android {
         }
         release {
             signingConfig signingConfigs.release
+            // Beacon SDK supports Proguard, no additional config is needed.
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
     compileOptions {
+        // Since SDK 2.0.2 we moved to okhttp 3.13 which requires the sourceCompatibility and
+        // targetCompatibility to Java 1.8
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -48,9 +46,9 @@ android {
 dependencies {
     implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
-
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
+    // Add this to your dependencies to install Beacon SDK to your app
     implementation "com.helpscout:beacon-ui:$beaconVersion"
 
     testImplementation "junit:junit:$jUnitVersion"

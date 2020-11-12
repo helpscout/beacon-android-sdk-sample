@@ -33,26 +33,31 @@ android {
         }
         release {
             signingConfig signingConfigs.release
+            // Beacon SDK supports Proguard, no additional config is needed.
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
     compileOptions {
+        // Since SDK 2.0.2 we moved to okhttp 3.13 which requires the sourceCompatibility and
+        // targetCompatibility to Java 1.8
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
+        // recommend Kotlin jvm target to be Java 1.8
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
     implementation "com.google.android.material:material:$materialVersion"
-
-    implementation "com.helpscout:beacon-ui:$beaconVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    // Add this to your dependencies to install Beacon SDK to your app
+    implementation "com.helpscout:beacon-ui:$beaconVersion"
 
     testImplementation "junit:junit:$jUnitVersion"
 }

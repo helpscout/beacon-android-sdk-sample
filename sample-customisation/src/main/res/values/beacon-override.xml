@@ -1,8 +1,10 @@
 <resources>
-  <!-- overrides some of the Beacon strings -->
-  <string name="hs_beacon_home_title">Customised title</string>
-  <string name="hs_beacon_answers">Search Results</string>
-  <string name="hs_beacon_search_hint">Customised search hint</string>
+  <!--
+    This file demonstrates overriding some of the Beacon strings
+    See https://developer.helpscout.com/beacon-2/android/#translation-strings for full list
+   -->
+  <string name="hs_beacon_answers">Customised</string>
+  <string name="hs_beacon_search_hint">Customised hint</string>
   <string name="hs_beacon_nothing_found">Customised nothing found</string>
 
 </resources>

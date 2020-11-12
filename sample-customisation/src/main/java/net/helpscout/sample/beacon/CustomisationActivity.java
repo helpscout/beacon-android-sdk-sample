@@ -1,155 +1,157 @@
 package net.helpscout.sample.beacon;
 
 import android.annotation.SuppressLint;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-
+import android.widget.CheckBox;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.internal.core.model.ContactFormConfigApi;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
 import com.helpscout.beacon.model.PreFilledForm;
-import com.helpscout.beacon.model.SuggestedArticle;
 import com.helpscout.beacon.ui.BeaconActivity;
+import net.helpscout.sample.beacon.customisation.R;
+import net.helpscout.sample.beacon.util.Utils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.helpscout.sample.beacon.customisation.R;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import timber.log.Timber;
-
 public class CustomisationActivity extends AppCompatActivity {
 
-    //for sample this is hardcoded to a single user. But in your code these details would be on per user basis.
-    private static final String secureModeUserEmail = "beacon_secure@scottyab.com";
-    private static final String secureModeUserSignature = "8235545a15c6f41b64e3c47e5c94d3cfb6c6d297e87af88dec953a73042a7b92";
-
-    // Replace this list with max five article string ids from your docs or a URL
-    private static final List<SuggestedArticle> articleSuggestionsOverride = new ArrayList<>();
+    private CheckBox overrideContactFormCheck;
+    private CheckBox overrideInstantAnswersCheck;
+    private CheckBox overrideColorCheck;
+    private CheckBox sessionAttributesCheck;
+    private CheckBox prefillCheck;
+    private CheckBox identifyCheck;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customisation);
-
-        //typically this should be set after successfully logging on to your service
-        Beacon.identify(secureModeUserEmail);
-
-        addPreFilledData();
-
-        addUserAttributes();
-
-        addArticlesSuggestionOverride();
-
-
-        findViewById(R.id.action_open_beacon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setColorOverrides(false);
-                openBeaconInSecureMode();
-            }
-        });
-
-        findViewById(R.id.action_open_beacon_color).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setColorOverrides(true);
-                openBeaconInBasicMode();
-            }
-        });
-
+        initViews();
     }
 
-    private void setColorOverrides(boolean enabled) {
-        if (enabled) {
-            @SuppressLint("ResourceType") String colorHexString = getResources().getString(R.color.primary);
-            Beacon.setConfigOverrides(new BeaconConfigOverrides(null, null, null, null, colorHexString));
-        } else {
-            Beacon.setConfigOverrides(new BeaconConfigOverrides(null, null, null, null, null));
-        }
-    }
-
-    private void openBeaconInBasicMode() {
+    private void openBeacon() {
+        configureBeacon();
+        configureOverrides();
         BeaconActivity.open(this);
     }
 
-    private void openBeaconInSecureMode() {
-        BeaconActivity.openInSecureMode(this, secureModeUserSignature);
+    private void configureBeacon() {
+        if (identifyCheck.isChecked()) {
+            // Call identify when you have your User's email, in the Help Scout app we do this
+            // after login success. There's identify method overrides if you wish to provide just
+            // email or email and name.
+            // more info https://developer.helpscout.com/beacon-2/android/#authenticating-users
+            Beacon.identify("sample@sample.com",
+                    "Name",
+                    "company",
+                    "jobTitle",
+                    "https://p-zkf42x.t2.n0.cdn.getcloudapp.com/items/5zuwqrLg/avataaars.png");
+        }
+
+        addPreFilledData(prefillCheck.isChecked());
+        addSessionAttributes(sessionAttributesCheck.isChecked());
+    }
+
+    private void configureOverrides() {
+        overrideBeaconConfig(!overrideContactFormCheck.isChecked(), !overrideContactFormCheck.isChecked(), overrideColorCheck.isChecked());
+        overrideInstantAnswers(overrideInstantAnswersCheck.isChecked());
     }
 
     /**
-     * Illustrates how to use the user attributes
+     * Illustrates how to use the session attributes
+     * more info https://developer.helpscout.com/beacon-2/android/#session-attributes
      */
-    private void addUserAttributes() {
-        Beacon.addAttributeWithKey("App version", getAppVersion());
-        Beacon.addAttributeWithKey("OS version", Build.VERSION.RELEASE);
-        Beacon.addAttributeWithKey("Device", Build.MANUFACTURER + " " + Build.MODEL);
+    private void addSessionAttributes(boolean enabled) {
+        Map<String, String> attributes = new HashMap<>();
+        if (enabled) {
+            attributes.put("App version", Utils.getAppVersion(this));
+            attributes.put("OS version", Build.VERSION.RELEASE);
+            attributes.put("Device", Build.MANUFACTURER + " " + Build.MODEL);
+        }
+        Beacon.setSessionAttributes(attributes);
     }
 
     /**
      * Pre-fill the Contact us form
+     * More info https://developer.helpscout.com/beacon-2/android/#prefilling-the-contact-form
      */
-    private void addPreFilledData() {
-        Map<Integer, String> prePopulatedCustomFields = new HashMap<>();
-        prePopulatedCustomFields.put(123, "TEST");
+    private void addPreFilledData(boolean enabled) {
+        Beacon.contactFormReset();
+        if (enabled) {
+            Map<Integer, String> prePopulatedCustomFields = new HashMap<>();
+            prePopulatedCustomFields.put(123, "TEST");
 
-        Beacon.addPreFilledForm(new PreFilledForm(
-                "My Secure user Scott",
-                "Bug report for app",
-                "Please include steps to reproduce the issue",
-                prePopulatedCustomFields,
-                generateLogFileUri(),
-                "my@email.com"
+            List<String> attachments = new ArrayList<>(Utils.generateSampleLogFileUri(this));
+
+            Beacon.addPreFilledForm(new PreFilledForm(
+                    "Prefill Name",
+                    "Prefill Subject",
+                    "Please include steps to reproduce the issue",
+                    prePopulatedCustomFields,
+                    attachments,
+                    "prefill@email.com" // email (this can be edited by the user)
+            ));
+        }
+    }
+
+    /**
+     * More info on settings overrides https://developer.helpscout.com/beacon-2/android/#settings-customization
+     */
+    private void overrideBeaconConfig(boolean shouldDisableName, boolean shouldDisableSubject, boolean colorOverrideEnabled) {
+
+        //Demonstrates how to use Android Color Resource Hex to override the Beacon color
+        @SuppressLint("ResourceType") String colorOverride = colorOverrideEnabled ? getResources().getString(R.color.custom_beacon_color) : null;
+
+        // [docs|messaging|chat]Enabled - is primarily designed for runtime disabling of features
+        // When set to false this will locally override and disable a feature
+        // When set to true the remote config will be used and does not enable a feature if
+        // it isn't enabled on the Beacon on Help Scout
+        Beacon.setConfigOverrides(new BeaconConfigOverrides(
+                true, // docsEnabled
+                true, // messagingEnabled
+                true, // chatEnabled
+                new ContactFormConfigApi(  // ContactForm overrides
+                        shouldDisableName, // showName
+                        shouldDisableSubject, // showSubject
+                        true,  // allowAttachments
+                        false, // customFieldsEnabled
+                        true), // showGetInTouch
+                colorOverride  // override color in #000000 format
         ));
     }
 
     /**
-     * Add suggested articles
+     * Replace the Instant Answers (suggestions) with this list. Note: max 5
+     * More info: https://developer.helpscout.com/beacon-2/android/#custom-suggestions
      */
-    private void addArticlesSuggestionOverride() {
-        Beacon.setOverrideSuggestedArticlesOrLinks(articleSuggestionsOverride);
-    }
-
-    /**
-     * Create a pre-fill log file to be attached in messages
-     */
-    private List<String> generateLogFileUri() {
-        List<String> uris = new ArrayList<>();
-
-        try {
-            File logAFile = new File(getFilesDir() + File.separator + "log_a.txt");
-            logAFile.createNewFile();
-            FileOutputStream fileOutputStream = new FileOutputStream(logAFile);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
-            outputStreamWriter.append("This is a sample log called log_a.txt");
-            outputStreamWriter.close();
-            fileOutputStream.close();
-            uris.add(Uri.fromFile(logAFile).toString());
-        } catch (IOException exception) {
-            Timber.e(this.getClass().getName(), exception.getLocalizedMessage());
-        }
-
-        return uris;
-    }
-
-    private String getAppVersion() {
-        try {
-            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            return pInfo.versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException(e);
+    private void overrideInstantAnswers(boolean enabled) {
+        if (enabled) {
+            List<String> overrides = new ArrayList<>();
+            // TODO replace the article IDs with Articles from your Docs Collection.
+            // https://secure.helpscout.net/docs/[COLLECTION ID]/article/[ARTICLE ID]/
+            overrides.add("11122bbb0428631d7a89ff4a");
+            overrides.add("11122ffd2c7d3a0fa9a29d22");
+            Beacon.setOverrideSuggestedArticles(overrides);
+        } else {
+            Beacon.resetSuggestedArticlesOverrides();
         }
     }
-    
+
+    private void initViews() {
+        overrideContactFormCheck = findViewById(R.id.overrideContactFormCheck);
+        overrideInstantAnswersCheck = findViewById(R.id.overrideInstantAnswersCheck);
+        overrideColorCheck = findViewById(R.id.overrideColorCheck);
+        sessionAttributesCheck = findViewById(R.id.sessionAttributesCheck);
+        prefillCheck = findViewById(R.id.prefillCheck);
+        identifyCheck = findViewById(R.id.identifyCheck);
+
+        findViewById(R.id.openBeaconButton).setOnClickListener(view -> openBeacon());
+        findViewById(R.id.buttonLogout).setOnClickListener(view -> Beacon.logout());
+    }
 }

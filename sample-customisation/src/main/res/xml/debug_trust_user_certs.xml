@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+  <!-- used for debugging API request/responses during development -->
   <debug-overrides>
     <trust-anchors>
       <certificates src="user" />

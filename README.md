@@ -1,25 +1,25 @@
-# Beacon SDK Samples for Android
+# Beacon Android SDK Samples
 
-This repo contains 3 sample apps that implement the Beacon Android SDK. 
+This repo contains 2 sample apps that implement the Beacon Android SDK.
 
-* [Sample Kotlin](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-kotlin) - demos Login and Logout with the Beacon UI.
-* [Sample Customisation](https://github.com/helpscout/beacon-android-sdk-sample/tree/master/sample-customisation) - illustrates how you can override the String and Colors of the Beacon UI and shows how to use Beacons in Secure mode.
+* [Sample Kotlin](./sample-kotlin) - A simple and concise demo that shows how to install, initialise and two different ways to open your Help Scout Beacon.
+* [Sample Customisation](./sample-customisation) - Java based sample illustrates some of the key features you can use to customise the Beacon SDK to add additional data about the user and how to override certain Beacon settings.
 
+## Beacon SDK version [![Download Beacon](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
 
-## Beacon SDK version [![Download Beacon UI](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion) 
-
-[Change Log](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
+[Release notes and changelog](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
 
 ## Documentation
 
-You can find the primary SDK documentation on the [Help Scout developers site](https://developer.helpscout.com/beacon-2/android/). 
+* [Beacon Mobile SDK documentation](https://developer.helpscout.com/beacon-2/mobile/)
+* [Android SDK API](https://developer.helpscout.com/beacon-2/android/)
+* [Android SDK API reference](https://developer.helpscout.com/beacon-2/android-api/beacon/index.html)
 
 ## Requirements
 
-* The minimum supported SDK is **21** (Android 5.0)
+* The minimum supported Android version is 5.0 (SDK INT 21)
 * Your app must be compiled with at least an API version **29** 
-* The Beacon SDK requires you to grant Internet permission.
-* A Help Scout account to obtain your Beacon Id.
+* A Beacon Id created on [Help Scout](https://secure.helpscout.net/settings/beacons/)
 
 ## Installation
 The Beacon Android SDK is distributed as AAR and available from JCenter, so add the following lines to your app's `build.gradle` file.
@@ -51,7 +51,7 @@ Beacon beacon = new Beacon.Builder()
 Beacon ID field is mandatory. Failing to provide it throws an `SDKInitException`
 when interacting with the `Beacon` object.
 
-## Launching the Beacon User Interface
+## Opening Beacon
 
 Once you've initialized Beacon, you're ready to interact with it. Whenever you want
 to invoke Beacon, use the code below to display the Beacon user interface.
