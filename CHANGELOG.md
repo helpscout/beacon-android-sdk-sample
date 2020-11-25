@@ -1,6 +1,20 @@
 Change Log
 ==========
 
+Version 2.3.0 *(2020-11-25)* 
+----------------------------
+**New!**
+- Want to know how customers experienced chatting with you? Beacon for Android now includes chat ratings! You’ll be able to get immediate feedback from your customers on how their conversation went with your team. [Learn more](https://docs.helpscout.com/article/1396-chat-satisfaction-ratings).
+
+**Fixes**
+- The close button no longer appears to terminate the host app. [#131](https://github.com/helpscout/beacon-android-sdk-sample/issues/131)
+- Smoother transition when opening straight to an Article detail. [#113](https://github.com/helpscout/beacon-android-sdk-sample/issues/113)
+- Removed opt-out of Firebase Analytics as it was disabling these events for the host project if not explicitly enabled. [#146](https://github.com/helpscout/beacon-android-sdk-sample/issues/146)
+- Session attributes are now visible in Help Scout after creating a chat.
+- The `SuggestedArticle` class was not accessible and prevented `Beacon.setOverrideSuggestedArticlesOrLinks()` from working. You can provide article suggestions by providing either Article IDs or custom links again.
+- We stopped ProGuard from obfuscating some method parameters.
+- Other bug fixes and performance improvements
+
 Version 2.2.2 *(2020-09-24)* 
 ----------------------------
 * We fixed a crash when starting `BeaconActivity` caused by a third-party library that we use internally – [Koin](https://github.com/InsertKoinIO/koin) – when using Kotlin version 1.4.x. We decided to use a beta version of  Koin to prevent the application from crashing. Please, let us know if you run into any issues. [#124](https://github.com/helpscout/beacon-android-sdk-sample/issues/124)
