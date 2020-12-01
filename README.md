@@ -44,7 +44,7 @@ class is a great place to initialize the SDK. If you won't know the Beacon ID at
 
 ```java
 Beacon beacon = new Beacon.Builder()
-  .withBeaconId("76d18b11-41f4-4d34-9a8c-08679d4759e3")       
+  .withBeaconId("YOUR_BEACON_ID_HERE")       
   .build();
 ```
 
@@ -69,7 +69,7 @@ To activate this mode, you have to tell the Beacon Builder like so:
 
 ```java
 Beacon beacon = Beacon.Builder()
-  .withBeaconId("cf2102b5-0f3c-4214-972e-2a1d33c7fadb")       
+  .withBeaconId("YOUR_BEACON_ID_HERE")       
   .withLogsEnabled(true)       
   .build();
 ```
