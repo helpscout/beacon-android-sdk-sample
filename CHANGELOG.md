@@ -4,7 +4,7 @@ Change Log
 Version 2.3.1 *(2020-12-21)* 
 ----------------------------
 Fixes 
-- We fixed the regression issue seen in version 2.2.2. Vimeo videos can now be embedded and played back within Articles [#147](https://github.com/helpscout/beacon-android-sdk-sample/issues/147)
+- Vimeo videos can now be embedded and played back within Articles[#147](https://github.com/helpscout/beacon-android-sdk-sample/issues/147)
 
 Version 2.3.0 *(2020-11-25)* 
 ----------------------------
