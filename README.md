@@ -11,6 +11,9 @@ This repo contains 2 sample apps that implement the Beacon Android SDK.
 
 You can subscribe to release updates here from this Github repository.
 
+![Screenshot](../docs/subscribe-to-releases.png)
+
+
 ## Documentation
 
 * [Beacon Mobile SDK documentation](https://developer.helpscout.com/beacon-2/mobile/)
