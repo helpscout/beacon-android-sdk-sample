@@ -50,6 +50,11 @@ android {
         // recommend Kotlin jvm target to be Java 1.8
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        ignoreWarnings true
+    }
 }
 
 dependencies {

@@ -6,10 +6,10 @@ ext {
 
     buildToolsVersion = '29.0.3'
     gradlePluginVersion = '3.6.2'
-    kotlinVersion = '1.4.10'
+    kotlinVersion = '1.4.21'
 
     // Testing
-    jUnitVersion = '4.13'
+    jUnitVersion = '4.13.1'
 
     //debug logging library
     timberVersion = '4.7.1'
