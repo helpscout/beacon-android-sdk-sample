@@ -14,7 +14,7 @@ You can subscribe to receive release updates by following these steps:
 2. Choose "Custom"
 3. Check the "Releases" option
 
-![Screenshot](../docs/subscribe-to-releases.png)
+[<img src="./docs/subscribe-to-releases.png" width="320">](./docs/subscribe-to-releases.png)
 
 
 ## Documentation
