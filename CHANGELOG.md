@@ -5,7 +5,7 @@ Version 2.3.2 *(2020-01-19)*
 ----------------------------
 **New**
 - You can now open your Beacon directly to the Ask screen [#108](https://github.com/helpscout/beacon-android-sdk-sample/issues/108)
-- Proguard optimize rules are now supported. 
+- Proguard optimize rules are now supported [#125](https://github.com/helpscout/beacon-android-sdk-sample/issues/125) 
 - We are now using Kotlin 1.4. 
 
 **Fixes**
