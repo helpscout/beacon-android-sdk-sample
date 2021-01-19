@@ -29,8 +29,9 @@ android {
         release {
             signingConfig signingConfigs.release
             // Beacon SDK supports Proguard, no additional config is needed.
+            // Since version 2.3.2 support for proguard-android-optimize.txt
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -39,6 +40,12 @@ android {
         // targetCompatibility to Java 1.8
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    lintOptions {
+        disable 'MissingTranslation'
+        ignoreWarnings true
     }
 }
 
