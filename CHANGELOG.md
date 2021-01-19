@@ -1,9 +1,22 @@
 Change Log
 ==========
 
+Version 2.3.2 *(2020-01-19)* 
+----------------------------
+**New**
+- You can now open your Beacon directly to the Ask screen [#108](https://github.com/helpscout/beacon-android-sdk-sample/issues/108)
+- Proguard optimize rules are now supported. 
+- We are now using Kotlin 1.4. 
+
+**Fixes**
+- Chats will only allow keyboard-based GIFS/sticker attachments when a chat is in progress if the "Allow Attachments" setting is enabled. 
+- The previous conversations button is now displayed when using secure mode and custom navigation. [#151](https://github.com/helpscout/beacon-android-sdk-sample/issues/151) 
+- Improved the visibility of the send button on the Contact form. [#140](https://github.com/helpscout/beacon-android-sdk-sample/issues/140)
+- Contact form drafts are now only saved when the user has changed the data; so, programmatic calls to prefill the form data when no user input has occurred will fill in the form data as expected. [#114](https://github.com/helpscout/beacon-android-sdk-sample/issues/114)
+
 Version 2.3.1 *(2020-12-21)* 
 ----------------------------
-Fixes 
+**Fixes**
 - Vimeo videos can now be embedded and played back within Articles[#147](https://github.com/helpscout/beacon-android-sdk-sample/issues/147)
 
 Version 2.3.0 *(2020-11-25)* 
