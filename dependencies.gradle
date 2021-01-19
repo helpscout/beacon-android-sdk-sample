@@ -1,11 +1,11 @@
 ext {
     // Sdk and tools
     minSdkVersion = 21
-    targetSdkVersion = 29
-    compileSdkVersion = 29
+    targetSdkVersion = 30
+    compileSdkVersion = 30
 
-    buildToolsVersion = '29.0.3'
-    gradlePluginVersion = '3.6.2'
+    buildToolsVersion = '30.0.3'
+    gradlePluginVersion = '4.1.1'
     kotlinVersion = '1.4.21'
 
     // Testing
