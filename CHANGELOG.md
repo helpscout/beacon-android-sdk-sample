@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 2.3.3 *(2020-02-25)* 
+----------------------------
+**Fixes**
+- Push notifications now subscribe correctly when sending a new message or replying. This fixes a regression issue introduced in 2.1.0. If you are using push notifications we strongly recommend upgrading to 2.3.3.
+
 Version 2.3.2 *(2020-01-19)* 
 ----------------------------
 **New**
