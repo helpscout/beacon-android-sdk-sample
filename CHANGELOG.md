@@ -1,6 +1,25 @@
 Change Log
 ==========
 
+Version 3.0.0 *(2020-03-30)*
+----------------------------
+The SDK is now published to Maven Central instead of JCenter/Bintray.
+No functional changes have been introduced.
+
+:warning: **Breaking changes** :warning:
+
+The library has been renamed from `beacon-ui` to `beacon`. Please, update your `build.gradle` file to match this change:
+```
+repositories {
+    mavenCentral()
+    …
+}
+
+dependencies {
+    implementation "com.helpscout:beacon:3.0.0"
+}
+```
+
 Version 2.3.3 *(2020-02-25)* 
 ----------------------------
 **Fixes**
