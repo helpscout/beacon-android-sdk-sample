@@ -1,11 +1,11 @@
 # Beacon Android SDK Samples
 
-This repo contains 2 sample apps that implement the Beacon Android SDK.
+This repository contains two sample apps that showcase how to integrate the Beacon Android SDK.
 
-* [Sample Kotlin](./sample-kotlin) - A simple and concise demo that shows how to install, initialise and two different ways to open your Help Scout Beacon.
+* [Sample Kotlin](./sample-kotlin) - A simple and concise demo that shows how to install, initialise, and two different ways to open your Help Scout Beacon.
 * [Sample Customisation](./sample-customisation) - Java based sample illustrates some of the key features you can use to customise the Beacon SDK to add additional data about the user and how to override certain Beacon settings.
 
-## Beacon SDK version [![Download Beacon](https://api.bintray.com/packages/helpscout/beacon/beacon-ui/images/download.svg) ](https://bintray.com/helpscout/beacon/beacon-ui/_latestVersion)
+## Beacon SDK version [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon)
 
 [Release notes and changelog](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
 
@@ -26,15 +26,33 @@ You can subscribe to receive release updates by following these steps:
 ## Requirements
 
 * The minimum supported Android version is 5.0 (SDK INT 21)
-* Your app must be compiled with at least an API version **29** 
+* Your app must be compiled with at least an API version **29**
 * A Beacon Id created on [Help Scout](https://secure.helpscout.net/settings/beacons/)
 
 ## Installation
-The Beacon Android SDK is distributed as AAR and available from JCenter, so add the following lines to your app's `build.gradle` file.
+The Beacon Android SDK is distributed as AAR and available from Maven Central, so add the following lines to your app's `build.gradle` file.
 
+**Groovy**
 ```groovy
+repositories {
+    mavenCentral()
+    …
+}
+
 dependencies {
-  implementation "com.helpscout:beacon-ui:$beaconVersion"
+  implementation 'com.helpscout:beacon:<beaconVersion>'
+}
+```
+
+**Kotlin DSL**
+```groovy
+repositories {
+    mavenCentral()
+    …
+}
+
+dependencies {
+    implementation("com.helpscout:beacon:<beaconVersion>")
 }
 ```
 
