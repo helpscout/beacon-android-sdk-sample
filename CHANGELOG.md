@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 3.0.1 *(2020-04-06)*
+----------------------------
+**Internal changes - No user impact**
+- We have completely removed any reference to `jcenter()` by moving to a beta version of Koin – the library we use for dependency injection – that's published in Maven Central [#159](https://github.com/helpscout/beacon-android-sdk-sample/issues/159)
+
 Version 3.0.0 *(2020-03-30)*
 ----------------------------
 The SDK is now published to Maven Central instead of JCenter/Bintray.
