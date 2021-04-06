@@ -5,7 +5,7 @@ This repository contains two sample apps that showcase how to integrate the Beac
 * [Sample Kotlin](./sample-kotlin) - A simple and concise demo that shows how to install, initialise, and two different ways to open your Help Scout Beacon.
 * [Sample Customisation](./sample-customisation) - Java based sample illustrates some of the key features you can use to customise the Beacon SDK to add additional data about the user and how to override certain Beacon settings.
 
-## Beacon SDK version [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon)
+## Beacon SDK version [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon/badge.svg?gav=true)](https://maven-badges.herokuapp.com/maven-central/com.helpscout/beacon)
 
 [Release notes and changelog](https://github.com/helpscout/beacon-android-sdk-sample/blob/master/CHANGELOG.md)
 
