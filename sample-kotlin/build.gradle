@@ -6,7 +6,6 @@ apply from: '../signing/signing.gradle'
 apply from: '../dependencies.gradle'
 
 android {
-    buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
@@ -63,7 +62,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
     // Add this to your dependencies to install Beacon SDK to your app
-    implementation "com.helpscout:beacon-ui:$beaconVersion"
+    implementation "com.helpscout:beacon:$beaconVersion"
 
     testImplementation "junit:junit:$jUnitVersion"
 }
