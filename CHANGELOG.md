@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 3.0.2 *(2020-05-18)*
+----------------------------
+- We've fixed a crash that occurs when opening a Beacon when host app is compiled using Kotlin 1.5 #170
+
 Version 3.0.1 *(2020-04-06)*
 ----------------------------
 **Internal changes - No user impact**
