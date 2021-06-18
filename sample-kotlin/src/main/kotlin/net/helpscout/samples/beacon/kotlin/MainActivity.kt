@@ -2,16 +2,20 @@ package net.helpscout.samples.beacon.kotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.model.BeaconScreens
 import com.helpscout.beacon.ui.BeaconActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
+
+    private val greeting: Greeting by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        openBeaconButton.text = "Greeting: ${greeting.hello}"
 
         openBeaconButton.setOnClickListener {
             // open the Beacon

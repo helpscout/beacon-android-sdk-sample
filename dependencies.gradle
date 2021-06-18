@@ -4,8 +4,10 @@ ext {
     targetSdkVersion = 30
     compileSdkVersion = 30
 
-    gradlePluginVersion = '4.1.3'
-    kotlinVersion = '1.4.30'
+    gradlePluginVersion = '4.2.1'
+    kotlinVersion = '1.5.10'
+    // this is test customer issue
+    koinVersion = '3.1.0'
 
     // Testing
     jUnitVersion = '4.13.1'
@@ -18,5 +20,5 @@ ext {
     constraintLayoutVersion = '2.0.4'
 
     // Beacon Note: We recommend to always use the latest version of the SDK. See changelog.md for changes.
-    beaconVersion = '+'
+    beaconVersion = '3.0.2'
 }
