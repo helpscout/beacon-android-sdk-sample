@@ -25,9 +25,18 @@ You can subscribe to receive release updates by following these steps:
 
 ## Requirements
 
-* The minimum supported Android version is 5.0 (SDK INT 21)
-* Your app must be compiled with at least an API version **29**
+* `minSdkVersion`: **21** (Android 5.0)
+* `compileSdkVersion`:**29**  
+* Java 8 language feature support
+* [Android X](https://developer.android.com/jetpack/androidx/) as of version SDK 2.0.0
 * A Beacon Id created on [Help Scout](https://secure.helpscout.net/settings/beacons/)
+
+### Supported platform and language versions
+
+* Android 8.0 to 11.0 (as noted above the "minSdkVersion: 21 (Android 5.0)" for greater compatiblity however we only offer support for issues on Android 8.0 to 11.0)   
+* Kotlin 1.4
+* Java 8
+* Koin 3.0.2
 
 ## Installation
 The Beacon Android SDK is distributed as AAR and available from Maven Central, so add the following lines to your app's `build.gradle` file.
