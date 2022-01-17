@@ -120,8 +120,8 @@ public class CustomisationActivity extends AppCompatActivity {
                         shouldDisableName, // showName
                         shouldDisableSubject, // showSubject
                         true,  // allowAttachments
-                        false, // customFieldsEnabled
-                        true), // showGetInTouch
+                        false // customFieldsEnabled
+                ),
                 colorOverride  // override color in #000000 format
         ));
     }
