@@ -5,8 +5,8 @@ Version 4.0.0 *2021-01-17*
 ----------------------------
 
 Bug fixes: 
-* The email contact form is now correctly reset after calling Beacon.contactFormReset() Contact Form is not getting reset after sent [#163](https://github.com/helpscout/beacon-android-sdk-sample/issues/163)
-* We've improved the transition animation when exiting a Contact only Beacon Weird transition animation when exiting beacon [#129](https://github.com/helpscout/beacon-android-sdk-sample/issues/129)
+* The email contact form is now correctly reset after calling `Beacon.contactFormReset()` [#163](https://github.com/helpscout/beacon-android-sdk-sample/issues/163)
+* We've improved the transition animation when exiting a contact-only Beacon [#129](https://github.com/helpscout/beacon-android-sdk-sample/issues/129)
 * We've further polished the Article screen to resolve the clipping issue with the bottom of the article being cut off after a rating is left  [#115](https://github.com/helpscout/beacon-android-sdk-sample/issues/115)
 
 :warning: Breaking changes :warning:
