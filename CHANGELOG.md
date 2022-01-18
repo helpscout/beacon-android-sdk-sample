@@ -1,6 +1,24 @@
 Change Log
 ==========
 
+Version 4.0.0 *2021-01-17*
+----------------------------
+
+Bug fixes: 
+* The email contact form is now correctly reset after calling `Beacon.contactFormReset()` [#163](https://github.com/helpscout/beacon-android-sdk-sample/issues/163)
+* We've improved the transition animation when exiting a contact-only Beacon [#129](https://github.com/helpscout/beacon-android-sdk-sample/issues/129)
+* We've further polished the Article screen to resolve the clipping issue with the bottom of the article being cut off after a rating is left  [#115](https://github.com/helpscout/beacon-android-sdk-sample/issues/115)
+
+:warning: Breaking changes :warning:
+
+* We've updated some of the language and platform requirements when using the Beacon Android SDK. This addressed [#173](https://github.com/helpscout/beacon-android-sdk-sample/issues/173)
+    * Target Android SDK 31 (Android 12)
+    * Java 11 
+    * Kotlin 1.5
+ 
+* The `showGetInTouch` option has been retired from the available [Contact Form Options](https://developer.helpscout.com/beacon-2/android/#contact-form-options) now that Focus Mode will allow developers to accomplish the same behavior.
+
+
 Version 3.0.2 *(2020-05-18)*
 ----------------------------
 - We've fixed a crash that occurs when opening a Beacon when host app is compiled using Kotlin 1.5 [#170](https://github.com/helpscout/beacon-android-sdk-sample/issues/170)

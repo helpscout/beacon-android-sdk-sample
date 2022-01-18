@@ -35,10 +35,10 @@ android {
     }
 
     compileOptions {
-        // Since SDK 2.0.2 we moved to OkHttp 3.13 which requires
-        // the sourceCompatibility and targetCompatibility to be Java 1.8
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        // Since SDK 4.0.0 we moved to Android Gradle Plugin 7.x which requires the sourceCompatibility and
+        // targetCompatibility to Java 11
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
 

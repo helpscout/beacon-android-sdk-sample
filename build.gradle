@@ -5,12 +5,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        jcenter {
-            content {
-                //  org.jetbrains.trove4j is currently only available in JCenter
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
     }
 
     dependencies {
@@ -23,12 +17,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter {
-            content {
-                //  org.jetbrains.trove4j is currently only available in JCenter
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
     }
 }
 
