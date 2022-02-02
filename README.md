@@ -16,13 +16,6 @@ You can subscribe to receive release updates by following these steps:
 
 [<img src="./docs/subscribe-to-releases.png" width="320">](./docs/subscribe-to-releases.png)
 
-
-## Documentation
-
-* [Beacon Mobile SDK documentation](https://developer.helpscout.com/beacon-2/mobile/)
-* [Android SDK API](https://developer.helpscout.com/beacon-2/android/)
-* [Android SDK API reference](https://developer.helpscout.com/beacon-2/android-api/beacon/index.html)
-
 ## Requirements
 
 * `minSdkVersion`: **21**
@@ -110,3 +103,15 @@ Beacon beacon = Beacon.Builder()
 ```
 
 To verify, take a peek in your Logcat.
+
+
+## Documentation
+
+* [Beacon Mobile SDK documentation](https://developer.helpscout.com/beacon-2/mobile/)
+* [Android SDK API](https://developer.helpscout.com/beacon-2/android/)
+* [Android SDK API reference](https://developer.helpscout.com/beacon-2/android-api/beacon/index.html)
+
+
+## Support
+
+For issues or questions, contact Help Scout support at help@helpscout.com
