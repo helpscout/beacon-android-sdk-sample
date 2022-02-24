@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+
+Version 4.0.1 *2021-01-17*
+----------------------------
+* We now check for available agents before creating a new chat. If no agents are available, we redirect to the contact form.
+
 Version 4.0.0 *2021-01-17*
 ----------------------------
 
