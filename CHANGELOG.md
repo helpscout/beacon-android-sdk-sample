@@ -2,11 +2,11 @@ Change Log
 ==========
 
 
-Version 4.0.1 *2021-01-17*
+Version 4.0.1 *2022-02-24*
 ----------------------------
 * We now check for available agents before creating a new chat. If no agents are available, we redirect to the contact form.
 
-Version 4.0.0 *2021-01-17*
+Version 4.0.0 *2022-01-17*
 ----------------------------
 
 Bug fixes: 
@@ -24,16 +24,16 @@ Bug fixes:
 * The `showGetInTouch` option has been retired from the available [Contact Form Options](https://developer.helpscout.com/beacon-2/android/#contact-form-options) now that Focus Mode will allow developers to accomplish the same behavior.
 
 
-Version 3.0.2 *(2020-05-18)*
+Version 3.0.2 *(2021-05-18)*
 ----------------------------
 - We've fixed a crash that occurs when opening a Beacon when host app is compiled using Kotlin 1.5 [#170](https://github.com/helpscout/beacon-android-sdk-sample/issues/170)
 
-Version 3.0.1 *(2020-04-06)*
+Version 3.0.1 *(2021-04-06)*
 ----------------------------
 **Internal changes - No user impact**
 - We have completely removed any reference to `jcenter()` by moving to a beta version of Koin – the library we use for dependency injection – that's published in Maven Central [#159](https://github.com/helpscout/beacon-android-sdk-sample/issues/159)
 
-Version 3.0.0 *(2020-03-30)*
+Version 3.0.0 *(2021-03-30)*
 ----------------------------
 The SDK is now published to Maven Central instead of JCenter/Bintray.
 No functional changes have been introduced.
@@ -52,12 +52,12 @@ dependencies {
 }
 ```
 
-Version 2.3.3 *(2020-02-25)* 
+Version 2.3.3 *(2021-02-25)* 
 ----------------------------
 **Fixes**
 - Push notifications now subscribe correctly when sending a new message or replying. This fixes a regression issue introduced in 2.1.0. If you are using push notifications we strongly recommend upgrading to 2.3.3.
 
-Version 2.3.2 *(2020-01-19)* 
+Version 2.3.2 *(2021-01-19)* 
 ----------------------------
 **New**
 - You can now open your Beacon directly to the Ask screen [#108](https://github.com/helpscout/beacon-android-sdk-sample/issues/108)
