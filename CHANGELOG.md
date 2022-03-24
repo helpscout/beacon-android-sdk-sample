@@ -2,6 +2,12 @@ Change Log
 ==========
 
 
+Version 4.0.2 *2022-03-24*
+----------------------------
+**Internal changes - No user impact**
+
+Internal shared library updated. 
+
 Version 4.0.1 *2022-02-24*
 ----------------------------
 * We now check for available agents before creating a new chat. If no agents are available, we redirect to the contact form.
