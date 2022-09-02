@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 4.0.3 *2022-09-TBC*
+----------------------------
+**Internal dependency updates**
+
+ * :warning: minimum Kotlin version has changed from 1.5 → 1.6
+ * Kotlin, Gradle, Android Plugin and 3rd party dependency updated   
 
 Version 4.0.2 *2022-03-24*
 ----------------------------
