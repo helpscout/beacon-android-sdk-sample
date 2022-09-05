@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-Version 4.0.3 *2022-09-TBC*
+Version 4.1.0 *2022-09-TBC*
 ----------------------------
 **Internal dependency updates**
 
