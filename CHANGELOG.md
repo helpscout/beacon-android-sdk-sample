@@ -6,7 +6,7 @@ Version 4.1.0 *2022-09-TBC*
 **Internal dependency updates**
 
  * :warning: minimum Kotlin version has changed from 1.5 → 1.6
- * Kotlin, Gradle, Android Plugin and 3rd party dependency updated   
+ * Kotlin, Gradle, Android Plugin and 3rd party dependency updated (included Koin to 3.2.0)  
 
 Version 4.0.2 *2022-03-24*
 ----------------------------
