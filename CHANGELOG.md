@@ -3,6 +3,10 @@ Change Log
 
 Version 4.1.0 *2022-09-TBC*
 ----------------------------
+
+Bug fixes: 
+* When a Beacon is configured with Contact>Show photos to false the Chat header is now populated correctly and a chat can be started. 
+
 **Internal dependency updates**
 
  * :warning: minimum Kotlin version has changed from 1.5 → 1.6
