@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+Version 4.1.0 *2022-09-TBC*
+----------------------------
+
+Bug fixes: 
+* When a Beacon is configured with Contact>Show photos to false the Chat header is now populated correctly and a chat can be started. 
+* We no longer duplicate the anonymous user's first chat message when chat is configured to not require email and user not identified. 
+
+**Internal dependency updates**
+
+ * :warning: minimum Kotlin version has changed from 1.5 → 1.6
+ * Kotlin, Gradle, Android Plugin and 3rd party dependency updated (included Koin to 3.2.0)  
 
 Version 4.0.2 *2022-03-24*
 ----------------------------
