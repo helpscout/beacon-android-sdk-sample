@@ -5,7 +5,7 @@ ext {
     compileSdkVersion = 31
 
     gradlePluginVersion = '7.0.4'
-    kotlinVersion = '1.5.30'
+    kotlinVersion = '1.6.21'
 
     // Testing
     jUnitVersion = '4.13.1'
