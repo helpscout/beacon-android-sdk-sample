@@ -26,7 +26,7 @@ You can subscribe to receive release updates by following these steps:
 
 ### Supported platform and language versions
 
-* Android 11.0 to 13.0 (as noted above the "minSdkVersion: 21 (Android 5.0)" for greater compatiblity however we only offer support for issues on Android 11.0 to 12.0)
+* Android 11.0 to 13.0 (as noted above the "minSdkVersion: 21 (Android 5.0)" for greater compatiblity however we only offer support for issues on Android 11.0 to 13.0)
 * Kotlin 1.6
 * Java 11
 * Koin 3.2.0
