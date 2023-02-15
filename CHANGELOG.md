@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-Version 4.1.1 *2023-02-16*
+Version 4.1.1 *2023-02-15*
 ----------------------------
 Bug fixes:
 * Newly created conversations no longer throw an `NumberFormatException` when viewed.
