@@ -1,9 +1,14 @@
 Change Log
 ==========
 
+Version 4.1.1 *2023-02-16*
+----------------------------
+Bug fixes:
+* Newly created conversations no longer throw an `NumberFormatException` when viewed.
+
+
 Version 4.1.0 *2022-09-22*
 ----------------------------
-
 Bug fixes: 
 * When a Beacon is configured with Contact>Show photos to false the Chat header is now populated correctly and a chat can be started. 
 * We no longer duplicate the anonymous user's first chat message when chat is configured to not require email and user not identified. 
