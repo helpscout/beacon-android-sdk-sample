@@ -4,7 +4,7 @@ ext {
     targetSdkVersion = 31
     compileSdkVersion = 31
 
-    gradlePluginVersion = '7.0.4'
+    gradlePluginVersion = '7.4.2'
     kotlinVersion = '1.6.21'
 
     // Testing
