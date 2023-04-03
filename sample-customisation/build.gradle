@@ -5,7 +5,7 @@ apply from: '../dependencies.gradle'
 
 android {
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
         applicationId "net.helpscout.samples.beacon.customisation"
@@ -41,8 +41,7 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-
-    lintOptions {
+    lint {
         disable 'MissingTranslation'
         ignoreWarnings true
     }
