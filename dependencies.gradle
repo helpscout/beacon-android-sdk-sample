@@ -4,8 +4,9 @@ ext {
     targetSdkVersion = 31
     compileSdkVersion = 31
 
-    gradlePluginVersion = '7.4.2'
-    kotlinVersion = '1.6.21'
+    gradlePluginVersion = '7.1.0'
+    kotlinVersion = '1.7.21'
+    beaconVersion = '4.1.1'
 
     // Testing
     jUnitVersion = '4.13.1'
@@ -16,7 +17,4 @@ ext {
     // Android libraries
     materialVersion = '1.4.0'
     constraintLayoutVersion = '2.1.1'
-
-    // Beacon Note: We recommend to always use the latest version of the SDK. See changelog.md for changes.
-    beaconVersion = '+'
 }

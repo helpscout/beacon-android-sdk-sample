@@ -14,11 +14,13 @@ class SampleApplication : Application() {
     }
 
     private fun initBeacon() {
-        // We recommend initialing Beacon as part of Application.onCreate or via your Dependency
-        // Injection
+        // We recommend initialing Beacon as part of
+        // Application.onCreate or via
+        // your Dependency Injection
         Beacon.Builder()
             .withBeaconId(beaconId)
-            .withLogsEnabled(true)  // Logging should be disabled in production
+            // Logging should be disabled in production
+            .withLogsEnabled(true)
             .build()
     }
 }

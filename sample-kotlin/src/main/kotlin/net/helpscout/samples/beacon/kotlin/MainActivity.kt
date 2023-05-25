@@ -3,9 +3,9 @@ package net.helpscout.samples.beacon.kotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.helpscout.beacon.Beacon
-import com.helpscout.beacon.model.BeaconScreens
+import com.helpscout.beacon.model.BeaconConfigOverrides
 import com.helpscout.beacon.ui.BeaconActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.openBeaconButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,14 +14,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         openBeaconButton.setOnClickListener {
+            // Disable docs
+            Beacon.setConfigOverrides(
+                BeaconConfigOverrides(docsEnabled = false),
+            )
+
             // open the Beacon
             BeaconActivity.open(baseContext)
-        }
-
-        openBeaconToContactButton.setOnClickListener {
-            // open the Beacon to contact page (note this assumes the Beacon supports contact)
-            // more info https://developer.helpscout.com/beacon-2/android/#navigate-to-a-specific-screen
-            BeaconActivity.open(baseContext, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf())
         }
     }
 }
