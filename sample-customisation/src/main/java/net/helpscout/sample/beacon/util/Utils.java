@@ -3,15 +3,14 @@ package net.helpscout.sample.beacon.util;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import timber.log.Timber;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import timber.log.Timber;
 
 
 public class Utils {
@@ -23,14 +22,16 @@ public class Utils {
         List<String> uris = new ArrayList<>();
 
         try {
-            File logAFile = new File(context.getFilesDir() + File.separator + "log_a.txt");
-            logAFile.createNewFile();
-            FileOutputStream fileOutputStream = new FileOutputStream(logAFile);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
-            outputStreamWriter.append("This is a sample log called log_a.txt");
-            outputStreamWriter.close();
-            fileOutputStream.close();
-            uris.add(Uri.fromFile(logAFile).toString());
+            File logAFile = new File(context.getFilesDir(), "log_a.txt");
+            if (logAFile.createNewFile()) {
+                FileWriter fileWriter = new FileWriter(logAFile);
+                fileWriter.write("This is a sample log called log_a.txt");
+                fileWriter.close();
+
+                uris.add(logAFile.toURI().toString());
+            } else {
+                Timber.e("Failed to create log file");
+            }
         } catch (IOException exception) {
             Timber.e(exception);
         }
@@ -39,7 +40,9 @@ public class Utils {
     }
 
     /**
-     * @return the Version name of the app
+     * Get the app's version name
+     *
+     * @return app's version name
      */
     public static String getAppVersion(Context context) {
         try {

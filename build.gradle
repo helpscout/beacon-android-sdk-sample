@@ -3,6 +3,7 @@ buildscript {
     apply from: './dependencies.gradle'
 
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
@@ -15,12 +16,13 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
 }
 
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }

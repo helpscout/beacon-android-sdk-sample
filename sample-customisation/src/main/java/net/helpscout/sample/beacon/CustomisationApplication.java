@@ -1,16 +1,16 @@
 package net.helpscout.sample.beacon;
 
 import android.app.Application;
+
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.ui.BeaconEventLifecycleHandler;
-import com.helpscout.beacon.ui.BeaconOnClosedListener;
-import com.helpscout.beacon.ui.BeaconOnOpenedListener;
+
 import timber.log.Timber;
 
 public class CustomisationApplication extends Application {
 
     // TODO replace with your Beacon Id from Help Scout
-    private static String beaconId = "";
+    private final static String beaconId = "";
 
     @Override
     public void onCreate() {
@@ -20,8 +20,8 @@ public class CustomisationApplication extends Application {
     }
 
     private void initBeacon() {
-        // We recommend initializing Beacon as part of Application.onCreate or through Dependency
-        // Injection
+        // We recommend initializing Beacon as part of Application.onCreate
+        // or through Dependency Injection
         new Beacon.Builder()
                 .withBeaconId(beaconId)
                 .withLogsEnabled(true)  // Logging should be disabled in production
@@ -32,18 +32,8 @@ public class CustomisationApplication extends Application {
         // Use the BeaconEventLifecycleHandler to start listening to close and open events on the
         // Beacon. i.e for Analytics more info https://developer.helpscout.com/beacon-2/android/#open-and-close-events
         BeaconEventLifecycleHandler eventLifecycleHandler = new BeaconEventLifecycleHandler(
-                new BeaconOnOpenedListener() {
-                    @Override
-                    public void onOpened() {
-                        Timber.i("Open Beacon event called");
-                    }
-                },
-                new BeaconOnClosedListener() {
-                    @Override
-                    public void onClosed() {
-                        Timber.i("Close Beacon event called");
-                    }
-                }
+                /* onOpenedListener */ () -> Timber.i("Open Beacon event called"),
+                /* onClosedListener */ () -> Timber.i("Close Beacon event called")
         );
 
         registerActivityLifecycleCallbacks(eventLifecycleHandler);

@@ -5,8 +5,7 @@ import com.helpscout.beacon.Beacon
 
 class SampleApplication : Application() {
 
-    // TODO replace with your Beacon Id from Help Scout
-    private val beaconId = ""
+        private val beaconId: String = TODO("Replace with your Beacon Id from Help Scout")
 
     override fun onCreate() {
         super.onCreate()
@@ -14,8 +13,8 @@ class SampleApplication : Application() {
     }
 
     private fun initBeacon() {
-        // We recommend initialing Beacon as part of Application.onCreate or via your Dependency
-        // Injection
+        // We recommend initialing Beacon as part of Application.onCreate
+        // or through Dependency Injection
         Beacon.Builder()
             .withBeaconId(beaconId)
             .withLogsEnabled(true)  // Logging should be disabled in production

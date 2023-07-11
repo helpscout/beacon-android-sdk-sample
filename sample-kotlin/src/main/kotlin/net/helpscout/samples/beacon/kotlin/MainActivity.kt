@@ -2,23 +2,25 @@ package net.helpscout.samples.beacon.kotlin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.helpscout.beacon.Beacon
 import com.helpscout.beacon.model.BeaconScreens
 import com.helpscout.beacon.ui.BeaconActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import net.helpscout.samples.beacon.kotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        openBeaconButton.setOnClickListener {
+        binding.openBeaconButton.setOnClickListener {
             // open the Beacon
             BeaconActivity.open(baseContext)
         }
 
-        openBeaconToContactButton.setOnClickListener {
+        binding.openBeaconToContactButton.setOnClickListener {
             // open the Beacon to contact page (note this assumes the Beacon supports contact)
             // more info https://developer.helpscout.com/beacon-2/android/#navigate-to-a-specific-screen
             BeaconActivity.open(baseContext, BeaconScreens.CONTACT_FORM_SCREEN, arrayListOf())

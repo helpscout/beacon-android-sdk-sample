@@ -1,21 +1,21 @@
 ext {
     // Sdk and tools
     minSdkVersion = 21
-    targetSdkVersion = 31
-    compileSdkVersion = 31
+    targetSdkVersion = 34
+    compileSdkVersion = 34
 
-    gradlePluginVersion = '7.4.2'
-    kotlinVersion = '1.6.21'
+    gradlePluginVersion = '8.0.2'
+    kotlinVersion = '1.8.20'
 
     // Testing
-    jUnitVersion = '4.13.1'
+    jUnitVersion = '4.13.2'
 
     //debug logging library
     timberVersion = '5.0.1'
 
     // Android libraries
-    materialVersion = '1.4.0'
-    constraintLayoutVersion = '2.1.1'
+    materialVersion = '1.4.3'
+    constraintLayoutVersion = '2.1.4'
 
     // Beacon Note: We recommend to always use the latest version of the SDK. See changelog.md for changes.
     beaconVersion = '+'

@@ -1,10 +1,11 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 apply from: '../signing/signing.gradle'
 apply from: '../dependencies.gradle'
 
 android {
-
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
@@ -15,8 +16,6 @@ android {
 
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -34,6 +33,10 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     compileOptions {
         // Since SDK 4.0.0 we moved to Android Gradle Plugin 7.x which requires the sourceCompatibility and
         // targetCompatibility to Java 11
@@ -45,6 +48,7 @@ android {
         disable 'MissingTranslation'
         ignoreWarnings true
     }
+    namespace 'net.helpscout.sample.beacon.customisation'
 }
 
 

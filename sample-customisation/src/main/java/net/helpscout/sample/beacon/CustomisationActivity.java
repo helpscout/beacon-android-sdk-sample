@@ -3,15 +3,19 @@ package net.helpscout.sample.beacon;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.CheckBox;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.internal.core.model.ContactFormConfigApi;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
 import com.helpscout.beacon.model.PreFilledForm;
+import com.helpscout.beacon.model.SuggestedArticle;
 import com.helpscout.beacon.ui.BeaconActivity;
+
 import net.helpscout.sample.beacon.customisation.R;
+import net.helpscout.sample.beacon.customisation.databinding.ActivityCustomisationBinding;
 import net.helpscout.sample.beacon.util.Utils;
 
 import java.util.ArrayList;
@@ -20,19 +24,17 @@ import java.util.List;
 import java.util.Map;
 
 public class CustomisationActivity extends AppCompatActivity {
+    private ActivityCustomisationBinding binding;
 
-    private CheckBox overrideContactFormCheck;
-    private CheckBox overrideInstantAnswersCheck;
-    private CheckBox overrideColorCheck;
-    private CheckBox sessionAttributesCheck;
-    private CheckBox prefillCheck;
-    private CheckBox identifyCheck;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customisation);
-        initViews();
+        binding = ActivityCustomisationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.openBeaconButton.setOnClickListener(view -> openBeacon());
+        binding.buttonLogout.setOnClickListener(view -> Beacon.logout());
     }
 
     private void openBeacon() {
@@ -42,7 +44,7 @@ public class CustomisationActivity extends AppCompatActivity {
     }
 
     private void configureBeacon() {
-        if (identifyCheck.isChecked()) {
+        if (binding.identifyCheck.isChecked()) {
             // Call identify when you have your User's email, in the Help Scout app we do this
             // after login success. There's identify method overrides if you wish to provide just
             // email or email and name.
@@ -54,18 +56,20 @@ public class CustomisationActivity extends AppCompatActivity {
                     "https://p-zkf42x.t2.n0.cdn.getcloudapp.com/items/5zuwqrLg/avataaars.png");
         }
 
-        addPreFilledData(prefillCheck.isChecked());
-        addSessionAttributes(sessionAttributesCheck.isChecked());
+        addPreFilledData(binding.prefillCheck.isChecked());
+        addSessionAttributes(binding.sessionAttributesCheck.isChecked());
     }
 
     private void configureOverrides() {
-        overrideBeaconConfig(!overrideContactFormCheck.isChecked(), !overrideContactFormCheck.isChecked(), overrideColorCheck.isChecked());
-        overrideInstantAnswers(overrideInstantAnswersCheck.isChecked());
+        overrideBeaconConfig(!binding.overrideContactFormCheck.isChecked(),
+                !binding.overrideContactFormCheck.isChecked(),
+                binding.overrideColorCheck.isChecked());
+        overrideInstantAnswers(binding.overrideInstantAnswersCheck.isChecked());
     }
 
     /**
-     * Illustrates how to use the session attributes
-     * more info https://developer.helpscout.com/beacon-2/android/#session-attributes
+     * Illustrates how to use the session attributes.
+     * More info. See <a href="https://developer.helpscout.com/beacon-2/android/#session-attributes">here</a>
      */
     private void addSessionAttributes(boolean enabled) {
         Map<String, String> attributes = new HashMap<>();
@@ -78,8 +82,8 @@ public class CustomisationActivity extends AppCompatActivity {
     }
 
     /**
-     * Pre-fill the Contact us form
-     * More info https://developer.helpscout.com/beacon-2/android/#prefilling-the-contact-form
+     * Pre-fill the Contact us form.
+     * More info. See <a href="https://developer.helpscout.com/beacon-2/android/#prefilling-the-contact-form">here</a>
      */
     private void addPreFilledData(boolean enabled) {
         Beacon.contactFormReset();
@@ -101,7 +105,8 @@ public class CustomisationActivity extends AppCompatActivity {
     }
 
     /**
-     * More info on settings overrides https://developer.helpscout.com/beacon-2/android/#settings-customization
+     * More info on settings overrides.
+     * More info. See <a href="https://developer.helpscout.com/beacon-2/android/#settings-customization">here</a>
      */
     private void overrideBeaconConfig(boolean shouldDisableName, boolean shouldDisableSubject, boolean colorOverrideEnabled) {
 
@@ -127,31 +132,19 @@ public class CustomisationActivity extends AppCompatActivity {
     }
 
     /**
-     * Replace the Instant Answers (suggestions) with this list. Note: max 5
-     * More info: https://developer.helpscout.com/beacon-2/android/#custom-suggestions
+     * Replace the Instant Answers (suggestions) with this list. Note: max 5.
+     * More info. See <a href="https://developer.helpscout.com/beacon-2/android/#custom-suggestions">here</a>
      */
     private void overrideInstantAnswers(boolean enabled) {
         if (enabled) {
-            List<String> overrides = new ArrayList<>();
+            List<SuggestedArticle> overrides = new ArrayList<>();
             // TODO replace the article IDs with Articles from your Docs Collection.
             // https://secure.helpscout.net/docs/[COLLECTION ID]/article/[ARTICLE ID]/
-            overrides.add("11122bbb0428631d7a89ff4a");
-            overrides.add("11122ffd2c7d3a0fa9a29d22");
-            Beacon.setOverrideSuggestedArticles(overrides);
+            overrides.add(new SuggestedArticle.SuggestedArticleWithId("11122bbb0428631d7a89ff4a"));
+            overrides.add(new SuggestedArticle.SuggestedArticleWithId("11122ffd2c7d3a0fa9a29d22"));
+            Beacon.setOverrideSuggestedArticlesOrLinks(overrides);
         } else {
             Beacon.resetSuggestedArticlesOverrides();
         }
-    }
-
-    private void initViews() {
-        overrideContactFormCheck = findViewById(R.id.overrideContactFormCheck);
-        overrideInstantAnswersCheck = findViewById(R.id.overrideInstantAnswersCheck);
-        overrideColorCheck = findViewById(R.id.overrideColorCheck);
-        sessionAttributesCheck = findViewById(R.id.sessionAttributesCheck);
-        prefillCheck = findViewById(R.id.prefillCheck);
-        identifyCheck = findViewById(R.id.identifyCheck);
-
-        findViewById(R.id.openBeaconButton).setOnClickListener(view -> openBeacon());
-        findViewById(R.id.buttonLogout).setOnClickListener(view -> Beacon.logout());
     }
 }
