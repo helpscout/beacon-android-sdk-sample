@@ -1,5 +1,19 @@
 Change Log
 ==========
+Version 5.0.0 *2023-08-31*
+----------------------------
+:warning: Breaking changes :warning:
+
+- **Java**: 8 → 11 (Java 17 support)
+- **Kotlin**: 1.7.10 → 1.8.21
+- **AGP**: 7.2.2 → 8.0.2
+- **Gradle**: 7.3.3 -> 8.1
+
+**Android SDK**
+- **Compile SDK**: 32 → 33
+- **Target SDK**: 32 → 33
+
+Updated some other third-party internal dependencies, including Koin (3.4.2).
 
 Version 4.1.1 *2023-02-15*
 ----------------------------

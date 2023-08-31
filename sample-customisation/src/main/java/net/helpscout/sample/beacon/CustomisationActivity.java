@@ -11,7 +11,6 @@ import com.helpscout.beacon.internal.core.model.ContactFormConfigApi;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
 import com.helpscout.beacon.model.PreFilledForm;
 import com.helpscout.beacon.ui.BeaconActivity;
-import net.helpscout.sample.beacon.customisation.R;
 import net.helpscout.sample.beacon.util.Utils;
 
 import java.util.ArrayList;
