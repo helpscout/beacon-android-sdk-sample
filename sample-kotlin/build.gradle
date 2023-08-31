@@ -1,6 +1,8 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
 
 apply from: '../signing/signing.gradle'
 apply from: '../dependencies.gradle'
@@ -9,6 +11,7 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
+        namespace = "net.helpscout.samples.beacon"
         applicationId "net.helpscout.samples.beacon.kotlin"
 
         minSdkVersion rootProject.ext.minSdkVersion
@@ -23,6 +26,10 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
