@@ -5,7 +5,7 @@ Version 5.0.0 *2023-08-31*
 :warning: Breaking changes :warning:
 
 - **Java**: 8 → 11 (Java 17 support)
-- **Kotlin**: 1.7.10 → 1.8.21
+- **Kotlin**: 1.7.10 → 1.8.20
 - **AGP**: 7.2.2 → 8.0.2
 - **Gradle**: 7.3.3 -> 8.1
 
