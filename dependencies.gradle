@@ -1,8 +1,8 @@
 ext {
     // Sdk and tools
     minSdkVersion = 21
-    targetSdkVersion = 33
-    compileSdkVersion = 33
+    targetSdkVersion = 34
+    compileSdkVersion = 34
 
     gradlePluginVersion = '8.0.2'
     kotlinVersion = '1.8.20'
