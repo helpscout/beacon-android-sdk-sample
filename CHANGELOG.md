@@ -1,5 +1,12 @@
 Change Log
 ==========
+Version 5.0.0 *2023-11-2*
+----------------------------
+
+**Android SDK**
+- **Compile SDK**: 33 → 34
+- **Target SDK**: 33 → 34
+
 Version 5.0.0 *2023-08-31*
 ----------------------------
 :warning: Breaking changes :warning:
