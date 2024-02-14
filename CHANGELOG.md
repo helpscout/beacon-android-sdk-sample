@@ -1,13 +1,21 @@
 Change Log
 ==========
-Version 5.0.1 *2023-11-7*
+
+Version 5.0.2 *(2024-02-14)*
+----------------------------
+
+**Bugfixes**
+- Corrected an issue that prevented users from updating to AGP 8.2.0, stemming from our utilization of an outdated version of OkHttp.
+- Addressed a crash occurring during Beacon initialization, impacting certain users.
+
+Version 5.0.1 *(2023-11-07)*
 ----------------------------
 
 **Android SDK**
 - **Compile SDK**: 33 → 34
 - **Target SDK**: 33 → 34
 
-Version 5.0.0 *2023-08-31*
+Version 5.0.0 *(2023-08-31)*
 ----------------------------
 :warning: Breaking changes :warning:
 
@@ -22,13 +30,13 @@ Version 5.0.0 *2023-08-31*
 
 Updated some other third-party internal dependencies, including Koin (3.4.2).
 
-Version 4.1.1 *2023-02-15*
+Version 4.1.1 *(2023-02-15)*
 ----------------------------
 Bug fixes:
 * Newly created conversations no longer throw an `NumberFormatException` when viewed.
 
 
-Version 4.1.0 *2022-09-22*
+Version 4.1.0 *(2022-09-22)*
 ----------------------------
 Bug fixes: 
 * When a Beacon is configured with Contact>Show photos to false the Chat header is now populated correctly and a chat can be started. 
@@ -39,22 +47,22 @@ Bug fixes:
  * :warning: minimum Kotlin version has changed from 1.5 → 1.6
  * Kotlin, Gradle, Android Plugin and 3rd party dependency updated (included Koin to 3.2.0)  
 
-Version 4.0.2 *2022-03-24*
+Version 4.0.2 *(2022-03-24)*
 ----------------------------
 **Internal changes - No user impact**
 
 Internal shared library updated. 
 
-Version 4.0.1 *2022-02-24*
+Version 4.0.1 *(2022-02-24)*
 ----------------------------
 * We now check for available agents before creating a new chat. If no agents are available, we redirect to the contact form.
 
 
-Support channel change *2022-02-04*
+Support channel change *(2022-02-04)*
 ----------------------------
 Not a new release, per se, but we have migrated support from GitHub Issues in this repository to our customer support team. Links in earlier changelog entries that pointed to an issue will no longer work, you will get a 404 when following them. For additional information on a previous release, github issue, or any other request for support please reach out to us via [help@helpscout.com](mailto:help@helpscout.com?subject=%5BAndroid%20Beacon%20SDK%5D%20Issue%20report&body=Technical%20details%0A%0A-%20Beacon%20version%3A%0A-%20Android%20OS%20version%3A%0A-%20Device%20make%2Fmodel%3A%0A-%20Impacted%20user%20count%3A%0A%0AActual%20outcome%0A%0A%20%20%20%20Beacon%20did%20or%20did%20not...%0A%0AExpected%20outcome%0A%0A%20%20%20%20Beacon%20should...%0A%0ASteps%20to%20reproduce%0A%0A%20%20%20%201.%20%E2%80%A6%0A%20%20%20%202.%20%E2%80%A6%0A%20%20%20%203.%20%E2%80%A6%0A%0AScreenshots%2FScreen%20Recording%0A%0A%20%20%20%20Please%20add%20any%20images%20or%20videos%20to%20support%20your%20report.%0A%0AAdditional%20Information%0A%0A%20%20%20%20Please%20attach%20any%20crash%20logs)
 
-Version 4.0.0 *2022-01-17*
+Version 4.0.0 *(2022-01-17)*
 ----------------------------
 
 Bug fixes: 
