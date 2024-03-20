@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+Version 5.1.0 *(2024-02-15)*
+----------------------------
+- **Dependency updates**
+  - **AGP**: 8.2.2
+  - **Gradle**: 8.2
+  - **Kotlin**: 1.9.10
+  - **Java**: 17
+  - Other internal libraries
+   
+- Modified our `FileProvider` file paths to exclude internal storage.
+
 Version 5.0.2 *(2024-02-14)*
 ----------------------------
 
