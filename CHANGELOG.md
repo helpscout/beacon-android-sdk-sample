@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 5.1.1 *(2024-04-11)*
+----------------------------
+Bugfixes:
+* Attachments from internal private storage are now restricted.
+
 Version 5.1.0 *(2024-03-20)*
 ----------------------------
 - **Dependency updates**
@@ -15,7 +20,7 @@ Version 5.1.0 *(2024-03-20)*
 Version 5.0.2 *(2024-02-14)*
 ----------------------------
 
-**Bugfixes**
+Bugfixes:
 - Corrected an issue that prevented users from updating to AGP 8.2.0, stemming from our utilization of an outdated version of OkHttp.
 - Addressed a crash occurring during Beacon initialization, impacting certain users.
 
