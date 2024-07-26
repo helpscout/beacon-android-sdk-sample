@@ -1,5 +1,9 @@
 Change Log
 ==========
+Version 5.1.2 *(2024-07-26)*
+----------------------------
+Bugfixes:
+* Resolved an issue where directly navigating to an article and then closing it using the X at the top would close the article but continue to display a loading indicator.
 
 Version 5.1.1 *(2024-04-16)*
 ----------------------------
