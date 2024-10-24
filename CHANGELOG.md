@@ -1,5 +1,10 @@
 Change Log
 ==========
+Version 5.1.3 *(2024-10-24)*
+----------------------------
+Bugfixes:
+* Fixed an issue where, after sending a message and navigating back, the beacon sometimes displayed a permanent loading state instead of behaving as expected.
+
 Version 5.1.2 *(2024-07-26)*
 ----------------------------
 Bugfixes:
