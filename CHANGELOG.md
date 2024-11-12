@@ -1,5 +1,13 @@
 Change Log
 ==========
+Version 5.2.0 *(2024-11-12)*
+---------------------------- 
+**Android SDK**
+- **Compile SDK**: 34 → 35
+- **Target SDK**: 34 → 35
+
+Added edge-to-edge support.
+
 Version 5.1.3 *(2024-10-24)*
 ----------------------------
 Bugfixes:
