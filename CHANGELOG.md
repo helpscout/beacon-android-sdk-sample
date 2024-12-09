@@ -1,5 +1,10 @@
 Change Log
 ==========
+Version 5.2.1 *(2024-12-9)*
+----------------------------
+Bugfixes:
+* Fixed an issue when building the SDK would fail if the consumer's Koin version was different from the SDK's Koin version.
+
 Version 5.2.0 *(2024-11-12)*
 ---------------------------- 
 **Android SDK**
