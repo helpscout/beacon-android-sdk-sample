@@ -1,5 +1,11 @@
 Change Log
 ==========
+Version 6.0.1 *(2025-02-12)*
+----------------------------
+Bugfixes:
+* Fixed an issue where an internal test dependency was exposed to clients
+* Internalized a couple exposed extension functions
+
 Version 6.0.0 *(2024-12-19)*
 ----------------------------
 - **Dependency updates**
