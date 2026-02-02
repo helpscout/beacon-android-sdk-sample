@@ -1,5 +1,16 @@
 Change Log
 ==========
+Version 7.0.0 *(TBD)*
+----------------------------
+:warning: Breaking changes :warning:
+
+* The method `setOverrideSuggestedArticles(List<String> articleIds)` has been deprecated in favor of `setOverrideSuggestedArticlesOrLinks(List<SuggestedArticle>)`, which supports both articles and external links.
+* The maximum number of article suggestions has increased from 5 to 10.
+* Updated translation string resource IDs:
+  - `hs_beacon_answers` → `hs_beacon_answer`
+  - `hs_beacon_search_hint` → `hs_beacon_search`
+  - `hs_beacon_nothing_found` → `hs_beacon_docs_search_empty`
+
 Version 6.0.1 *(2025-02-12)*
 ----------------------------
 Bugfixes:
