@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.internal.core.model.ContactFormConfigApi;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
+import com.helpscout.beacon.model.ContactFormConfig;
 import com.helpscout.beacon.model.PreFilledForm;
+import com.helpscout.beacon.model.SuggestedArticle;
 import com.helpscout.beacon.ui.BeaconActivity;
 import net.helpscout.sample.beacon.util.Utils;
 
@@ -115,28 +117,29 @@ public class CustomisationActivity extends AppCompatActivity {
                 true, // docsEnabled
                 true, // messagingEnabled
                 true, // chatEnabled
-                new ContactFormConfigApi(  // ContactForm overrides
+                new ContactFormConfig(  // ContactForm overrides
                         shouldDisableName, // showName
                         shouldDisableSubject, // showSubject
                         true,  // allowAttachments
                         false // customFieldsEnabled
+
                 ),
                 colorOverride  // override color in #000000 format
         ));
     }
 
     /**
-     * Replace the Instant Answers (suggestions) with this list. Note: max 5
+     * Replace the Instant Answers (suggestions) with this list. Note: max 10
      * More info: https://developer.helpscout.com/beacon-2/android/#custom-suggestions
      */
     private void overrideInstantAnswers(boolean enabled) {
         if (enabled) {
-            List<String> overrides = new ArrayList<>();
+            List<SuggestedArticle> overrides = new ArrayList<>();
             // TODO replace the article IDs with Articles from your Docs Collection.
             // https://secure.helpscout.net/docs/[COLLECTION ID]/article/[ARTICLE ID]/
-            overrides.add("11122bbb0428631d7a89ff4a");
-            overrides.add("11122ffd2c7d3a0fa9a29d22");
-            Beacon.setOverrideSuggestedArticles(overrides);
+            overrides.add(new SuggestedArticle.SuggestedArticleWithId("11122bbb0428631d7a89ff4a"));
+            overrides.add(new SuggestedArticle.SuggestedArticleWithId("11122ffd2c7d3a0fa9a29d22"));
+            Beacon.setOverrideSuggestedArticlesOrLinks(overrides);
         } else {
             Beacon.resetSuggestedArticlesOverrides();
         }

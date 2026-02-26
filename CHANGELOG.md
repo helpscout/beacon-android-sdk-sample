@@ -1,5 +1,29 @@
 Change Log
 ==========
+Version 7.0.0 *(2026-02-26)*
+----------------------------
+
+### What's new?
+
+* **[AI Answers](https://docs.helpscout.com/article/1569-ai-answers)**: You can now navigate directly to the AI Answers screen using `BeaconScreens.AI_ANSWERS`, or open it with a pre-submitted question using `BeaconScreens.ASK_QUESTION`.
+* New `BeaconScreens.ANSWERS` navigation option to open directly to the docs/articles list, bypassing the Home screen.
+* New `Beacon.logout(boolean endActiveChat)` overload — pass `true` to end any active chat when the user logs out.
+* User attribute limits updated: 
+    * Keys now support up to 100 characters (from 80) 
+    * Values up to 255 characters (from 200)
+
+### :warning: Breaking changes :warning:
+
+* `setFirebaseCloudMessagingToken()` now requires a `Context` as the first parameter.
+* `ContactFormConfigApi` has been renamed to `ContactFormConfig` but functionality remains unchanged.
+* `prefilledFormReset()` has been removed. Use `contactFormReset()` instead.
+* The deprecated `login()` methods have been removed. Use `identify()` instead.
+* `addAttributeWithKey()` now throws an `SDKInitException` if called before `identify()`. Previously it would silently use an empty attribute map.
+* The method `setOverrideSuggestedArticles(List<String> articleIds)` has been deprecated in favor of `setOverrideSuggestedArticlesOrLinks(List<SuggestedArticle>)`, which supports both articles and external links.
+* The maximum number of article suggestions has increased from 5 to 10.
+* Made the internal constants in `BeaconActivity` private. They weren’t intended for external use, so this shouldn’t cause any breakage.
+* **Updated localization keys** for consistency and alignment. Some keys were renamed and others removed. See the full list of changes [here](https://developer.helpscout.com/beacon-2/android/#translation-strings).
+
 Version 6.0.1 *(2025-02-12)*
 ----------------------------
 Bugfixes:
