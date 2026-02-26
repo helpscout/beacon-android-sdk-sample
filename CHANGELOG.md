@@ -15,6 +15,7 @@ Version 7.0.0 *(2026-02-26)*
 ### :warning: Breaking changes :warning:
 
 * `setFirebaseCloudMessagingToken()` now requires a `Context` as the first parameter.
+* `ContactFormConfigApi` has been renamed to `ContactFormConfig` but functionality remains unchanged.
 * `prefilledFormReset()` has been removed. Use `contactFormReset()` instead.
 * The deprecated `login()` methods have been removed. Use `identify()` instead.
 * `addAttributeWithKey()` now throws an `SDKInitException` if called before `identify()`. Previously it would silently use an empty attribute map.

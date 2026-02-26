@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.internal.core.model.ContactFormConfigApi;
 import com.helpscout.beacon.model.BeaconConfigOverrides;
+import com.helpscout.beacon.model.ContactFormConfig;
 import com.helpscout.beacon.model.PreFilledForm;
 import com.helpscout.beacon.model.SuggestedArticle;
 import com.helpscout.beacon.ui.BeaconActivity;
@@ -116,11 +117,12 @@ public class CustomisationActivity extends AppCompatActivity {
                 true, // docsEnabled
                 true, // messagingEnabled
                 true, // chatEnabled
-                new ContactFormConfigApi(  // ContactForm overrides
+                new ContactFormConfig(  // ContactForm overrides
                         shouldDisableName, // showName
                         shouldDisableSubject, // showSubject
                         true,  // allowAttachments
                         false // customFieldsEnabled
+
                 ),
                 colorOverride  // override color in #000000 format
         ));
