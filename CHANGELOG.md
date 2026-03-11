@@ -1,5 +1,16 @@
 Change Log
 ==========
+Version 7.0.1 *(2026-03-11)*
+----------------------------
+
+**Android SDK**
+- **Compile SDK**: 35 → 36
+- **Target SDK**: 35 → 36
+
+Bugfixes:
+* Removed usage of deprecated edge-to-edge APIs.
+* Fixed issues affecting error and loading view display.
+
 Version 7.0.0 *(2026-02-26)*
 ----------------------------
 
