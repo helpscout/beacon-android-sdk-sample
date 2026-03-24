@@ -1,5 +1,10 @@
 Change Log
 ==========
+Version 7.0.2 *(2026-03-24)*
+----------------------------
+Bugfixes:
+* Fixed an issue with email validation where emails with an apostrophe were not allowed.
+
 Version 7.0.1 *(2026-03-11)*
 ----------------------------
 
